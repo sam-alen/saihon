@@ -22,15 +22,15 @@ El proyecto cuenta con las siguientes páginas HTML
 
 ## Integrantes del Proyecto
 
-* Alen Samuel Villaseñor Flores | 
-* Andrea Estefanía Castellanos Suárez | 
-* Arturo Misael Solares Velasco | 
-* Braulio Israel Alejo Cerezo | 
-* Ingrid Archundia López | 
-* Jalil Samas Mendoza Reyes | 
-* Jesús Pineda Gil | 
-* José Salazar Pérez | 
-* Leonardo León Castro | 
+* [Alen Samuel Villaseñor Flores | ](https://github.com/sam-alen)
+* [Andrea Estefanía Castellanos Suárez | ](https://github.com/ACass96)
+* [Arturo Misael Solares Velasco | ](https://github.com/arthvelc)
+* [Braulio Israel Alejo Cerezo | ](https://github.com/BraulioIAC)
+* [Ingrid Archundia López | ](https://github.com/ingridarchundia)
+* [Jalil Samas Mendoza Reyes | ](https://github.com/JalilSMR)
+* [Jesús Pineda Gil | ](https://github.com/JesusPineda29)
+* [José Salazar Pérez | ](https://github.com/Josesp012)
+* [Leonardo León Castro | ](https://github.com/LeoLeon1610)
 
 ## Flujo de Trabajo para Subir Cambios a GitHub
 
