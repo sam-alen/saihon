@@ -1,10 +1,10 @@
-# Proyecto de Libros Saiho
+# Proyecto de Libros Saihon
 
-Repositorio del Proyecto de Libros Saiho, el Proyecto Integrador del Bootcamp de Generation México.
+Repositorio del Proyecto de Libros Saihon, el Proyecto Integrador del Bootcamp de Generation México.
 
 ## Descripción
 
-El Proyecto de Libros Saiho tiene como objetivo diseñar una plataforma dedicada a la venta de libros en línea puede ofrecer soluciones a distintas problemáticas, tanto para los vendedores como para los consumidores. Consiste en un E-commerce enfocado a la venta de libros de diferentes géneros literarios, la cual va dirigida a una público de 12 años en adelante, delimitada a la zona de la CDMX. Se desarrollo buscando satisfacer las siguientes necesidades.
+El Proyecto de Libros Saihon tiene como objetivo diseñar una plataforma dedicada a la venta de libros en línea puede ofrecer soluciones a distintas problemáticas, tanto para los vendedores como para los consumidores. Consiste en un E-commerce enfocado a la venta de libros de diferentes géneros literarios, la cual va dirigida a una público de 12 años en adelante, delimitada a la zona de la CDMX. Se desarrollo buscando satisfacer las siguientes necesidades.
 
 1. Realizar una página web de venta de libros de fácil navegación.
 2. Ofrecer a la venta diversos libros de ciencia y tecnología, romance y terror. (8 libros de categoría, sujeto de ampliación)
@@ -34,7 +34,7 @@ El proyecto cuenta con las siguientes páginas HTML
 
 ## Flujo de Trabajo para Subir Cambios a GitHub
 
-Para contribuir al repositorio del Proyecto de Libros Saiho, sigue estos pasos para asegurarte de que los cambios se suben correctamente a GitHub:
+Para contribuir al repositorio del Proyecto de Libros Saihon, sigue estos pasos para asegurarte de que los cambios se suben correctamente a GitHub:
 
 ### 1. Clonar el repositorio
 
