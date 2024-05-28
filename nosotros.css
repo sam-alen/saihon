@@ -1,0 +1,65 @@
+:root{
+    --main-bg-color: #F9F9F9;
+    --main-bg-color: #170E2D;
+    --main-bg-color: #321519;
+    --main-bg-color: #E1351F; /*Color de los hoover links*/
+    --main-bg-color: #F75820;
+    --main-bg-color: #FDC264;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+h1{
+    font-family: Belle;
+}
+h2{
+font-family: intter;
+}
+
+.col{
+    display: flex;
+
+}
+/*Ajuste de los logos de github y linkedin*/
+.divlogo{
+display: flex;
+flex-direction: wrap
+}
+.logo{
+    width: 50px;
+height: 50px;
+}
+/*Ajuste de las fotos de perfil*/
+.foto{
+    width: auto;
+    height: auto;
+    
+
+}
+/*Ajuste de las tarjetas*/
+.card{
+    width: 350px;
+    height: auto;
+    opacity: 80%;
+}
+/*efecto de opacidad y movimiento en lars cards*/
+.card:hover{
+    opacity: 100%;
+    transition: 0.5s;
+    cursor: pointer;
+    transform:scale(1.1);
+    z-index: 1;
+ }
+
+
+ /*ajuste de tamaño de las fotos de perfil en las cards*/
+.fotoperfil{
+    width: auto;
+    height: auto;
+}
