@@ -41,6 +41,36 @@
           .img img{
             width: 100%;
           }
+          .foot {
+              flex-direction: column;
+              justify-content: center;
+              height: auto;  
+              padding: 2rem;
+          }
+
+          .div-container2 {
+              display: none;
+          }
+
+          .footer-title {
+              font-size: 2rem; 
+          }
+
+          .div-redes {
+              margin-top: 1rem;
+          }
+
+          .Redes {
+              margin-top: 1rem;
+          }
+
+          .Redes img {
+              margin: 0.5rem; /* Añade margen entre los íconos para mejor separación en columnas */
+          }
+
+          .footer-info, .footer-infotation {
+              font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+          }
       }
     /* Para tabletas */
     @media (min-width: 768px){
@@ -48,6 +78,14 @@
 
     /* Para escritorio */
     @media (min-width: 1024px) {
+      .set-cards{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-text{
+        font-size: 1.5rem;
+      }
     }
 
     </style>
@@ -139,9 +177,9 @@
 
 <main> 
 
-  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+  <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
     <!-- MIEMBRO 1-->
-      <div class="col">
+      <div class="col set-cards">
         <div class="card h-100">
           <img class="fotoperfil" src="src/samfoto.jpg" class="card-img-top" alt="foto de Alen">
             <div class="card-body d-flex flex-column">
@@ -156,7 +194,7 @@
       </div>
     
     <!-- MIEMBRO 2-->
-      <div class="col">
+      <div class="col set-cards">
           <div class="card h-100">
             <img class="fotoperfil" src="src/Andrea C-foto perfil.jpg" class="card-img-top" alt="foto de Andrea">
               <div class="card-body d-flex flex-column">
@@ -171,12 +209,12 @@
       </div>
   
     <!-- MIEMBRO 3 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/arturo.jpg" class="card-img-top" alt="foto de arturo">
           <div class="card-body d-flex flex-column">
           <h5 class="card-title">Arturo Misael Solares Velasco</h5>
-          </p class="card-text">Soy Arturo Desarrollador Java fullstack, mi interés surgió desde un curso de tecnico en TI de google. Esto encendió mi curiosidad y me hizo orillarme al aprendizaje continuo.</p>
+          <p class="card-text">Soy Arturo Desarrollador Java fullstack, mi interés surgió desde un curso de tecnico en TI de google. Esto encendió mi curiosidad y me hizo orillarme al aprendizaje continuo.</p>
           <div class="divlogo">
             <img class="logo" src="src/linkedin-svgrepo-com.svg" class="card-img-top" alt="foto de ...">
             <img class="logo" src="src/github-svgrepo-com.svg" class="card-img-top" alt="foto de ...">
@@ -185,16 +223,15 @@
       </div>
     </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4 py-5 set-cards">
 
     <!-- MIEMBRO 4 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/braulio.jpg" class="card-img-top" alt="foto de braulio">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">Braulio Israel Alejo Cerezo</h5>
-          <p class="card-text">Soy un Ingeniero en Biónica que busca desarrollarse en el área de tecnologías de la información. Mi pasión es la programación y actualmente poseo un particular interés por el Desarrollo de Aplicaciones Web y la Ciencia de Datos.
-        Actualmente me encuentro desarrollando mis habilidades de programación y un conjunto basto de habilidades blandas en un Bootcamp de Fullstack en Java, por parte de Generation Mexico. Participar en este programa me ha proporcionado habilidades prácticas en desarrollo de Software Front End y Back End, permitiéndome implementar Aplicaciones Web completas y responsivas.</p> 
+          <p class="card-text">Soy un Ingeniero en Biónica que busca desarrollarse en el área de tecnologías de la información. Mi pasión es la programación y actualmente poseo un particular interés por el Desarrollo de Aplicaciones Web y la Ciencia de Datos. </p> 
         <div div class="divlogo">
           <img class="logo" src="src/linkedin-svgrepo-com.svg" class="card-img-top" alt="foto de ...">
           <img class="logo" src="src/github-svgrepo-com.svg" class="card-img-top" alt="foto de ...">
@@ -205,7 +242,7 @@
   
   
     <!-- MIEMBRO 5 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/Ingrid Arlo - foto.jpg" class="card-img-top" alt="foto de Ingrid">
         <div class="card-body d-flex flex-column">
@@ -220,7 +257,7 @@
     </div>
   
     <!-- MIEMBRO 6 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/jalil.jpg" class="card-img-top" alt="foto de ...">
           <div class="card-body d-flex flex-column">
@@ -234,9 +271,9 @@
     </div>
   </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+  <div class="row row-cols-1 row-cols-md-2 g-4 py-5 set-cards">
     <!-- MIEMBRO 7 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/jesusPineda.png" class="card-img-top" alt="foto de ...">
           <div class="card-body d-flex flex-column">
@@ -250,7 +287,7 @@
     </div>
     
     <!-- MIEMBRO 8-->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
         <img class="fotoperfil" src="src/jose.jpg" class="card-img-top" alt="foto de ...">
           <div div class="card-body d-flex flex-column">
@@ -265,9 +302,9 @@
     </div>
   
     <!-- MIEMBRO 9 -->
-    <div class="col">
+    <div class="col set-cards">
       <div class="card h-100">
-        <img class="fotoperfil" src="src/Foto Leonardo.png" class="card-img-top" alt="foto de ...">
+        <img class="fotoperfil" src="src/Leo.jpg" class="card-img-top" alt="foto de ...">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Leonardo León Castro</h5>
               <p class="card-text">Ingeniero en nanotecnología. Apasionado a los retos y al conocimiento. A lo largo de los últimos años he desarrollado un gran interés en el mundo de la tecnología y programación.</p>

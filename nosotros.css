@@ -116,36 +116,3 @@
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-
-@media (max-width: 768px) {
-   .foot {
-       flex-direction: column;
-       justify-content: center;
-       height: auto;  
-       padding: 2rem;
-   }
-
-   .div-container2 {
-      display: none;
-   }
-
-   .footer-title {
-       font-size: 2rem; 
-   }
-
-   .div-redes {
-       margin-top: 1rem;
-   }
-
-   .Redes {
-       margin-top: 1rem;
-   }
-
-   .Redes img {
-       margin: 0.5rem; /* Añade margen entre los íconos para mejor separación en columnas */
-   }
-
-   .footer-info, .footer-infotation {
-       font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
-   }
-}
