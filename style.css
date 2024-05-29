@@ -1,0 +1,49 @@
+
+
+.navbar-nav{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    width: 100%;
+    font-size: 20px
+    
+}
+
+.topPage {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    height: 400px;
+    width: 100%;
+}
+
+
+.img, .acercaNosotros {
+    flex: 2;
+}
+
+.img img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; 
+}
+
+
+.acercaNosotros {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.topPage  h1 {
+    font-size: 50px
+
+}
+
+.topPage  p {
+    font-size: 30px
+}
+
+
