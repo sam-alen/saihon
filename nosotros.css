@@ -2,7 +2,7 @@
     --main-whitest-color: #F9F9F9;
     --main-darkblue-color: #170E2D ;
     --main-darkbrown-color: #321519;
-    --main-darkbrown-color: #E1351F;
+    --main-redish-color: #E1351F;
     --main-orangeish-color: #E1351F;
     --main-yelllowish-color: #FDC264;
  }
@@ -14,8 +14,9 @@
     box-sizing: border-box; /* border y paddingn se*/
  }
 
-
-
+ html{
+    font-size: 62.5%;
+}
 
 
  h2{
@@ -25,6 +26,7 @@
  body{
     font-family: "inter";
  }
+
 
  .row{ 
     display: flex;
@@ -60,6 +62,7 @@
     cursor: pointer;
     transform:scale(1.1);
     z-index: 1;
+    background-color: #FDC264;
  }
 
 
@@ -68,4 +71,3 @@
     width: auto;
     height: auto;
 }
-
