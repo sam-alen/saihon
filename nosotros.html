@@ -10,6 +10,36 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Inter:wght@100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Para dispositivos móviles */
+        @media(max-width: 767px) {
+          .card {
+                width: 100%;
+          }
+          .logo {
+                width: 40px;
+                height: 40px;
+          }
+          .acercaNosotros h1{
+                font-size: 3.5rem;
+          }
+          .acercaNosotros p{
+            font-size: 2rem;
+            text-align: justify;
+            justify-content: center;
+            align-items: center;
+          }
+          .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .img img{
+            width: 100%;
+            height: auto;
+          }
+
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Para usar inner-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Para usar inner-->
@@ -64,7 +94,7 @@
             <div class="carousel-item">
                 <div class="topPage">
                     <div class="img">
-                        <img src="https://example.com/other-image1.jpg" alt="">
+                        <img src="src/Nosotros-libros-1.jpg" alt="Imagen de librero">
                     </div>
                     <div class="acercaNosotros">
                         <h1>Nuestra Misión</h1>
@@ -75,7 +105,7 @@
             <div class="carousel-item">
                 <div class="topPage">
                     <div class="img">
-                        <img src="https://example.com/other-image2.jpg" alt="">
+                        <img src="src/Nosotros-libros-2.jpg" alt="Imagen de librero">
                     </div>
                     <div class="acercaNosotros">
                         <h1>Nuestra Visión</h1>
