@@ -116,3 +116,8 @@
    font-size: 2rem;
    margin-bottom: 1rem;
 }
+
+.nav-link-size {
+   font-size: 1.4rem !important;
+}
+

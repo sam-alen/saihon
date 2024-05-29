@@ -13,6 +13,10 @@
 
         /* Para dispositivos móviles */
         @media(max-width: 767px) {
+          .navbar-nav {
+            flex-direction: row !important;
+            gap: 40px !important;
+          }
           .topPage{
             display: flex;
             flex-direction: column;
@@ -75,6 +79,9 @@
       }
     /* Para tabletas */
     @media (min-width: 768px){
+      .navbar-nav {
+        flex-direction: row !important;
+      }
       .container-cards{
         display: flex;
         align-items: center;
@@ -102,6 +109,9 @@
 
     /* Para escritorio */
     @media (min-width: 1024px) {
+      .navbar-nav {
+        flex-direction: row;
+      }
       .set-cards{
         display: flex;
         align-items: center;
@@ -138,23 +148,18 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active nav-link-size" aria-current="page" href="#">Inicio</a>
             <div>|</div>
-            <a class="nav-link" href="#">Nosotros</a>
+            <a class="nav-link nav-link-size" href="#">Nosotros</a>
             <div>|</div>
-            <a class="nav-link" href="#">Libros</a>
+            <a class="nav-link nav-link-size" href="#">Libros</a>
             <div>|</div>
-            <a class="nav-link" href="#">Contactanos</a>
+            <a class="nav-link nav-link-size" href="#">Contactanos</a>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
   <br><br>
   <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
