@@ -71,3 +71,29 @@
     width: auto;
     height: auto;
 }
+
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 576px) {
+   .card {
+       width: 100%;
+   }
+   .logo {
+       width: 40px;
+       height: 40px;
+   }
+}
+
+/* Para tabletas */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+   .card {
+       width: 50%;
+   }
+}
+
+/* Para escritorio */
+@media screen and (min-width: 993px) {
+   .card {
+       width: 33.33%;
+   }
+}
