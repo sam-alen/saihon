@@ -13,6 +13,10 @@
 
         /* Para dispositivos móviles */
         @media(max-width: 767px) {
+          .topPage{
+            display: flex;
+            flex-direction: column;
+          }
           .card {
                 width: 100%;
           }
@@ -21,10 +25,10 @@
                 height: 40px;
           }
           .acercaNosotros h1{
-                font-size: 3.5rem;
+                font-size: 2rem;
           }
           .acercaNosotros p{
-            font-size: 2rem;
+            font-size: 1.2rem;
             text-align: justify;
             justify-content: center;
             align-items: center;
@@ -36,10 +40,16 @@
           }
           .img img{
             width: 100%;
-            height: auto;
           }
-
       }
+    /* Para tabletas */
+    @media (min-width: 768px){
+    }
+
+    /* Para escritorio */
+    @media (min-width: 1024px) {
+    }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Para usar inner-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Para usar inner-->
@@ -105,7 +115,7 @@
             <div class="carousel-item">
                 <div class="topPage">
                     <div class="img">
-                        <img src="src/Nosotros-libros-2.jpg" alt="Imagen de librero">
+                        <img src="src/Nosotros-libros-1.jpg" alt="Imagen de librero">
                     </div>
                     <div class="acercaNosotros">
                         <h1>Nuestra Visión</h1>
