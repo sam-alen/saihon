@@ -6,12 +6,64 @@
     <title>Contactanos</title>
     <link rel="stylesheet" href="css/stylecontactanos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
       @media(max-width: 767px) {
+        #nav-desktop{
+          display:none;
+        }
 
+        .container-nav-mobile{
+          display:flex;
+          width:100%;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .container-nav-mobile h2{
+          font-size: 7.5rem;
+        }
+        .hamburger{
+          font-size: 5rem;
+        }
+
+        .libro-container{
+          display:none;
+        }
+        .contenido{
+          display: flex;
+          flex-direction: column;
+          margin: 3.5rem;
+        }
+        .datos{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 2rem
+        }
+        #btnEnviar{
+          width: 30%;
+          border-radius: 5rem;
+          font-size: 1.6rem;
+          margin-top: 1rem;
+        }
+        .tituloMain h1{
+          font-size: 3.5rem;
+        }
+        .campos{
+          font-size: 1.6rem;
+        }
+        .input-form{
+          font-size: 1.6rem;
+          border-radius: 1rem;
+          box-shadow: #000 0 0 .5rem;
+        }
       }
       @media (min-width: 768px){
+        .container-nav-mobile{
+          display:none;
+        }
 
+        
       }
       @media (min-width: 1024px) {
         body{
@@ -28,7 +80,7 @@
 <body class = "grid-container">
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+      <div class="container-fluid" id = "nav-desktop">
         <div class="navbar-nav"><!--MENU DE NAVEGACIÓN-->
           <a class="nav-link nav-link-size otrosL" aria-current="page" href="#">Inicio</a>
           <div>|</div>
@@ -39,38 +91,46 @@
           <a class="nav-link nav-link-size otrosL" href="#">Contáctanos</a>
         </div>
       </div>
+
+      <!-- NAVBAR MOBILE-->
+      <div class = "container-nav-mobile">
+        <h2>Saihon</h2>
+        <span class="material-symbols-outlined hamburger">
+          menu
+        </span>
+      </div>
     </nav>
   </header>
 <br><br>
   <main>
       <div class="container text-center">
           <div class="row contenido">
-              <div class="col"> <!--Imagen libros-->
+              <div class="col libro-container"> <!--Imagen libros-->
                   <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%" class="libros">
               </div>
               <div class="col">
                   <div class="tituloMain"><!--Titulo-->
-                      <h1><strong>Acerca de nosotros</strong></h1>
+                      <h1><strong>Contáctanos</strong></h1>
                   </div>
                   <div>
                       <form><!--Formulario-->
                           <div class="mb-3 campos">
                               <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
-                              <input type="name" class="form-control" id="exampleInputName" placeholder="👤 Ricardo Lopez">
+                              <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo Lopez">
                           </div>
                           <div class="mb-3 campos">
                             <label for="exampleInputPassword1" class="form-label">Número telefónico</label>
-                            <input type="email" class="form-control" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
+                            <input type="email" class="form-control input-form" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
                           <div class="mb-3 campos">
                               <label for="exampleInputPassword1" class="form-label">Correo electronico</label>
-                              <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
+                              <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
                               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                           </div>
                           <div class="mb-3 campos">
                               <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="✏️ Escribe tu mensaje  aquí" rows="3"></textarea>
+                              <textarea class="form-control input-form" id="exampleFormControlTextarea1" placeholder="✏️ Escribe tu mensaje  aquí" rows="3"></textarea>
                           </div><!--BOTON-->
                               <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
                       </form>
