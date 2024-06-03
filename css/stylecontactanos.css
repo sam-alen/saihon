@@ -92,18 +92,22 @@ main {
 
 #exampleInputName {
    background-color: rgba(50, 21, 25, 1);
+   color: #F9F9F9;
 }
 
 #exampleInputPhone {
    background-color: rgba(50, 21, 25, 1);
+   color: #F9F9F9;
 }
 
 #exampleInputEmail {
    background-color: rgba(50, 21, 25, 1);
+   color: #F9F9F9;
 }
 
 #exampleFormControlTextarea1 {
    background-color: rgba(50, 21, 25, 1);
+   color: #F9F9F9;
 }
 
 form-label {
