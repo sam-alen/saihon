@@ -77,3 +77,41 @@ h2{
    margin-bottom: 1rem;
 }
  /* ========================================================================================================================================= */
+
+main{
+  
+  font-family: "Inter", sans-serif;
+}
+
+.form-label{
+  font-size: 15px;
+}
+
+#exampleInputName{
+  background-color: rgba(50, 21, 25, 1);
+}
+
+
+#exampleInputPhone{
+  background-color: rgba(50, 21, 25, 1);
+}
+
+#exampleInputEmail{
+  background-color: rgba(50, 21, 25, 1);
+}
+
+#exampleFormControlTextarea1{
+  background-color: rgba(50, 21, 25, 1);
+}
+
+form-label{
+  text-align: start;
+}
+
+col {
+  align-items: center;
+}
+
+.tituloMain{
+text-align: center;
+}
