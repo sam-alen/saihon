@@ -80,6 +80,9 @@ h2{
 
 main{
   font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-label{
@@ -113,4 +116,36 @@ col {
 
 .tituloMain{
 text-align: center;
+}
+
+.datos{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   height: 100%;
+}
+
+.contenido{
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+.libros{
+   height: 50vh;
+   width: 100%;
+   border-radius: 30px;
+}
+#btnEnviar{
+   width: 5vw;
+   height: 4vh;
+   background-color: #E1351F;
+   border: none;
+}
+
+#contacto, #telefono{
+   font-weight: bold;
+}
+
+.campos{
+   text-align: left;
 }

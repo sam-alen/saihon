@@ -44,45 +44,47 @@
 <br><br>
   <main>
       <div class="container text-center">
-          <div class="row">
+          <div class="row contenido">
               <div class="col"> <!--Imagen libros-->
-                  <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%">
+                  <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%" class="libros">
               </div>
               <div class="col">
                   <div class="tituloMain"><!--Titulo-->
-                      <h1>Acerca de nosotros</h1>
+                      <h1><strong>Acerca de nosotros</strong></h1>
                   </div>
                   <div>
                       <form><!--Formulario-->
-                          <div class="mb-3">
+                          <div class="mb-3 campos">
                               <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
                               <input type="name" class="form-control" id="exampleInputName" placeholder="👤 Ricardo Lopez">
                           </div>
-                          <div class="mb-3">
+                          <div class="mb-3 campos">
                             <label for="exampleInputPassword1" class="form-label">Número telefónico</label>
                             <input type="email" class="form-control" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
-                          <div class="mb-3">
+                          <div class="mb-3 campos">
                               <label for="exampleInputPassword1" class="form-label">Correo electronico</label>
                               <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
                               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                           </div>
-                          <div class="mb-3">
+                          <div class="mb-3 campos">
                               <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
                               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="✏️ Escribe tu mensaje  aquí" rows="3"></textarea>
                           </div><!--BOTON-->
-                              <button type="submit" class="btn btn-primary">Enviar</button>
+                              <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
                       </form>
                   </div>
               </div>
-              <div class="col">
+              <div class="col datos">
                   <div><!--Datos de contacto-->
-                      <h2>Contacto</h2>
+                      <h2 id="contacto">Contacto</h2>
                       <h3>saihon@gmail.com</h3>
                   </div>
+                  <br>
+                  <br>
                   <div><!--Datos de contacto-->
-                      <h2>Telefonos</h2>
+                      <h2 id="telefono">Telefonos</h2>
                       <h3>+52 5514535455</h3>
                       <h3>+52 5589345677</h3>
                   </div>
