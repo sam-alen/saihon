@@ -8,26 +8,31 @@
     --main-yelllowish-color: #FDC264;
  }
  
- 
+
  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* border y paddingn se*/
  }
 
- /*para acomodar los logos de linkedin y github en las cards*/
- .divlogo{
+ html{
+    font-size: 62.5%;
+}
+ body{
+    font-family: "inter";
+ }
+
+ .navbar-nav{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
- }
-
-/*para ajustar el tamaño de los logos de linkedin y github*/
- .logo{
-    width: 50px;
-    height: 50px;
- }
-
+    gap: 90px;
+    width: 100%;
+    font-size: 20px
+    
+}
+.otrosL:hover{
+    font-weight: bold;
+}
 
 .foot{
    display: flex;
@@ -41,10 +46,11 @@
    align-items: center;
 }
 
+h2{
+    font-family: "bellefair-regular";
+ }
 .footer-title{
-   font-size: 3.8rem;
-   font-weight: regular;
-   font-family: var(--logo-font);
+    font-size: 3.8rem;
 }
 
 .Redes{
@@ -72,93 +78,74 @@
 }
  /* ========================================================================================================================================= */
 
-.navbar-nav{
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    width: 100%;
-    font-size: 20px
-    
+main{
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topPage {
-    font-family: "Inter", sans-serif;
-    display: flex;
-    height: 400px;
-    width: 100%;
+.form-label{
+  font-size: 15px;
 }
 
-
-.img, .acercaNosotros {
-    flex: 2;
-}
-
-.img img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%; 
+#exampleInputName{
+  background-color: rgba(50, 21, 25, 1);
 }
 
 
-.acercaNosotros {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
+#exampleInputPhone{
+  background-color: rgba(50, 21, 25, 1);
 }
 
-.topPage  h1 {
-    font-size: 50px
-
+#exampleInputEmail{
+  background-color: rgba(50, 21, 25, 1);
 }
 
-.topPage  p {
-    font-size: 30px
+#exampleFormControlTextarea1{
+  background-color: rgba(50, 21, 25, 1);
 }
 
-
-/* -------------------------------------------------------------------------------------------------------------------------------------------- */
-
- html{
-    font-size: 62.5%;
+form-label{
+  text-align: start;
 }
 
+col {
+  align-items: center;
+}
 
- h2{
-    font-family: "bellefair-regular";
- }
+.tituloMain{
+text-align: center;
+}
 
- body{
-    font-family: "inter";
- }
+.datos{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   height: 100%;
+}
 
+.contenido{
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+.libros{
+   height: 50vh;
+   width: 100%;
+   border-radius: 30px;
+}
+#btnEnviar{
+   width: 5vw;
+   height: 4vh;
+   background-color: #E1351F;
+   border: none;
+}
 
- .row{ 
-    display: flex;
-    flex-direction: row;
- }
+#contacto, #telefono{
+   font-weight: bold;
+}
 
- /*Color y ancho de las cards*/
- /* .card{
-    background-color:var(--main-yelllowish-color);
-    width: 350px;
-    opacity: 80%;
- } */
-
- /*efecto de opacidad y movimiento en lars cards*/
- /* .card:hover{
-    opacity: 100%;
-    transition: 0.5s;
-    cursor: pointer;
-    transform:scale(1.1);
-    z-index: 1;
-    background-color: #FDC264;
- } */
-
-
-
-/* .nav-link-size {
-   font-size: 1.4rem !important;
-}  */
+.campos{
+   text-align: left;
+}
