@@ -4,10 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contactanos</title>
-    <link rel="stylesheet" href="/nosotros.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/stylecontactanos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style></style>
+    <style>
+      @media(max-width: 767px) {
+
+      }
+      @media (min-width: 768px){
+
+      }
+      @media (min-width: 1024px) {
+        body{
+          margin: 0;
+          padding: 0;
+          display: grid;
+          height: 100vh;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr auto;
+        }
+      }
+    </style>
 </head>
 <body class = "grid-container">
   <header>
@@ -26,75 +42,75 @@
     </nav>
   </header>
 <br><br>
-<main>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col"> <!--Imagen libros-->
-                <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%">
-            </div>
-            <div class="col">
-                <div><!--Titulo-->
-                    <h1>Acerca de nosotros</h1>
-                </div>
-                <div>
-                    <form><!--Formulario-->
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
-                            <input type="name" class="form-control" id="exampleInputName" placeholder="👤 Ricardo Lopez">
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Número telefónico</label>
-                          <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
-                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                      </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Correo electronico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
+  <main>
+      <div class="container text-center">
+          <div class="row">
+              <div class="col"> <!--Imagen libros-->
+                  <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%">
+              </div>
+              <div class="col">
+                  <div><!--Titulo-->
+                      <h1>Acerca de nosotros</h1>
+                  </div>
+                  <div>
+                      <form><!--Formulario-->
+                          <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
+                              <input type="name" class="form-control" id="exampleInputName" placeholder="👤 Ricardo Lopez">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Número telefónico</label>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="✏️ Escribe tu mensaje  aquí" rows="3"></textarea>
-                        </div><!--BOTON-->
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col">
-                <div><!--Datos de contacto-->
-                    <h2>Contacto</h2>
-                    <h3>saihon@gmail.com</h3>
-                </div>
-                <div><!--Datos de contacto-->
-                    <h2>Telefonos</h2>
-                    <h3>+52 5514535455</h3>
-                    <h3>+52 5589345677</h3>
-                </div>
-            </div>
+                          <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Correo electronico</label>
+                              <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
+                              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="✏️ Escribe tu mensaje  aquí" rows="3"></textarea>
+                          </div><!--BOTON-->
+                              <button type="submit" class="btn btn-primary">Enviar</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="col">
+                  <div><!--Datos de contacto-->
+                      <h2>Contacto</h2>
+                      <h3>saihon@gmail.com</h3>
+                  </div>
+                  <div><!--Datos de contacto-->
+                      <h2>Telefonos</h2>
+                      <h3>+52 5514535455</h3>
+                      <h3>+52 5589345677</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+  </main>
+  <footer class="foot">
+      <div class = "div-container">
+        <div class="footer-title">
+          <h3 class="footer-title">SAIHON</h3>
         </div>
-    </div>
-   
-</main>
-<footer class="foot">
-    <div class = "div-container">
-      <div class="footer-title">
-        <h3 class="footer-title">SAIHON</h3>
+        <div class="Redes">
+          <img src="./src/Facebook logo.jpg" class="social-logo">
+          <img src="./src/linkdin logo.jpg" class="social-logo">
+          <img src="./src/youtube logo.jpg" class="social-logo">
+          <img src="./src/Instagram logo.jpg" class="social-logo">
+        </div>
       </div>
-      <div class="Redes">
-        <img src="./src/Facebook logo.jpg" class="social-logo">
-        <img src="./src/linkdin logo.jpg" class="social-logo">
-        <img src="./src/youtube logo.jpg" class="social-logo">
-        <img src="./src/Instagram logo.jpg" class="social-logo">
-      </div>
-    </div>
 
-    <div class="div-container div-container2">
-      <div><h3 class="footer-infotation">Informacion</h3></div>
-      <div><p><strong class="footer-info">Direccion corporativa</strong><br>Ciudad de Mexico</p></div>
-      <p class="footer-info">Telefono:5589345677</p>
-      <p class="footer-info">Correo electronico:atencion@saihon.com</p>
-    </div>
-  </footer>
+      <div class="div-container div-container2">
+        <div><h3 class="footer-infotation">Informacion</h3></div>
+        <div><p><strong class="footer-info">Direccion corporativa</strong><br>Ciudad de Mexico</p></div>
+        <p class="footer-info">Telefono:5589345677</p>
+        <p class="footer-info">Correo electronico:atencion@saihon.com</p>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   </body>
