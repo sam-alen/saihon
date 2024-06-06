@@ -32,7 +32,7 @@
 .navbar-nav {
    display: flex;
    justify-content: center;
-   gap: 90px;
+   gap: 70px;
    width: 100%;
    font-size: 20px;
 }

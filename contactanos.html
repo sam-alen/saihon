@@ -9,23 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
       @media(max-width: 991px) {
-        #nav-desktop{
-          display:none;
+        .separador{
+          display: none;
         }
-
-        .container-nav-mobile{
-          display:flex;
-          width:100%;
-          justify-content: space-around;
-          align-items: center;
-        }
-        .container-nav-mobile h2{
-          font-size: 7.5rem;
-        }
-        .hamburger{
-          font-size: 5rem;
-        }
-
         .libro-container{
           display:none;
         }
@@ -72,12 +58,6 @@
         }
 
       }
-
-
-      @media (min-width: 990px){
-
-        
-      }
       @media (min-width: 1024px) {
         body{
           margin: 0;
@@ -85,17 +65,16 @@
           display: grid;
           height: 100vh;
           grid-template-columns: 1fr;
-          grid-template-rows: auto auto 1fr auto;
+          grid-template-rows: auto 1fr auto;
         }
 
       }
     </style>
 </head>
-<body class = "grid-container">
+<body>
   <header id = "header">
     
   </header>
-<br><br>
   <main>
       <div class="container text-center">
           <div class="row contenido">

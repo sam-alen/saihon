@@ -23,14 +23,14 @@ body {
 }
 /* ========================================= Navbar =================================*/
 #logo{
-   font-size: 3rem;
+   font-size: 3.5rem;
    margin-left: 5vw;
 }
 
 .navbar-nav {
    display: flex;
    justify-content: center;
-   gap: 90px;
+   gap: 70px;
    width: 100%;
    font-size: 20px;
 }
@@ -38,7 +38,10 @@ body {
 .otrosL:hover {
    font-weight: bold;
 }
-
+.container-fluid{
+   background-color: white;
+   gap: 2px;
+}
 /* ==================================================================================== */
 
 .foot {
@@ -84,9 +87,7 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-.container-fluid{
-   background-color: white;
-}
+
 /* ========================================================================================================================================= */
 
 main {
@@ -146,12 +147,3 @@ col {
 .campos {
    text-align: left;
 }
-
-
-/*
-menu desplegabe
-*/
-
-
-
-
