@@ -21,6 +21,11 @@ html {
 body {
    font-family: "inter";
 }
+/* ========================================= Navbar =================================*/
+#logo{
+   font-size: 3rem;
+   margin-left: 5vw;
+}
 
 .navbar-nav {
    display: flex;
@@ -33,6 +38,8 @@ body {
 .otrosL:hover {
    font-weight: bold;
 }
+
+/* ==================================================================================== */
 
 .foot {
    display: flex;
@@ -77,6 +84,9 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
+.container-fluid{
+   background-color: white;
+}
 /* ========================================================================================================================================= */
 
 main {
@@ -88,26 +98,6 @@ main {
 
 .form-label {
    font-size: 15px;
-}
-
-#exampleInputName {
-   background-color: rgba(50, 21, 25, 1);
-   color: #F9F9F9;
-}
-
-#exampleInputPhone {
-   background-color: rgba(50, 21, 25, 1);
-   color: #F9F9F9;
-}
-
-#exampleInputEmail {
-   background-color: rgba(50, 21, 25, 1);
-   color: #F9F9F9;
-}
-
-#exampleFormControlTextarea1 {
-   background-color: rgba(50, 21, 25, 1);
-   color: #F9F9F9;
 }
 
 form-label {
