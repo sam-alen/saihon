@@ -40,5 +40,5 @@ function addNavbar(header){
       `)
 
 }
-addNavbar(header)
 
+addNavbar(header)

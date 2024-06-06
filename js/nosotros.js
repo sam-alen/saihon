@@ -1,4 +1,13 @@
+/*
+****************************
+*   Navbar  - Contactanos  *
+****************************
+
+*/
+
+
 const header = document.getElementById('header');
+
 
 function addNavbar(header){
   console.log('se cargó navbar')
@@ -40,5 +49,5 @@ function addNavbar(header){
       `)
 
 }
-addNavbar(header)
 
+addNavbar(header)

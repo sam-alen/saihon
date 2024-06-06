@@ -23,6 +23,28 @@
     font-family: "bellefair-regular";
  }
 
+/* ========================================= Navbar =================================*/
+#logo{
+   font-size: 3rem;
+   margin-left: 5vw;
+}
+
+.navbar-nav {
+   display: flex;
+   justify-content: center;
+   gap: 70px;
+   width: 100%;
+   font-size: 20px;
+}
+
+.otrosL:hover {
+   font-weight: bold;
+}
+.container-fluid{
+   background-color: white;
+}
+/* ==================================================================================== */
+
  body{
     font-family: "inter";
  }
