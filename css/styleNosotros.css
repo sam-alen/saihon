@@ -14,11 +14,6 @@
     box-sizing: border-box; /* border y paddingn se*/
  }
 
- html{
-    font-size: 62.5%;
-}
-
-
  h2{
     font-family: "bellefair-regular";
  }
@@ -48,6 +43,11 @@
  body{
     font-family: "inter";
  }
+
+.vista{
+   display: flex;
+   flex-direction: row;
+}
 
 
  .row{ 
@@ -138,8 +138,3 @@
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-
-.nav-link-size {
-   font-size: 1.4rem !important;
-}
-

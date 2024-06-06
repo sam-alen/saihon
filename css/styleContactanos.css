@@ -14,16 +14,12 @@
    box-sizing: border-box; /* border y paddingn se*/
 }
 
-html {
-   font-size: 62.5%;
-}
-
 body {
    font-family: "inter";
 }
 /* ========================================= Navbar =================================*/
 #logo{
-   font-size: 3.5rem;
+   font-size: 3rem;
    margin-left: 5vw;
 }
 
@@ -95,6 +91,7 @@ main {
    display: flex;
    justify-content: center;
    align-items: center;
+   margin: 5vh 0 5vh 0;
 }
 
 .form-label {
