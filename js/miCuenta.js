@@ -43,4 +43,3 @@ function addNavbar(header){
 }
 
 addNavbar(header)
-
