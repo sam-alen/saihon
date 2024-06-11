@@ -2,65 +2,55 @@ let btnReal = document.getElementById("btnEnviar");
 let span = document.getElementById("error");
 
 function validateForm() {
-    let name = document.getElementById("exampleInputName");
-    let email = document.getElementById("exampleInputEmail");
-    let phone = document.getElementById("exampleInputPhone");
-    let message = document.getElementById("exampleFormControlTextarea1");
+  let name = document.getElementById("exampleInputName");
+  let email = document.getElementById("exampleInputEmail");
+  let phone = document.getElementById("exampleInputPhone");
+  let message = document.getElementById("exampleFormControlTextarea1");
 
-    // span Errores
-    let errorNombre = document.getElementById("errorNombre");
-    let errorTelefono = document.getElementById("errorTelefono");
-    let errorEmail = document.getElementById("errorEmail");
-    let errorMensaje = document.getElementById("errorMensaje");
+  // span Errores
+  let errorNombre = document.getElementById("errorNombre");
+  let errorTelefono = document.getElementById("errorTelefono");
+  let errorEmail = document.getElementById("errorEmail");
+  let errorMensaje = document.getElementById("errorMensaje");
 
-    // Limpiar errores
-    errorNombre.innerHTML = "";
-    errorTelefono.innerHTML = "";
-    errorEmail.innerHTML = "";
-    errorMensaje.innerHTML = "";
+  // Limpiar errores
+  errorNombre.innerHTML = "";
+  errorTelefono.innerHTML = "";
+  errorEmail.innerHTML = "";
+  errorMensaje.innerHTML = "";
 
-    let valid = true;
+  let valid = true;
 
-    // Validar Nombre
-    if (name.value.trim() === "") {
-        errorNombre.innerHTML = "Please enter a valid name";
-        valid = false;
-    } else if (name.value.length < 3) {
-        errorNombre.innerHTML = "Name must be at least 3 characters long";
-        valid = false;
-    }
+  // Regex
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let phoneRegex = /^[1-9][0-9]{9,}$/; // al menos 10 digitos, no comenzar en 0
+  let nameRegex = /^[a-zA-Z\s]{3,}$/; // Nombre debe tener al menos 3 caracteres y solo puede contener letras y espacios
 
-    // Validar email
-    if (email.value.trim() === "") {
-        errorEmail.innerHTML = "Please enter a valid email";
-        valid = false;
-    } else if (!email.value.includes('@')) {
-        errorEmail.innerHTML = "Please enter a valid email";
-        valid = false;
-    }
+  // Validar Nombre
+  if (name.value.trim() === "" || !nameRegex.test(name.value)) {
+      errorNombre.innerHTML = "Please enter a valid name (at least 3 characters long)";
+      valid = false;
+  }
 
-    // Validar telefono
-    if (phone.value.trim() === "") {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    } else if (phone.value.length < 3) {
-        errorTelefono.innerHTML = "Number must be at least 3 digits long";
-        valid = false;
-    } else if (isNaN(phone.value)) {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    } else if (phone.value <= 0) {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    }
+  // Validar email
+  if (email.value.trim() === "" || !emailRegex.test(email.value)) {
+      errorEmail.innerHTML = "Please enter a valid email";
+      valid = false;
+  }
 
-    // validar mensaje
-    if (message.value.trim() === "") {
-        errorMensaje.innerHTML = "Please enter a valid message";
-        valid = false;
-    }
+  // Validar telefono
+  if (phone.value.trim() === "" || !phoneRegex.test(phone.value)) {
+      errorTelefono.innerHTML = "Please enter a valid number (at least 10 digits long and cannot start with 0)";
+      valid = false;
+  }
 
-    return valid;
+  // Validar mensaje
+  if (message.value.trim() === "") {
+      errorMensaje.innerHTML = "Please enter a valid message";
+      valid = false;
+  }
+
+  return valid;
 }
 
 btnReal.addEventListener("click", function(e) {
