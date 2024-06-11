@@ -7,7 +7,6 @@
     --main-yelllowish-color: #FDC264;
  }
  
- 
  *{
     margin: 0;
     padding: 0;
@@ -27,7 +26,7 @@
 .navbar-nav {
    display: flex;
    justify-content: center;
-   gap: 70px;
+   gap: 60px;
    width: 100%;
    font-size: 20px;
 }
@@ -39,22 +38,52 @@
    background-color: white;
 }
 /* ==================================================================================== */
-
+/* ========================================= Body =================================*/
  body{
     font-family: "inter";
  }
-
 .vista{
    display: flex;
-   flex-direction: row;
-}
-
-
- .row{ 
-    display: flex;
-    flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   height: 40vh;
+   width: 90vw;
+   margin: 0 5vw 0 5vw;
  }
 
+ .acercaNosotros{
+   margin: 0 5vw 0 0;
+ }
+
+.acercaNosotros h1{
+   font-size: 3rem;
+ }
+
+ .acercaNosotros p{
+   font-size: 1.5rem;
+   text-align: justify;
+ }
+ .img img{
+   width: 30vw;
+   height: 100%;
+   margin: 0 5vw;
+   /* Problema con el border Radious por el tamaño y posición de la imagen */
+ }
+
+ .carousel-control-prev-icon,
+ .carousel-control-next-icon {
+   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); /* Cambia el color del ícono */
+   border-radius: 50%; /* Hace los íconos redondos (opcional) */
+ }
+
+ .carousel-indicators .indicadorCarousel.active {
+   background-color: #E1351F /* Cambia el color de fondo cuando está activo */
+ }
+ .set-cards{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
 
  /*para acomodar los logos de linkedin y github en las cards*/
  .divlogo{
@@ -72,12 +101,11 @@
  /*Color y ancho de las cards*/
  .card{
     background-color:var(--main-yelllowish-color);
-    width: 350px;
+    width: 25vw;
     opacity: 80%;
  }
 
-
- /*efecto de opacidad y movimiento en lars cards*/
+ /*efecto de opacidad y movimiento en las cards*/
  .card:hover{
     opacity: 100%;
     transition: 0.5s;
@@ -87,18 +115,19 @@
     background-color: #FDC264;
  }
 
-
  /*ajuste de tamaño de las fotos de perfil en las cards*/
 .fotoperfil{
     width: auto;
     height: auto;
 }
 
-.foot{
+/* ==================================================================================== */
+
+.foot {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
-   height: 20rem;
+   height: 35vh;
    background-color: #170E2D;
    color: white;
    padding: 2rem 0; /* */
@@ -106,16 +135,15 @@
    align-items: center;
 }
 
-.footer-title{
-   font-size: 3.8rem;
-   font-weight: regular;
-   font-family: var(--logo-font);
-}
-.div-redes{
-   margin-top:5rem;
+h2 {
+   font-family: "bellefair-regular";
 }
 
-.Redes{
+.footer-title {
+   font-size: 3.8rem;
+}
+
+.Redes {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
@@ -123,7 +151,7 @@
    margin-top: 2rem;
 }
 
-.Redes img{
+.Redes img {
    width: 1.8rem;
 }
 
