@@ -1,8 +1,9 @@
 const header = document.getElementById('header');
 
+const main = document.getElementById("main");
+
 function addNavbar(header){
   console.log('se cargó navbar')
-
 
   header.insertAdjacentHTML('afterbegin', `
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
