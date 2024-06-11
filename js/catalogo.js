@@ -153,15 +153,14 @@ function addBooks(libros){
       </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade modal-dialog modal-dialog-centered modal-dialog-scrollable" id="exampleModal_${libro.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal_${libro.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">${libro.title}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body ">
-            <h2> ${libro.title}</h2>
             <h3>${libro.author}</h3>
             <h3>${libro.publication_year}</h3> 
             <h3>${libro.genre}</h3>
