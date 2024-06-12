@@ -56,7 +56,7 @@ h2 {
    align-items: center;
    top: 30%;
    left: 15%;
-   font-size: 6rem;
+   font-size: 7rem;
 }
 
 .books-img {
@@ -178,5 +178,49 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
+
+/*
+***************************************
+*            Media Query              *
+***************************************
+*/
+/* */
+@media (min-width: 320px) and (max-width: 426px){
+   .main{
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+   }
+   .h1-name{
+      font-size: 3rem;
+      top: 10%;
+      left: 5%;
+   }
+   .aside{
+      display: none;
+   }
+   
+}
+@media (min-width: 427px) and (max-width: 990px){
+   .main{
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+   }
+   .h1-name{
+      font-size: 4rem;
+      top: 20%;
+      left: 10%;
+   }
+   .aside{
+      display: none;
+   }
+}
+
+@media(max-width: 991px) {
+
+}
+
+
 
 
