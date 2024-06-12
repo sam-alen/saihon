@@ -1,24 +1,182 @@
+:root {
+   --main-whitest-color: #F9F9F9;
+   --main-darkblue-color: #170E2D;
+   --main-darkbrown-color: #321519;
+   --main-redish-color: #E1351F;
+   --main-orangeish-color: #E1351F;
+   --main-yelllowish-color: #FDC264;
+}
+
+
 /* ========================================= Navbar =================================*/
-#logo{
-    font-size: 3rem;
-    margin-left: 5vw;
- }
- 
- .navbar-nav {
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    width: 100%;
-    font-size: 20px;
- }
- 
- .otrosL:hover {
-    font-weight: bold;
- }
- .container-fluid{
+#logo {
+   font-size: 3rem;
+   margin-left: 5vw;
+}
+
+.navbar-nav {
+   display: flex;
+   justify-content: center;
+   gap: 70px;
+   width: 100%;
+   font-size: 20px;
+}
+
+.otrosL:hover {
+   font-weight: bold;
+}
+
+.container-fluid {
    background-color: white;
 }
- /* ==================================================================================== */
- h2 {
-    font-family: "bellefair-regular";
- }
+
+/* ==================================================================================== */
+h2 {
+   font-family: "bellefair-regular";
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box
+}
+
+
+/*
+***************************************
+*     Portada Saihon-libros           *
+***************************************
+*/
+
+
+.h1-name{
+   font-family: "bellefair-regular";
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 30%;
+   left: 15%;
+   font-size: 6rem;
+}
+
+.books-img {
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+}
+
+/*
+***************************************
+*            Main container           *
+***************************************
+*/
+.main{
+   display: grid;
+   grid-template-columns: .7fr 3fr;
+   background-color: rgb(240, 240, 240);
+}
+
+/*ASIDE*/
+
+.aside__genres {
+   margin-top: 2.5rem;
+   margin-left: 2rem; 
+}
+.aside__recommendations{
+   margin-top: 1rem;
+   margin-left: 2rem;
+}
+.aside__title{
+   font-size: 1rem;
+   text-align: center;
+   
+   font-weight: bold;
+}
+
+.aside__item{
+   list-style: none;
+   margin-top: 1rem;
+   
+}
+
+.aside__link{
+   text-decoration: none;
+   color: var(--main-darkblue-color);
+   padding: .5rem;
+   padding-right: 1rem;
+}
+.aside__link:hover{
+   color: var(--main-orangeish-color);
+   font-weight: bold;
+   background-color: var(--main-whitest-color);
+   border-radius: 5px;
+   padding-right: 2.5rem;
+}
+
+/*SECTION*/
+.section{
+   margin-top: 1rem;
+   margin-left: 1rem;
+   background-color: var(--main-whitest-color);
+   border-radius: .5rem;
+   box-shadow: rgb(160, 160, 160) 0px 0px 20px .1px;
+   margin-bottom: .5rem;
+}
+
+.section__content{
+   padding: 3rem;
+}
+
+
+/*
+***************************************
+*            Main container           *
+***************************************
+*/
+
+
+.foot {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   height: 20rem;
+   background-color: #170E2D;
+   color: white;
+   padding: 2rem 0; /* */
+   text-align: center;
+   align-items: center;
+}
+
+h2 {
+   font-family: "bellefair-regular";
+}
+
+.footer-title {
+   font-size: 3.8rem;
+}
+
+.Redes {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 2rem;
+}
+
+.Redes img {
+   width: 1.8rem;
+}
+
+.footer-info {
+   color: var(--white);
+   font-size: 1rem;
+   margin-bottom: 1rem;
+}
+
+.footer-infotation {
+   color: var(--cream);
+   font-size: 2rem;
+   margin-bottom: 1rem;
+}
+
+
