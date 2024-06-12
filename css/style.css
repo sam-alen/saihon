@@ -1,24 +1,72 @@
 /* ========================================= Navbar =================================*/
-#logo{
-    font-size: 3rem;
-    margin-left: 5vw;
- }
- 
- .navbar-nav {
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    width: 100%;
-    font-size: 20px;
- }
- 
- .otrosL:hover {
-    font-weight: bold;
- }
- .container-fluid{
+#logo {
+   font-size: 3rem;
+   margin-left: 5vw;
+}
+
+.navbar-nav {
+   display: flex;
+   justify-content: center;
+   gap: 70px;
+   width: 100%;
+   font-size: 20px;
+}
+
+.otrosL:hover {
+   font-weight: bold;
+}
+
+.container-fluid {
    background-color: white;
 }
- /* ==================================================================================== */
- h2 {
-    font-family: "bellefair-regular";
- }
+
+/* ==================================================================================== */
+h2 {
+   font-family: "bellefair-regular";
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box
+}
+
+
+/*
+***************************************
+*     Portada Saihon-libros           *
+***************************************
+*/
+
+
+.h1-name{
+   font-family: "bellefair-regular";
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 30%;
+   left: 15%;
+   font-size: 6rem;
+}
+
+.books-img {
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+}
+
+/*
+***************************************
+*            Main container           *
+***************************************
+*/
+.main{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+}
+
+
+/*ASIDE*/
+
+
+
