@@ -16,7 +16,7 @@ let libros= [
         "Classic"
       ],
       "description": "A classic novel depicting racial injustice in the American South.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro1-HL.webp"
     },
     {
       "id": 2,
@@ -29,7 +29,7 @@ let libros= [
         "Science Fiction"
       ],
       "description": "A dystopian novel portraying a totalitarian society.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro2-GO.jpg"
     },
     {
       "id": 3,
@@ -42,7 +42,7 @@ let libros= [
         "Romance"
       ],
       "description": "A classic novel exploring themes of love, marriage, and social norms.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro3-JA.webp"
     },
     {
       "id": 4,
@@ -55,7 +55,7 @@ let libros= [
         "Classic"
       ],
       "description": "A tale of the American Dream, wealth, and love during the Roaring Twenties.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro4-FSF.webp"
     },
     {
       "id": 5,
@@ -68,7 +68,7 @@ let libros= [
         "Adventure"
       ],
       "description": "The epic tale of Captain Ahab's obsession with the white whale.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro5-HM.webp"
     },
     {
       "id": 6,
@@ -81,7 +81,7 @@ let libros= [
         "Adventure"
       ],
       "description": "An epic fantasy saga about the quest to destroy the One Ring.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/LIBRO6-JRT.webp"
     },
     {
       "id": 7,
@@ -94,7 +94,7 @@ let libros= [
         "Coming-of-age"
       ],
       "description": "A classic coming-of-age novel following Holden Caulfield's journey.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/LIBRO7-JDS.webp"
     },
     {
       "id": 8,
@@ -107,7 +107,7 @@ let libros= [
         "Adventure"
       ],
       "description": "The prequel to The Lord of the Rings, following Bilbo Baggins' journey.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/LIBRO8-JRT.webp"
     },
     {
       "id": 9,
@@ -120,7 +120,7 @@ let libros= [
         "Literary Fiction"
       ],
       "description": "A multi-generational saga of the Buendía family in the fictional town of Macondo.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro9-GG,.webp"
     },
     {
       "id": 10,
@@ -133,7 +133,7 @@ let libros= [
         "Epic"
       ],
       "description": "A monumental work depicting the events of Russian society during the Napoleonic era.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
+      "cover_image": "assets/imagenes/imageneslibros/libro10-LT.webp"
     },
 ];
 
@@ -146,7 +146,7 @@ function addBooks(libros){
         <p class="card-text"> ${libro.author}</p>        
         <p class="card-text"> ${libro.price}$</p>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
+        <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
           Ver más
         </button>
 
@@ -180,8 +180,10 @@ function addBooks(libros){
   });
 }
 
+
 function addNavbar(header){
   console.log('se cargó navbar')
+
 
   header.insertAdjacentHTML('afterbegin', `
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -219,5 +221,6 @@ function addNavbar(header){
       `)
 
 }
+
 addNavbar(header)
 addBooks(libros)
