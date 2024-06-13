@@ -1,3 +1,85 @@
+
+const nombreLibro = document.getElementById("nombreLibro");
+const autorLibro = document.getElementById("autorLibro");
+const precioLibro = document.getElementById("precioLibro");
+const generoLibro = document.getElementById("generoLibro");  
+const cantidadLibro = document.getElementById("cantidadLibro");
+const btnEnviar= document.getElementById ("btnEnviar");
+const descripcionLibro = document.getElementById("descripcionLibro");
+
+//Variables REGEX
+const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
+const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
+const regexNL = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"() ]+$/;
+const regexDes = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"()&%$#@*\n\r ]+$/;
+//const regexStock = /^\d+$/;
+//const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
+
+let Libros= []; //lista de libros
+
+function agregarLibros(){
+  if(validateAutor () && validateTitulo () && validatePrecio () && validateDescripcion ()){
+    let libro = { 
+      title: nombreLibro.value,
+      price: precioLibro.value,
+      author: autorLibro.value,
+      description: descripcionLibro.value,
+      id: null,
+      genre: null,
+      cover_image: null,
+    };
+  Libros.push(libro); //se agregan los datos del libro
+  console.log(Libros);
+  }
+}
+
+
+btnEnviar,addEventListener("click", function (event) {
+  event.preventDefault();
+  agregarLibros();
+})
+
+
+function validateAutor (){
+  let istrue = regexA.test(autorLibro.value);
+  
+  if (istrue){
+  return true;
+  }else{
+    return false;
+  }
+}
+
+function validateTitulo (){
+  let istrue = regexNL.test(nombreLibro.value);
+  if (istrue){
+    return true;
+    }else{
+      return false;
+    }
+}
+
+function validatePrecio (){
+  let istrue = regexPrecio.test(precioLibro.value);
+  if (istrue){
+    return true;
+    }else{
+      return false;
+    }
+}
+
+function validateDescripcion (){
+  let istrue = regexDes.test(descripcionLibro.value);
+  if (istrue){
+    return true;
+    }else{
+      return false;
+    }
+
+}
+
+
+
 function addNavbar(header){
     console.log('se cargó navbar')
 
