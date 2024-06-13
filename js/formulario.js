@@ -12,29 +12,36 @@ const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
 const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
 const regexNL = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"() ]+$/;
 const regexDes = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"()&%$#@*\n\r ]+$/;
-//const regexStock = /^\d+$/;
+const regexStock = /^\d+$/;
 //const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
 
 let Libros= []; //lista de libros
 
 function agregarLibros(){
-  if(validateAutor () && validateTitulo () && validatePrecio () && validateDescripcion ()){
+  if(validateAutor () && validateTitulo () && validatePrecio () && validateDescripcion () && validategenero() && validateStock()){
     let libro = { 
       title: nombreLibro.value,
       price: precioLibro.value,
       author: autorLibro.value,
       description: descripcionLibro.value,
-      id: null,
-      genre: null,
+      id: Libros.length + 1,
+      genre: [generoLibro.value],
       cover_image: null,
     };
-  Libros.push(libro); //se agregan los datos del libro
+  Libros.push(JSON.stringify(libro)); //se agregan los datos del libro
   console.log(Libros);
+  }else{
+    console.log("No se puede agregar este artículo");
+    Swal.fire({
+      icon: "error",
+      title: "Error al agregar el artículo",
+      text: "Favor de verificar los campos",
+    });
   }
 }
 
 
-btnEnviar,addEventListener("click", function (event) {
+btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
   agregarLibros();
 })
@@ -78,7 +85,22 @@ function validateDescripcion (){
 
 }
 
+function validategenero(){
+  if(generoLibro.value == "Seleccionar"){
+    return false;
+  } else{
+  return true;  
+  }
+}
 
+function validateStock(){
+  let istrue = regexStock.test(cantidadLibro.value);
+  if (istrue){
+    return true;
+    }else{
+      return false;
+    }
+}
 
 function addNavbar(header){
     console.log('se cargó navbar')
