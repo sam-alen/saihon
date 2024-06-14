@@ -46,10 +46,28 @@ body{
    border-radius: 10px;
    margin: 1vh 0 5vh 0;
 }
-
+#myTabContent{
+   display:flex;
+   flex-direction: column;
+   /* gap: 20px;  */
+   background-color: var(--main-yelllowish-color);
+   align-items: center;
+   /* border-radius: 10px;
+   margin: 1vh 0 5vh 0; */
+}
+#hello{
+   display:flex;
+   flex-direction: column;
+   /* gap: 20px;  */
+   background-color: var(--main-yelllowish-color);
+   align-items: center;
+   /* border-radius: 10px; */
+   margin: 1vh 0 5vh 0;
+}
 .formularioContainer{
    display: flex;
    justify-content: center;
+   width: 100%;
    padding: 15px;
 }
 
