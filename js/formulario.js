@@ -6,6 +6,18 @@ const generoLibro = document.getElementById("generoLibro");
 const cantidadLibro = document.getElementById("cantidadLibro");
 const btnEnviar= document.getElementById ("btnEnviar");
 const descripcionLibro = document.getElementById("descripcionLibro");
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'my_cloud_name', 
+  uploadPreset: 'my_preset'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
 
 //Variables REGEX
 const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
@@ -28,7 +40,9 @@ function agregarLibros(){
       genre: [generoLibro.value],
       cover_image: null,
     };
-  Libros.push(JSON.stringify(libro)); //se agregan los datos del libro
+  
+  
+    Libros.push(JSON.stringify(libro)); //se agregan los datos del libro
   console.log(Libros);
   }else{
     console.log("No se puede agregar este artículo");
@@ -44,6 +58,13 @@ function agregarLibros(){
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
   agregarLibros();
+})
+
+widget.addEventListener("click", function (event) {
+  event.preventDefault();
+  widget.open();
+
+  
 })
 
 
