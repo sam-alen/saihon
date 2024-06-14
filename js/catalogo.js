@@ -137,13 +137,27 @@ let libros= [
     },
 ];
 
-let librosLocalStorage = [];
-let catalogoLocalStorage = [];
-librosLocalStorage = JSON.parse(localStorage.getItem("libros"));
-catalogoLocalStorage = libros.concat(librosLocalStorage);
-localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage))
+// let librosLocalStorage = [];
+// let catalogoLocalStorage = [];
+// let librosLocalStorage = JSON.parse(localStorage.getItem("libros"));
+// librosLocalStorage.forEach(l => {
+//   libros.push(l)
+// });
+// // let catalogoLocalStorage = libros.concat(librosLocalStorage);
+// localStorage.setItem("catalogoLocalStorage",JSON.stringify(libros));
 
-libros = libros.concat(catalogoLocalStorage);
+// libros = libros.concat(catalogoLocalStorage);
+
+let librosLocalStorage = localStorage.getItem("libros");
+localStorage.setItem("librosLocalStorage",librosLocalStorage);
+librosLocalStorage = localStorage.getItem("librosLocalStorage");
+
+
+
+
+let catalogoLocalStorage = libros.concat(JSON.parse(librosLocalStorage));
+localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage));
+
 
 function addBooks(libros){
   libros.forEach(libro => {
@@ -231,4 +245,5 @@ function addNavbar(header){
 }
 
 addNavbar(header)
-addBooks(libros)
+addBooks(catalogoLocalStorage)
+addBooks(librosLocalStorage)

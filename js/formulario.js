@@ -53,10 +53,19 @@ function agregarLibros() {
     };
   
     libros.push(libro);
-     //se agregan los datos del libro
-    librosLocalStorage.push(libro);
+    
+    // Recuperar libros existentes del localStorage
+    let librosLocalStorage = JSON.parse(localStorage.getItem("libros")) || [];
 
-    localStorage.setItem("libros", JSON.stringify(libro));
+    if (Array.isArray(librosLocalStorage)) {
+      librosLocalStorage.push(libro);
+    } else {
+      librosLocalStorage = [libro];
+    }
+
+    // Guardar el array actualizado en el localStorage
+    localStorage.setItem("libros", JSON.stringify(librosLocalStorage));
+    
     console.log(libros);
 
     nombreLibro.value = "";
