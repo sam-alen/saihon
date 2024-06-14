@@ -48,7 +48,7 @@ function agregarLibros() {
       cover_image: imageUrl,
     };
   
-    libros.push(JSON.stringify(libro)); //se agregan los datos del libro
+    libros.push(libro); //se agregan los datos del libro
     console.log(libros);
   } else {
     console.log("No se puede agregar este artículo");
