@@ -24,7 +24,7 @@ const regexStock = /^\d+$/;
 let Libros= []; //lista de libros
 
 let myWidget = cloudinary.createUploadWidget({
-  cloudName: 'aqui pon el name', 
+  cloudName: 'dckk99wpm', 
   uploadPreset: 'uw_test'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
