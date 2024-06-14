@@ -16,6 +16,7 @@ const regexStock = /^\d+$/;
 
 let libros = []; //lista de libros
 //const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
+let librosLocalStorage = [];
 
 let imageUrl = null;
 
@@ -48,8 +49,13 @@ function agregarLibros() {
       cover_image: imageUrl,
     };
   
-    libros.push(libro); //se agregan los datos del libro
+    libros.push(libro);
+     //se agregan los datos del libro
+    librosLocalStorage.push(libro);
+
+    localStorage.setItem("libros", JSON.stringify(libros));
     console.log(libros);
+
   } else {
     console.log("No se puede agregar este artículo");
     Swal.fire({
@@ -59,6 +65,8 @@ function agregarLibros() {
     });
   }
 }
+
+
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
