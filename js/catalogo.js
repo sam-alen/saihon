@@ -137,11 +137,13 @@ let libros= [
     },
 ];
 
-let librosLocalStorage = []
-
+let librosLocalStorage = [];
+let catalogoLocalStorage = [];
 librosLocalStorage = JSON.parse(localStorage.getItem("libros"));
+catalogoLocalStorage = libros.concat(librosLocalStorage);
+localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage))
 
-libros = libros.concat(librosLocalStorage);
+libros = libros.concat(catalogoLocalStorage);
 
 function addBooks(libros){
   libros.forEach(libro => {

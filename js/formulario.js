@@ -1,4 +1,5 @@
 // Elementos del DOM
+const header = document.querySelector("header");// header para la navbar
 const nombreLibro = document.getElementById("nombreLibro");
 const autorLibro = document.getElementById("autorLibro");
 const precioLibro = document.getElementById("precioLibro");
@@ -19,6 +20,8 @@ let libros = []; //lista de libros
 let librosLocalStorage = [];
 
 let imageUrl = null;
+
+addNavbar(header);
 
 // Inicializar el widget de Cloudinary
 let myWidget = cloudinary.createUploadWidget({
@@ -53,9 +56,15 @@ function agregarLibros() {
      //se agregan los datos del libro
     librosLocalStorage.push(libro);
 
-    localStorage.setItem("libros", JSON.stringify(libros));
+    localStorage.setItem("libros", JSON.stringify(libro));
     console.log(libros);
 
+    nombreLibro.value = "";
+    precioLibro.value = "";
+    autorLibro.value = "";
+    descripcionLibro.value = "";
+    generoLibro.value = "";
+    cantidadLibro.value = "";
   } else {
     console.log("No se puede agregar este artículo");
     Swal.fire({
@@ -64,6 +73,7 @@ function agregarLibros() {
       text: "Favor de verificar los campos",
     });
   }
+
 }
 
 
@@ -166,5 +176,4 @@ function addNavbar(header) {
   `);
 }
 
-const header = document.querySelector("header");
-addNavbar(header);
+
