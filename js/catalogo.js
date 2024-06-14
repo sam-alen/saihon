@@ -137,6 +137,14 @@ let libros= [
     },
 ];
 
+let librosLocalStorage = [];
+let catalogoLocalStorage = [];
+librosLocalStorage = JSON.parse(localStorage.getItem("libros"));
+catalogoLocalStorage = libros.concat(librosLocalStorage);
+localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage))
+
+libros = libros.concat(catalogoLocalStorage);
+
 function addBooks(libros){
   libros.forEach(libro => {
     seccionLibro.insertAdjacentHTML("afterbegin", `<div class="card" style="width: 18rem;">

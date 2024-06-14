@@ -1,0 +1,150 @@
+/*=============VARIABLES COLORES=================*/
+:root{
+   --main-whitest-color: #F9F9F9;
+   --main-darkblue-color: #170E2D ;
+   --main-darkbrown-color: #321519;
+   --main-redish-color: #E1351F;
+   --main-orangeish-color: #E1351F;
+   --main-yelllowish-color: #FDC264;
+}
+
+/* ========================================= Navbar =================================*/
+#logo{
+    font-size: 3rem;
+    margin-left: 5vw;
+ }
+ 
+ .navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+    font-size: 20px;
+ }
+ 
+ .otrosL:hover {
+    font-weight: bold;
+ }
+ .container-fluid{
+    background-color: white;
+    gap: 2px;
+ }
+
+/*=============================BODY=============================*/
+
+body{
+   font-family: "inter";
+}
+
+
+.container{
+   display:flex;
+   flex-direction: column;
+   gap: 20px;
+   background-color: var(--main-yelllowish-color);
+   align-items: center;
+   border-radius: 10px;
+   margin: 1vh 0 5vh 0;
+}
+#myTabContent{
+   display:flex;
+   flex-direction: column;
+   /* gap: 20px;  */
+   background-color: var(--main-yelllowish-color);
+   align-items: center;
+   /* border-radius: 10px;
+   margin: 1vh 0 5vh 0; */
+}
+#hello{
+   display:flex;
+   flex-direction: column;
+   /* gap: 20px;  */
+   background-color: var(--main-yelllowish-color);
+   align-items: center;
+   /* border-radius: 10px; */
+   margin: 1vh 0 5vh 0;
+}
+.formularioContainer{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 15px;
+}
+
+.classForm{
+   width: 100%;
+   padding: 20px;
+}
+
+.imagen{
+   padding: 15px;
+}
+
+.picture{
+   width: 40vw;
+   height: auto; 
+   border-radius: 10px;
+}
+
+.botonContainer{
+   display: flex;
+   justify-content: center;
+}
+
+#btnEnviar{
+   width: auto;
+   background-color: var(--main-orangeish-color);
+   border: none;
+}
+
+#btnEnviar:hover{
+   background-color: var(--main-darkblue-color);
+}
+
+ /* =================================FOOTER=================================================== */
+ 
+ .foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20rem;
+    background-color: #170E2D;
+    color: white;
+    padding: 2rem 0; /* */
+    text-align: center;
+    align-items: center;
+ }
+ 
+ h2 {
+    font-family: "bellefair-regular";
+ }
+ 
+ .footer-title {
+    font-size: 3.8rem;
+ }
+ 
+ .Redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+ }
+ 
+ .Redes img {
+    width: 1.8rem;
+ }
+ 
+ .footer-info {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+ }
+ 
+ .footer-infotation {
+    color: var(--cream);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+ }
+ 
+ 
