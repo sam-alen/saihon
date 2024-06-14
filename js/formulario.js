@@ -22,15 +22,19 @@ const regexStock = /^\d+$/;
 //const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
 
 let Libros= []; //lista de libros
+let imageUrl = null;
 
 let myWidget = cloudinary.createUploadWidget({
   cloudName: 'dckk99wpm', 
   uploadPreset: 'uw_test'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
+      imageUrl = result.info.secure_url
     }
   }
 )
+
+
 
 function agregarLibros(){
   if(validateAutor () && validateTitulo () && validatePrecio () && validateDescripcion () && validategenero() && validateStock()){
