@@ -74,6 +74,14 @@ function agregarLibros() {
     descripcionLibro.value = "";
     generoLibro.value = "";
     cantidadLibro.value = "";
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "El libro ha sido guardado en localStorage",
+      showConfirmButton: false,
+      timer: 1500
+    });
   } else {
     console.log("No se puede agregar este artículo");
     Swal.fire({
