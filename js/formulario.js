@@ -45,7 +45,7 @@ function agregarLibros() {
       description: descripcionLibro.value,
       id: libros.length + 1,
       genre: [generoLibro.value],
-      cover_image: null,
+      cover_image: imageUrl,
     };
   
     libros.push(JSON.stringify(libro)); //se agregan los datos del libro
