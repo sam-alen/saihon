@@ -6,14 +6,8 @@ const generoLibro = document.getElementById("generoLibro");
 const cantidadLibro = document.getElementById("cantidadLibro");
 const btnEnviar= document.getElementById ("btnEnviar");
 const descripcionLibro = document.getElementById("descripcionLibro");
-var myWidget = cloudinary.createUploadWidget({
-  cloudName: 'my_cloud_name', 
-  uploadPreset: 'my_preset'}, (error, result) => { 
-    if (!error && result && result.event === "success") { 
-      console.log('Done! Here is the image info: ', result.info); 
-    }
-  }
-)
+const btnUploadImage = document.getElementById("upload_widget");
+
 
 document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
@@ -28,6 +22,15 @@ const regexStock = /^\d+$/;
 //const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
 
 let Libros= []; //lista de libros
+
+let myWidget = cloudinary.createUploadWidget({
+  cloudName: 'aqui pon el name', 
+  uploadPreset: 'uw_test'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  }
+)
 
 function agregarLibros(){
   if(validateAutor () && validateTitulo () && validatePrecio () && validateDescripcion () && validategenero() && validateStock()){
@@ -60,12 +63,11 @@ btnEnviar.addEventListener("click", function (event) {
   agregarLibros();
 })
 
-widget.addEventListener("click", function (event) {
-  event.preventDefault();
-  widget.open();
+btnUploadImage.addEventListener("click", function(){
+  myWidget.open();
+}, false);
 
-  
-})
+
 
 
 function validateAutor (){
