@@ -78,7 +78,7 @@ function agregarLibros() {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "El libro ha sido guardado en localStorage",
+      title: "El libro ha sido guardado con éxito",
       showConfirmButton: false,
       timer: 1500
     });
