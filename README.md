@@ -28,7 +28,6 @@ El proyecto cuenta con las siguientes páginas HTML
 * [Braulio Israel Alejo Cerezo | ](https://github.com/BraulioIAC)
 * [Ingrid Archundia López | ](https://github.com/ingridarchundia)
 * [Jalil Samas Mendoza Reyes | ](https://github.com/JalilSMR)
-* [Jesús Pineda Gil | ](https://github.com/JesusPineda29)
 * [José Salazar Pérez | ](https://github.com/Josesp012)
 * [Leonardo León Castro | ](https://github.com/LeoLeon1610)
 
