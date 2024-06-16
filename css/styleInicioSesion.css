@@ -1,0 +1,47 @@
+/* =================================FOOTER=================================================== */
+ 
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20rem;
+    background-color: #170E2D;
+    color: white;
+    padding: 2rem 0; /* */
+    text-align: center;
+    align-items: center;
+ }
+ 
+ h2 {
+    font-family: "bellefair-regular";
+ }
+ 
+ .footer-title {
+    font-size: 3.8rem;
+ }
+ 
+ .Redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+ }
+ 
+ .Redes img {
+    width: 1.8rem;
+ }
+ 
+ .footer-info {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+ }
+ 
+ .footer-infotation {
+    color: var(--cream);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+ }
+ 
+ 
