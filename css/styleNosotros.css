@@ -19,8 +19,9 @@
 
 /* ========================================= Navbar =================================*/
 #logo{
-   font-size: 3rem;
+   font-size: 3.3rem;
    margin-left: 5vw;
+   color: var(--main-whitest-color);
 }
 
 .navbar-nav {
@@ -29,14 +30,22 @@
    gap: 60px;
    width: 100%;
    font-size: 20px;
+   color: var(--main-darkblue-color);
+   align-items: center;
+   background-color: var(--main-yelllowish-color);
+   border: 3px solid var(--main-whitest-color);
+   border-radius: 5px;
 }
+
 
 .otrosL:hover {
    font-weight: bold;
 }
 .container-fluid{
-   background-color: white;
+   background-color: var(--main-darkblue-color);
 }
+
+
 /* ==================================================================================== */
 /* ========================================= Body =================================*/
  body{
