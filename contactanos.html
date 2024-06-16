@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
       @media (min-width: 320px) and (max-width: 426px){
-
+        .footer-info, .footer-infotation {
+          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+        }
+        .dos{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+        .foot{
+        height: 50vh;
+        }
+        
       }
       @media (min-width: 427px) and (max-width: 990px){
         .footer-info, .footer-infotation {
@@ -134,7 +145,7 @@
                         </div>
                           <div class="mb-3 campos">
                               <label for="exampleInputEmail" class="form-label">Correo electrónico</label>                              
-                              <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
+                              <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ usuario@ejemplo.com">
                               <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
                               <span id="errorEmail"></span>
                           </div>
