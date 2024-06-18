@@ -159,6 +159,7 @@ function validateStock() {
 function addNavbar(header) {
   console.log('se cargó navbar');
 
+  
   header.insertAdjacentHTML('afterbegin', `
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -169,7 +170,7 @@ function addNavbar(header) {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active otrosL" aria-current="page" href="./index.html">Inicio</a>
+              <a class="nav-link otrosL" aria-current="page" href="./index.html">Inicio</a>
             </li>
             <p class="separador">|</p>
             

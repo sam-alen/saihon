@@ -30,21 +30,26 @@
    gap: 60px;
    width: 100%;
    font-size: 20px;
-   color: var(--main-darkblue-color);
+   color: var(--main-whitest-color);
    align-items: center;
-   background-color: var(--main-yelllowish-color);
-   border: 3px solid var(--main-whitest-color);
-   border-radius: 5px;
+   background-color: var(--main-darkblue-color);
 }
 
+.nav-item a{
+   color:#F9F9F9;
+}
+
+.navbar-toggler span{
+   background-color: #F9F9F9;
+}
 
 .otrosL:hover {
+   background-color: var(--main-yelllowish-color);
    font-weight: bold;
 }
 .container-fluid{
    background-color: var(--main-darkblue-color);
 }
-
 
 /* ==================================================================================== */
 /* ========================================= Body =================================*/

@@ -1,23 +1,37 @@
 /* ========================================= Navbar =================================*/
 #logo{
-    font-size: 3rem;
-    margin-left: 5vw;
- }
- 
- .navbar-nav {
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    width: 100%;
-    font-size: 20px;
- }
- 
- .otrosL:hover {
-    font-weight: bold;
- }
- .container-fluid{
-   background-color: white;
+   font-size: 3.3rem;
+   margin-left: 5vw;
+   color: var(--main-whitest-color);
 }
+
+.navbar-nav {
+   display: flex;
+   justify-content: center;
+   gap: 60px;
+   width: 100%;
+   font-size: 20px;
+   color: var(--main-whitest-color);
+   align-items: center;
+   background-color: var(--main-darkblue-color);
+}
+
+.navbar-nav a{
+   color:#F9F9F9;
+}
+
+.navbar-toggler span{
+   background-color: #F9F9F9;
+}
+
+.otrosL:hover {
+   background-color: var(--main-yelllowish-color);
+   font-weight: bold;
+}
+.container-fluid{
+   background-color: var(--main-darkblue-color);
+}
+
  /* ==================================================================================== */
  h2 {
     font-family: "bellefair-regular";
