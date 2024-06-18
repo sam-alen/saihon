@@ -6,23 +6,23 @@
     <title>Inicio de sesión</title>
     <link rel="stylesheet" href="./css/styleInicioSesion.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
 
-<body>
+<body class="container">
     
 
-    <section class="imagen">
+    <section class="imagen" id="">
       <img src="./assets/imagenes/login.png" alt="">
     </section>
-
+<!------------------------------->
     <section class="contenido">
       
-      <nav id="header">
+      <header id="header">
 
-      </nav>
+      </header>
 
-      
-      <main>
+      <main id="login_container">
         <!--Inicio de sesión-->
         <div class="registro">
           <div class="encabezado">
@@ -43,33 +43,32 @@
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
           </div>
-        </div>
-        <!--Registro-->
-        <div class="formulario">
-          <form>
-            <div class="mb-3">
-              <label for="exampleName" class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" id="Nombre">
-            </div>
-            <div class="mb-3">
-              <label for="examplePhone" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Nunca compartiremos tu confirmación</div>
-            </div>
-            <div class="mb-3">
-              <label for="examplePassword" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword">
-            </div>
-            <div class="mb-3">
-              <label for="exampleConfirm" class="form-label">Confirmar contraseña</label>
-              <input type="Confirm" class="form-control" id="exampleConfirm">
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
+          <div class="formulario">
+            <form>
+              <div class="mb-3">
+                <label for="exampleName" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="Nombre">
+              </div>
+              <div class="mb-3">
+                <label for="examplePhone" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos tu confirmación</div>
+              </div>
+              <div class="mb-3">
+                <label for="examplePassword" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword">
+              </div>
+              <div class="mb-3">
+                <label for="exampleConfirm" class="form-label">Confirmar contraseña</label>
+                <input type="Confirm" class="form-control" id="exampleConfirm">
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
         </div>
       </div>
 
