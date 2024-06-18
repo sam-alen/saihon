@@ -138,10 +138,11 @@
   
  }
 
- .card-title {
+.card-title {
    font-size: 1.5rem; /* Tamaño del título */
    color: var(--main-darkblue-color); /* Color del título */
    margin-bottom: 15px; /* Espaciado después del título */
+   margin-top: 1.5rem;
 }
 
 .card-text {
@@ -170,6 +171,8 @@
    height: 50%; /* Tamaño fijo de alto */
    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
    object-position: center;
+   box-shadow: 0 1.5rem 10px -6px rgba(0, 0, 0, 0.5);
+   border-radius: 50%;
 }
 
 /* ==================================================================================== */
