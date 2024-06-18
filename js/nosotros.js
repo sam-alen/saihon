@@ -12,7 +12,7 @@ const header = document.getElementById('header');
 function addNavbar(header){
   console.log('se cargó navbar')
 
-
+//en la clase de nav-link de Inicio, era "nav-link active otrosL", sin embargo esto impedia que agarrara el color blanco del css
   header.insertAdjacentHTML('afterbegin', `
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -23,7 +23,7 @@ function addNavbar(header){
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active otrosL" aria-current="page" href="./index.html">Inicio</a>
+                <a class="nav-link otrosL" aria-current="page" href="./index.html">Inicio</a>
               </li>
               <p class="separador">|</p>
               
