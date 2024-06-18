@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
       @media (min-width: 320px) and (max-width: 426px){
-
+        .footer-info, .footer-infotation {
+          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+        }
+        .dos{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+        .foot{
+        height: 50vh;
+        }
+        
       }
       @media (min-width: 427px) and (max-width: 990px){
         .footer-info, .footer-infotation {
@@ -17,16 +28,23 @@
           }
           .dos{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 40px;
+          }
+          foot{
+            margin: 0;
           }
           .foot{
             height: 50vh;
+            display: flex; 
+          }
+          .foot dos{
+            flex-direction: column;
           }
       }
 
       @media(max-width: 991px) {
-        .separador{
+     .separador{
           display: none;
         }
         .libro-container{
@@ -48,12 +66,13 @@
           font-family: 'inter', sans-serif;
         }
         #btnEnviar{
-          width: 30%;
-          height: 3rem;
+          width: 50%;
+          height: 4rem;
           border-radius: 5rem;
           font-size: 1.6rem;
           margin-top: 1rem;
           padding-bottom: .5rem;
+          height: 90%;
         }
         #btnEnviar:hover{
           background-color: #cf6153;
@@ -73,6 +92,9 @@
         .input-form:focus{
           box-shadow: #000 0 0 2rem;
         }
+        foot{
+            margin: 0;
+          }
 
       }
       @media (min-width: 1024px) {
@@ -84,7 +106,13 @@
           grid-template-columns: 1fr;
           grid-template-rows: auto 1fr auto;
         }
-
+        #btnEnviar{
+          height: 100%;
+        }
+        foot{
+            margin: 0;
+            padding: 0;
+          }
       }
     </style>
 </head>
@@ -106,19 +134,19 @@
                       <form><!--Formulario-->
                           <div class="mb-3 campos">
                               <label for="exampleInputName" class="form-label">Nombre completo</label>
-                              <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo Lopez">
+                              <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo López">
                               <span id="errorNombre"></span>
                           </div>
                           <div class="mb-3 campos">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            <div id="emailHelp" class="form-text"></div>
                             <label for="exampleInputPhone" class="form-label">Número telefónico</label>
                             <input type="tel" class="form-control input-form" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
                               <span id="errorTelefono"></span>
                         </div>
                           <div class="mb-3 campos">
-                              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                              <label for="exampleInputEmail" class="form-label">Correo electronico</label>
-                              <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ user@example.com">
+                              <label for="exampleInputEmail" class="form-label">Correo electrónico</label>                              
+                              <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ usuario@ejemplo.com">
+                              <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
                               <span id="errorEmail"></span>
                           </div>
                           <div class="mb-3 campos">
@@ -133,12 +161,12 @@
               <div class="col datos">
                   <div><!--Datos de contacto-->
                       <h2 id="contacto">Contacto</h2>
-                      <h3>saihon@gmail.com</h3>
+                      <h3>saihon.bookstore@gmail.com</h3>
                   </div>
                   <br>
                   <br>
                   <div><!--Datos de contacto-->
-                      <h2 id="telefono">Telefonos</h2>
+                      <h2 id="telefono">Teléfonos</h2>
                       <h3>+52 5514535455</h3>
                       <h3>+52 5589345677</h3>
                   </div>

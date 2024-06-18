@@ -18,6 +18,9 @@ body {
    font-family: "inter";
 }
 /* ========================================= Navbar =================================*/
+#header{
+   margin: 0;
+}
 #logo{
    font-size: 3.3rem;
    margin-left: 5vw;
@@ -60,7 +63,7 @@ body {
    height: 20rem;
    background-color: #170E2D;
    color: white;
-   padding: 2rem 0; /* */
+   /*padding: 2rem 0rem;  */
    text-align: center;
    align-items: center;
 }
@@ -143,8 +146,8 @@ col {
 }
 
 #btnEnviar {
-   width: 5vw;
-   height: 4vh;
+   width: 7vw;
+   height: 6vh;
    background-color: #E1351F;
    border: none;
 }
