@@ -2,65 +2,54 @@ let btnReal = document.getElementById("btnEnviar");
 let span = document.getElementById("error");
 
 function validateForm() {
-    let name = document.getElementById("exampleInputName");
-    let email = document.getElementById("exampleInputEmail");
-    let phone = document.getElementById("exampleInputPhone");
-    let message = document.getElementById("exampleFormControlTextarea1");
-
-    // span Errores
-    let errorNombre = document.getElementById("errorNombre");
-    let errorTelefono = document.getElementById("errorTelefono");
-    let errorEmail = document.getElementById("errorEmail");
-    let errorMensaje = document.getElementById("errorMensaje");
-
-    // Limpiar errores
-    errorNombre.innerHTML = "";
-    errorTelefono.innerHTML = "";
-    errorEmail.innerHTML = "";
-    errorMensaje.innerHTML = "";
-
-    let valid = true;
-
-    // Validar Nombre
-    if (name.value.trim() === "") {
-        errorNombre.innerHTML = "Please enter a valid name";
-        valid = false;
-    } else if (name.value.length < 3) {
-        errorNombre.innerHTML = "Name must be at least 3 characters long";
-        valid = false;
-    }
-
-    // Validar email
-    if (email.value.trim() === "") {
-        errorEmail.innerHTML = "Please enter a valid email";
-        valid = false;
-    } else if (!email.value.includes('@')) {
-        errorEmail.innerHTML = "Please enter a valid email";
-        valid = false;
-    }
-
-    // Validar telefono
-    if (phone.value.trim() === "") {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    } else if (phone.value.length < 3) {
-        errorTelefono.innerHTML = "Number must be at least 3 digits long";
-        valid = false;
-    } else if (isNaN(phone.value)) {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    } else if (phone.value <= 0) {
-        errorTelefono.innerHTML = "Please enter a valid number";
-        valid = false;
-    }
-
-    // validar mensaje
-    if (message.value.trim() === "") {
-        errorMensaje.innerHTML = "Please enter a valid message";
-        valid = false;
-    }
-
-    return valid;
+     //elementos necesarios
+     let name = document.getElementById("exampleInputName");
+     let email = document.getElementById("exampleInputEmail");
+     let phone = document.getElementById("exampleInputPhone");
+     let message = document.getElementById("exampleFormControlTextarea1");
+ 
+     // span para mostrar errorer 
+     let errorNombre = document.getElementById("errorNombre");
+     let errorTelefono = document.getElementById("errorTelefono");
+     let errorEmail = document.getElementById("errorEmail");
+     let errorMensaje = document.getElementById("errorMensaje");
+ 
+     // Limpiar errores
+     errorNombre.innerHTML = "";
+     errorTelefono.innerHTML = "";
+     errorEmail.innerHTML = "";
+     errorMensaje.innerHTML = "";
+ 
+     //bandera para la validacion
+     let valid = true;
+ 
+    // Regex patterns proporcionados por IHATE REGEX
+   let namePattern = /^[a-zA-Z\s]{3,}$/;
+   let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+   let phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+   let messagePattern = /^.{20,}$/;
+ 
+   if (!namePattern.test(name.value.trim())) {
+       errorNombre.innerHTML = "Por favor ingresa un nombre válido (al menos 3 caracteres)";
+       valid = false;
+   }
+ 
+   if (!emailPattern.test(email.value.trim())) {
+       errorEmail.innerHTML = "Por favor ingresa un email válido";
+       valid = false;
+   }
+ 
+   if (!phonePattern.test(phone.value.trim())) {
+       errorTelefono.innerHTML = "Por favor ingresa un teléfono válido (entre 10 y 12 dígitos)";
+       valid = false;
+   }
+ 
+   if (!messagePattern.test(message.value.trim())) {
+       errorMensaje.innerHTML = "Por favor ingresa un mensaje válido (al menos 20 caracteres)";
+       valid = false;
+   }
+ 
+     return valid; 
 }
 
 btnReal.addEventListener("click", function(e) {

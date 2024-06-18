@@ -53,18 +53,15 @@ function agregarLibros() {
     };
   
     libros.push(libro);
-    
-    // Recuperar libros existentes del localStorage
-    let librosLocalStorage = JSON.parse(localStorage.getItem("libros")) || [];
 
-    if (Array.isArray(librosLocalStorage)) {
-      librosLocalStorage.push(libro);
-    } else {
-      librosLocalStorage = [libro];
+    // cada que se modifica el localStorage, se debe verificar y cargar su estado anterior
+    if (localStorage.getItem("librosLocalStorage") != null){
+      librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
     }
 
-    // Guardar el array actualizado en el localStorage
-    localStorage.setItem("libros", JSON.stringify(librosLocalStorage));
+    // Se almacena el libro en el localStorage
+    librosLocalStorage.push(libro);
+    localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
     
     console.log(libros);
 
@@ -92,8 +89,6 @@ function agregarLibros() {
   }
 
 }
-
-
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();

@@ -1,8 +1,8 @@
 const header = document.getElementById('header');
-
 const main = document.getElementById("main");
-
 const seccionLibro= document.getElementById("seccionLibro")
+
+let librosLocalStorage = [];
 
 let libros= [
     {
@@ -137,26 +137,22 @@ let libros= [
     },
 ];
 
-// let librosLocalStorage = [];
-// let catalogoLocalStorage = [];
-// let librosLocalStorage = JSON.parse(localStorage.getItem("libros"));
-// librosLocalStorage.forEach(l => {
-//   libros.push(l)
-// });
-// // let catalogoLocalStorage = libros.concat(librosLocalStorage);
-// localStorage.setItem("catalogoLocalStorage",JSON.stringify(libros));
+addNavbar(header)
+addBooks(libros)
+// Condiciones para el almacenamiento local
+if (localStorage.getItem("librosLocalStorage") != null){
+  librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+  console.log(librosLocalStorage);
+  addBooks(librosLocalStorage)
+}
 
-// libros = libros.concat(catalogoLocalStorage);
+// Funcionalidad anterior
+// librosLocalStorage = localStorage.getItem("libros");
+// localStorage.setItem("librosLocalStorage",librosLocalStorage);
+// librosLocalStorage = localStorage.getItem("librosLocalStorage");
 
-let librosLocalStorage = localStorage.getItem("libros");
-localStorage.setItem("librosLocalStorage",librosLocalStorage);
-librosLocalStorage = localStorage.getItem("librosLocalStorage");
-
-
-
-
-let catalogoLocalStorage = libros.concat(JSON.parse(librosLocalStorage));
-localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage));
+// catalogoLocalStorage = libros.concat(JSON.parse(librosLocalStorage));
+// localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage));
 
 
 function addBooks(libros){
@@ -243,7 +239,3 @@ function addNavbar(header){
       `)
 
 }
-
-addNavbar(header)
-addBooks(catalogoLocalStorage)
-addBooks(librosLocalStorage)
