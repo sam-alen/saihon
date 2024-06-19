@@ -88,7 +88,7 @@ function crearUsuario(){
   let telefonoValido = true;
   if (!telefono.value.trim().match(rePhone)) {
     // errorTelefono.innerHTML = "Por favor ingresa un teléfono válido (entre 10 y 12 dígitos)";
-    errorString += " Telefono incorrecto <br>";
+    errorString += " Teléfono incorrecto <br>";
     telefono.style.border = "2px solid crimson";
     telefonoValido = false;
   }
