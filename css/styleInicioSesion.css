@@ -17,8 +17,8 @@ body{
    margin: 0 !important;
    padding: 0 !important;
    width: 100vw !important;
-   display: flex;
-   flex-direction: row;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
    font-family: 'Inter', sans-serif;
 }
 
@@ -97,8 +97,12 @@ body{
    display: flex;
    background-color: var(--main-orangeish-color);
    border: none;
-   font-size: 1.3rem;
-   justify-self: center;
+   font-size: 1.3rem;  
+}
+
+.btncontainer{
+   display: flex;
+   justify-content: center;
 }
 
 .condiciones-- {
