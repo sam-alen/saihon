@@ -9,53 +9,90 @@ const confirmacion = document.getElementById("exampleConfirm");
 const btn = document.getElementsByClassName("btn");
 const submitRegistro = document.getElementById("submitSupremo");
 
-console.log(btn);
-console.log(submitRegistro);
+const errorCampos = document.getElementById("errorCampos");
 
+let errorString = "Error: ";
+errorString = errorString.concat("Haola");
 let user = [];
+
+const reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
+const reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+const rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
+const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
 
 //Validaciones version 1
 
-function validarNombre(){
-     let reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
-     console.log(reName.test(nombre.value));
-     return reName.test(nombre.value);
-}
+// function validarNombre(){
+//      let reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
+//      if (!reName.test(nombre.value)){
+//         nombre.style.border = "2px solid crimson";
+//         errorString = errorString.concat(`Nombre no váilido <br>`);
+//      }
+//      return reName.test(nombre.value);
+// }
 
-function validarEmail(){
-    let reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
-    console.log(reMail.test(email.value)); 
-    return reMail.test(email.value);
- }
+// function validarEmail(){
+//     let reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+//     if (!reMail.test(email.value)){
+//       email.style.border = "2px solid crimson";
+//       errorString = errorString.concat(`Correo no váilido <br>`);
+//    }
+//     return reMail.test(email.value);
+//  }
 
- // contraseña de 8 caracteres minimo, una mayus, una minus, un caracter especial y un numero
- function validarPassword(){
-    let rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
-    console.log(rePass.test(contrase.value));
-     return (contrase.value === confirmacion.value && rePass.test(contrase.value));
+//  // contraseña de 8 caracteres minimo, una mayus, una minus, un caracter especial y un numero
+//  function validarPassword(){
+//     let rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
+//     if (!rePass.test(contrase.value)){
+//       contrase.style.border = "2px solid crimson";
+//       errorString = errorString.concat(`Correo no váilido <br>`);
+//    }
+//      return (contrase.value === confirmacion.value && rePass.test(contrase.value));
 
- }
+//  }
 
- function validarTelefono(){
-    let rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
-
-    telefono.value.match(rePhone);
-    console.log(telefono.value.match(rePhone));
-    return telefono.value.match(rePhone);
-}
-
-
+//  function validarTelefono(){
+//     let rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
+//     if (!rePhone.test(telefono.value)){
+//       telefono.style.border = "2px solid crimson";
+//       errorString = errorString.concat(`Correo no váilido <br>`);
+//    }
+//     return telefono.value.match(rePhone);
+// }
 
 
 function crearUsuario(){
-    if (validarNombre(nombre) && validarEmail(email) && validarPassword(contrase, confirmacion) && validarTelefono()){
-      let user = [];      
+  errorCampos.innerHTML = "";
+
+
+
+  // Validar Nombre
+  let nombreValido = true;
+  if(!reName.test(nombre.value)){
+    nombre.style.border = "2px solid crimson";
+    errorString = errorString.concat(`Nombre no váilido <br>`);
+    nombreValido = false;
+  }
+
+  // Validar Email
+  let emailValido = true;
+  if(!reName.test(nombre.value)){
+    
+    emailValido = false;
+  }
+
+
+  // Validar Password
+
+  // Validar Telefono
+
+    if (validarNombre() && validarEmail() && validarPassword() && validarTelefono()){
+      // let user = [];      
       
       if (localStorage.getItem("user") != null){
         user = JSON.parse(localStorage.getItem("user"));
       }
 
-  
       let Usuario = {
             UserName: nombre.value,
             Email: email.value,
@@ -63,11 +100,20 @@ function crearUsuario(){
             Telefono: telefono.value,
         }
 
-    user.push(Usuario);
-        console.log(Usuario);
-        console.log(user);
-    localStorage.setItem("user", JSON.stringify(user));
+      user.push(Usuario);
+      console.log(Usuario);
+      console.log(user);
+      localStorage.setItem("user", JSON.stringify(user));
 
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "El usuario ha sido registrado con éxito",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    } else {
+      errorCampos.insertAdjacentHTML("beforebegin",errorString);
     }
 }
 
@@ -76,9 +122,6 @@ submitRegistro.addEventListener("click", function(event){
     event.preventDefault();
     crearUsuario()
 })
-
-
-
 
 
 //HEADER 
