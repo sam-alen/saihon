@@ -122,6 +122,12 @@ function addNavbar(header){
                 <li class="nav-item">
                   <a class="nav-link otrosL"  href="./nosotros.html">Nosotros</a>
                 </li>
+                <p class="separador">|</p>
+
+                <li class="nav-item">
+                  <a class="nav-link otrosL"  href="./inicioSesion.html">Inicia Sesión</a>
+                </li>
+              
                 
                 
               </ul>
