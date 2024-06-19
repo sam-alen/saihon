@@ -1,75 +1,65 @@
 const header = document.getElementById('header');
 
-let nombre = document.getElementById("Nombre");
-let contraseña = document.getElementById("exampleInputPassword");
-let email = document.getElementById("exampleInputEmail1");
-let telefono = document.getElementById("telefono");
-let confirmacion = document.getElementById("exampleConfirm");
+const nombre = document.getElementById("Nombre");
+const contrase = document.getElementById("exampleInputPassword");
+const email = document.getElementById("exampleInputEmail1");
+const telefono = document.getElementById("telefono");
+const confirmacion = document.getElementById("exampleConfirm");
 
-let btn = document.getElementsByClassName("btn");
-let submitRegistro = btn.item(1);
+const btn = document.getElementsByClassName("btn");
+const submitRegistro = document.getElementById("submitSupremo");
 
 console.log(btn);
+console.log(submitRegistro);
 
 let user = [];
 
-//RegExp
-/*
-Username: https://ihateregex.io/expr/username
-Email: https://emailregex.com/
-Password: https://ihateregex.io/expr/password
-*/
-
 //Validaciones version 1
 
-function validarNombre(nombre){
-     let reName = RegExp(/^[a-z0-9_-]{3,15}$/);
-     console.log(reName.test(nombre));
-     return reName.test(nombre);
+function validarNombre(){
+     let reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
+     console.log(reName.test(nombre.value));
+     return reName.test(nombre.value);
 }
 
-function validarEmail(email){
-    let reMail = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    console.log(reMail.test(email)); 
-    return reMail.test(email);
+function validarEmail(){
+    let reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+    console.log(reMail.test(email.value)); 
+    return reMail.test(email.value);
  }
 
- function validarPassword(contraseña){
- // let valid = true;
-     let rePass = RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/);
-     console.log(rePass.test(contraseña));
+ // contraseña de 8 caracteres minimo, una mayus, una minus, un caracter especial y un numero
+ function validarPassword(){
+    let rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
+    console.log(rePass.test(contrase.value));
+     return (contrase.value === confirmacion.value && rePass.test(contrase.value));
 
-     if((contraseña.value === confirmacion.value) && rePass.test(contraseña)){
-      console.log("La contraseña es igual");
-      return true;
-     } else {
-      console.log("La contraseña es diferente");
-      return false;
-     }
  }
 
- function validarTelefono(telefono){
-    let rePhone = RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/);
-    console.log(rePhone.test(telefono));
-    return rePhone.test(telefono);
+ function validarTelefono(){
+    let rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
+
+    telefono.value.match(rePhone);
+    console.log(telefono.value.match(rePhone));
+    return telefono.value.match(rePhone);
 }
 
 
 
 
 function crearUsuario(){
-    if (validarNombre() && validarEmail() && validarPassword() && validarTelefono()){
+    if (validarNombre(nombre) && validarEmail(email) && validarPassword(contrase, confirmacion) && validarTelefono()){
+      let user = [];      
       
       if (localStorage.getItem("user") != null){
         user = JSON.parse(localStorage.getItem("user"));
       }
 
-      
-      
+  
       let Usuario = {
             UserName: nombre.value,
             Email: email.value,
-            Password: pass.value,
+            Password: contrase.value,
             Telefono: telefono.value,
         }
 
@@ -84,9 +74,10 @@ function crearUsuario(){
 //EventListener
 submitRegistro.addEventListener("click", function(event){
     event.preventDefault();
-    console.log(event);
     crearUsuario()
 })
+
+
 
 
 
