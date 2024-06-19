@@ -1,65 +1,33 @@
 *{
-   margin:0;
+   margin: 0;
    padding: 0;
    box-sizing: border-box;
-   
 }
+.encabezado{
+   background-color: greenyellow
+   text-align: center;
+
+}
+
 .container{
-   margin: 0 !important;
-   padding: 0 !important;
-   display: grid !important;
-   grid-template-columns: 1.1fr 1.2fr !important;
-   font-family: "inter";
+   margin: 0; !important
+   padding: 0;
+   display: grid;
+   grid-template-columns: 1fr 1.2fr;
+   /* flex-direction: column; */
 }
-.imagen img{
-   width: 100%;
+
+.imagen{
+   width: 30%;
    height: 100%;
-   object-fit: cover;
-}
-/* =================================NAVBAR=================================================== */
-.navbar-nav {
-   display: flex;
-   justify-content: center;
-   gap: 60px;
-   width: 100%;
-   font-size: 20px;
-   color: var(--main-whitest-color);
-   align-items: center;
-   background-color: var(--main-darkblue-color);
+   padding: 0;
+   margin: 0;
 }
 
-.nav-item a{
-   color:#F9F9F9;
-}
 
-.navbar-toggler span{
-   background-color: #F9F9F9;
-}
 
-.otrosL:hover {
-   background-color: var(--main-yelllowish-color);
-   font-weight: bold;
-}
-.container-fluid{
-   background-color: var(--main-darkblue-color);
-}
-/* =================================FORMULARIO=================================================== */
-.registro{
-   margin: 0 auto;
-   margin-top: 3rem;
-   padding:  1.5rem;
-   width: 70%;
-   align-content: center;
-   
-}
-.formulario{
-   margin-top: 3rem;
-   margin-left: 3rem;
-   padding:  1.5rem;
-   box-shadow: #D9D9D9 3px 4px 5px 4px;
-   align-content: center;
-   border-radius: 5px;
-}
+
+
 
 
 
