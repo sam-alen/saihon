@@ -19,13 +19,26 @@
 
 /* ========================================= Navbar =================================*/
 #logo{
-   font-size: 3.3rem;
+   /* font-size: 3.3rem;
    margin-left: 5vw;
+   color: var(--main-whitest-color); */
+   font-size: 3.3rem;
+   margin-left: 1rem;
+   margin-right: 1.5rem;
    color: var(--main-whitest-color);
 }
 
 .navbar-nav {
+   /* display: flex;
+   justify-content: center;
+   gap: 60px;
+   width: 100%;
+   font-size: 20px;
+   color: var(--main-whitest-color);
+   align-items: center;
+   background-color: var(--main-darkblue-color); */
    display: flex;
+   margin-right: 2rem;
    justify-content: center;
    gap: 60px;
    width: 100%;
@@ -33,10 +46,14 @@
    color: var(--main-whitest-color);
    align-items: center;
    background-color: var(--main-darkblue-color);
+
 }
 
 .nav-item a{
    color:#F9F9F9;
+}
+.nav-link {
+   color:#F9F9F9 !important ; 
 }
 
 .navbar-toggler span{
