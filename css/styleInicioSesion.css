@@ -1,34 +1,119 @@
+:root{
+   --main-whitest-color: #F9F9F9;
+   --main-darkblue-color: #170E2D ;
+   --main-darkbrown-color: #321519;
+   --main-redish-color: #E1351F;
+   --main-orangeish-color: #E1351F;
+   --main-yelllowish-color: #FDC264;
+}
 *{
-   margin: 0;
+   margin:0;
    padding: 0;
    box-sizing: border-box;
-}
-.encabezado{
-   background-color: greenyellow
-   text-align: center;
-
+   
 }
 
-.container{
-   margin: 0; !important
-   padding: 0;
-   display: grid;
-   grid-template-columns: 1fr 1.2fr;
-   /* flex-direction: column; */
+body{
+   margin: 0 !important;
+   padding: 0 !important;
+   width: 100vw !important;
+   display: flex;
+   flex-direction: row;
+   font-family: 'Inter', sans-serif;
 }
 
-.imagen{
-   width: 30%;
+
+.imagen img{
+   width: 100%;
    height: 100%;
-   padding: 0;
-   margin: 0;
+   object-fit: cover;
+}
+/* =================================NAVBAR=================================================== */
+#logo{
+   font-size: 3.3rem;
+   margin-left: 1rem;
+   margin-right: 1.5rem;
+   color: var(--main-whitest-color);
 }
 
+.navbar-nav {
+   display: flex;
+   margin-right: 2rem;
+   justify-content: center;
+   gap: 60px;
+   width: 100%;
+   font-size: 20px;
+   color: var(--main-whitest-color);
+   align-items: center;
+   background-color: var(--main-darkblue-color);
+}
 
+.nav-item a{
+   color:#F9F9F9;
+}
+.nav-link {
+   color:#F9F9F9 !important ; 
+}
 
+.navbar-toggler span{
+   background-color: #F9F9F9;
+}
 
+.otrosL:hover {
+   background-color: var(--main-yelllowish-color);
+   font-weight: bold;
+}
+.container-fluid{
+   background-color: var(--main-darkblue-color);
+}
+/* =================================FORMULARIO=================================================== */
+.encabezado h1, h2{
+   text-align: center;
+   color: var(--main-darkbrown-color);
+}
 
+.registro{
+   margin: 0 auto;
+   margin-top: 3rem;
+   padding:  1.5rem;
+   width: 70%;
+   align-content: center;
+   
+}
+.formulario{
+   margin-top: 3rem;
+   margin-left: 3rem;
+   padding:  1.5rem;
+   box-shadow: #D9D9D9 3px 4px 5px 4px;
+   align-content: center;
+   border-radius: 5px;
+}
 
+.form-label{
+   font-size: 1.5rem;
+}
+
+#submitSupremo, #submit{
+   display: flex;
+   background-color: var(--main-orangeish-color);
+   border: none;
+   font-size: 1.3rem;
+   justify-self: center;
+}
+
+.condiciones-- {
+   color: var(--main-darkbrown-color);
+   display: flex;
+   flex-direction: row;
+   gap: 40px;
+   justify-content: center;
+   margin-top: 2rem;
+   margin-bottom: 1rem;
+}
+
+.condiciones-- p{
+   font-size: 1rem;
+}
 
 
 
@@ -79,5 +164,3 @@
     font-size: 2rem;
     margin-bottom: 1rem;
  }
- 
- 
