@@ -5,14 +5,13 @@
    
 }
 
-
-.container{
+body{
    margin: 0 !important;
    padding: 0 !important;
-   width: 100vw ;
+   width: 100vw !important;
    display: flex;
    flex-direction: row;
-   font-family: "inter";
+   font-family: 'Inter', sans-serif;
 }
 
 
