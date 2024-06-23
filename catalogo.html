@@ -63,18 +63,15 @@
 
         header {
             grid-area: header;
-            background-color: lightcoral;
           }
           aside {
             grid-area: sidebar;
-            background-color: lightblue;
           }
           main {
             grid-area: main;
           }
           footer {
             grid-area: footer;
-            background-color: lightgrey;
           }
         body{
           display: grid;
@@ -92,9 +89,9 @@
 
       } 
       @media (min-width: 991px)  {
-        .separador{
+        /* .separador{
           display: none;
-        }
+        } */
 
         
         .card-img-top{
@@ -170,7 +167,7 @@
     <header id = "header"></header>
     <!-- sidebar -->
     <aside class="sidebar">
-      <div class="todos">
+      <!-- <div class="todos">
         <div id="sidebartitle"><strong> Todas las categorías</strong></div> 
       <ul>
         <div><a href="" class="filtro">Ciencia</a></div>
@@ -187,12 +184,35 @@
         <div><a href="" class="filtro">Top Géneros</a></div>
         <div><a href="" class="filtro">Tendencias</a></div>
       </ul>
-    </div>
-      
+    </div> -->
+
+      <div class="aside__genres">
+        <span class="aside__title">Géneros por libros</span>
+
+        <ul class="aside__list">
+          <li class="aside__item"><a href="" class="aside__link">Todos los géneros</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Negocios</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Ciencia</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Ficción</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Filosofía</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Biología</a></li>
+        </ul>
+      </div>
+
+      <div class="aside__recommendations">
+        <span class="aside__title">Recomendaciones</span>
+
+        <ul class="aside__list">
+          <li class="aside__item"><a href="" class="aside__link">Autores del mes</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Libro del año</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Top géneros</a></li>
+          <li class="aside__item"><a href="" class="aside__link">Tendencias</a></li>
+        </ul>
+      </div>
     </aside>
     <!-- main con cards -->
     <main id="main">
-      <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3" id="seccionLibro">        <!-- Card de ejemplo -->
+      <div class="row" id="seccionLibro">        <!-- Card de ejemplo -->
 
         
       </div>

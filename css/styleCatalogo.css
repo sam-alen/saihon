@@ -45,7 +45,8 @@ h2{
 }
 
 .otrosL:hover {
-   background-color: var(--main-yelllowish-color);
+   /* background-color: var(--main-yelllowish-color); */
+   color: #FDC264;
    font-weight: bold;
 }
 .container-fluid{
@@ -55,14 +56,15 @@ h2{
  /* ==================================================================================== */
 
 body{
-   position:absolute;
+   position:absolute; /* Corrige el posicionamiento del sidebar con position:fixed */
 }
 
 .row{
    gap: 15px;
 }
 
-.sidebar{
+/* ============================ Sidebar*/
+/* .sidebar{
    background-color: #ffffff;
    margin-left: 5px;
    position: fixed;
@@ -73,8 +75,48 @@ body{
 
 #sidebartitle{
    color:var(--main-orangeish-color);
+} */
+
+/* .sidebar{
+   position: fixed;
+} */
+.aside__genres {
+   margin-top: 2.5rem;
+   margin-left: 2rem; 
+}
+.aside__recommendations{
+   margin-top: 1rem;
+   margin-left: 2rem;
+}
+.aside__title{
+   font-size: 1rem;
+   text-align: center;
+   
+   font-weight: bold;
 }
 
+.aside__item{
+   list-style: none;
+   margin-top: 1rem;
+   
+}
+
+.aside__link{
+   text-decoration: none;
+   color: var(--main-darkblue-color);
+   padding: .5rem;
+   padding-right: 1rem;
+}
+.aside__link:hover{
+   color: var(--main-orangeish-color);
+   font-weight: bold;
+   background-color: var(--main-whitest-color);
+   border-radius: 5px;
+   padding-right: 2.5rem;
+}
+
+
+/* ================================================================================== */
 div>ul>div>a{
    text-decoration: none;
    color: var(--main-darkblue-color);
@@ -95,6 +137,7 @@ a:hover{
 .card{
    box-sizing: border-box;
    height: 68vh;
+   border: none;
 }
 
 .card-body{
@@ -107,11 +150,15 @@ a:hover{
 
 .boton{
    background-color: #E1351F;
-   width: 15vw;
+   width: auto;
+}
+.boton:hover{
+   background-color: #170E2D;
 }
 
 .card-img-top{
-   height: 40vh;
+   object-fit: contain;
+   height: 35vh;
    width: 100%;
 }
 
