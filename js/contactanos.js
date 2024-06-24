@@ -21,6 +21,7 @@ function validateForm() {
   errorTelefono.innerHTML = "";
   errorEmail.innerHTML = "";
   errorMensaje.innerHTML = "";
+  clearErrors();
 
   //bandera para la validacion
   let valid = true;
@@ -31,11 +32,13 @@ function validateForm() {
   let phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
   let messagePattern = /^.{20,}$/;
 
+
   if (!namePattern.test(name.value.trim())) {
     errorNombre.innerHTML = "Por favor ingresa un nombre válido (al menos 3 caracteres)";
     
     name.setAttribute("style", "background-color: #D97575;");
     valid = false;
+    
   }
 
   if (!emailPattern.test(email.value.trim())) {
@@ -43,6 +46,8 @@ function validateForm() {
     
     email.setAttribute("style", "background-color: #D97575;");
     valid = false;
+
+
   }
 
   if (!phonePattern.test(phone.value.trim())) {
@@ -54,7 +59,6 @@ function validateForm() {
 
   if (!messagePattern.test(message.value.trim())) {
     errorMensaje.innerHTML = "Por favor ingresa un mensaje válido (al menos 20 caracteres)";
-    
     message.setAttribute("style", "background-color: #D97575;");
     valid = false;
   }
@@ -80,8 +84,11 @@ function clearErrors() {
   message.setAttribute("style", "border-color: #ced4da;");
   message.setAttribute("style", "background-color: white;");
 }
+
+
 btnReal.addEventListener("click", function(e) {
     e.preventDefault();
+    
     if (validateForm()) {
         let name = document.getElementById("exampleInputName").value;
         let email = document.getElementById("exampleInputEmail").value;
@@ -104,9 +111,9 @@ btnReal.addEventListener("click", function(e) {
                 Swal.fire({
                   position: "center",
                   icon: "success",
-                  title: response.text,
+                  title: "¡Mensaje enviado con éxito!",
                   showConfirmButton: false,
-                  timer: 2000
+                  timer: 4000
                 });
                 // Limpiar los campos
                 document.getElementById("exampleInputName").value = "";
