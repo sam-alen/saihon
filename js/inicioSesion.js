@@ -137,6 +137,7 @@ function crearUsuario(){
         window.location.href = "inicioSesion.html";
       }, 1000);
     } else {
+      errorCampos.style.display="block";
       errorCampos.innerHTML= errorString;
     }
 }
@@ -153,7 +154,10 @@ function validarOpcion(){
     if (validUser) {
     window.location.href = "index.html";
 }   else {
+    userError.style.display="block"
     userError.innerHTML = "El usuario y/o contraseña son incorrectos";
+    userError.style.color = "red";
+
 }}
 
 
@@ -167,6 +171,7 @@ submitRegistro.addEventListener("click", function(event){
 //EventListener Ocultar 
 CampoResgitro.addEventListener("click", function(event){
   event.preventDefault();
+  userError.style.display="none";
   ocultar();
 })
 
@@ -175,6 +180,8 @@ submitSesion.addEventListener("click", function(event){
   event.preventDefault();
   validarOpcion();
 })
+
+
 
 //HEADER 
 function addNavbar(header){
