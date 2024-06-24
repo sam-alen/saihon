@@ -9,6 +9,9 @@ const descripcionLibro = document.getElementById("descripcionLibro");
 const yearLibro = document.getElementById("yearLibro");
 const btnEnviar = document.getElementById("btnEnviar");
 
+const deleteID = document.getElementById("deleteID");
+const btnDelete = document.getElementById("btnDelete");
+
 // Variables REGEX
 const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
 const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
@@ -99,7 +102,32 @@ btnEnviar.addEventListener("click", function (event) {
   agregarLibros();
 });
 
+// Eliminar libros usando ID
 
+function deletingBooks(){
+let IDtoDelete = deleteID.value;
+let idGet = localStorage.getItem("librosLocalStorage");
+
+if(idGet){
+  let toParse = JSON.parse(idGet);
+
+  let indexToDelete = toParse.findIndex(toParse => toParse.id == IDtoDelete);
+  if (indexToDelete !== -1){
+    toParse.splice(indexToDelete, 1)
+
+    localStorage.setItem("librosLocalStorage", JSON.stringify(toParse));
+    console.log("Se eliminó el libro");
+  } else {
+    console.log("Ese libro no se encontró");
+  }
+
+} 
+}
+
+btnDelete.addEventListener("click", function(event) {
+  event.preventDefault();
+  deletingBooks();
+})
 
 // Validaciones
 
