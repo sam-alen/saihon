@@ -131,11 +131,13 @@
 
  /*Color y ancho de las cards*/
  .card{
+
    background-color: var(--main-yelllowish-color);
-   width: 25vw;
+   width: 20vw;
+   height: 18vw;
    opacity: 0.9;
     box-shadow: 0 4px 8px rgba(10, 0, 10, .5); 
-    border-radius: 3rem;
+    border-radius: 3.5rem;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave */
 }
 
@@ -143,13 +145,12 @@
 
  /*efecto de opacidad y movimiento en las cards*/
  .card:hover{
-    opacity: 100%;
-    transition: 0.5s;
-    cursor: pointer;
-    transform:scale(1.1);
-    z-index: 1;
-    background-color: #FDC264;
-    
+   opacity: 100%;
+   transition: 0.5s;
+   cursor: pointer;
+   transform:scale(1.1);
+   z-index: 1;
+   background-color: #FDC264;
    opacity: 1; /* Opacidad completa al pasar el mouse */
    transform: translateY(-7px); /* Elevación sutil */
   
@@ -163,15 +164,16 @@
 }
 
 .card-text {
-   font-size: 1rem; /* Tamaño del texto */
+   font-size: 1.3rem; /* Tamaño del texto */
    color: var(--main-darkbrown-color); /* Color del texto */
    text-align: justify; /* Alineación del texto */
-   margin-bottom: 20px; /* Espaciado antes de los logos */
+   margin-bottom: 10px; /* Espaciado antes de los logos */
 }
 
 .divlogo {
-   justify-content: space-around; /* Espaciado entre logos */
-   margin-top: 2rem;
+   /* justify-content: space-around; Espaciado entre logos */
+   gap: 2rem;
+   margin-top: 1rem;
 }
 
 .divlogo a:hover{
