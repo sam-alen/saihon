@@ -30,7 +30,7 @@ h2{
    justify-content: center;
    /* gap: 30px; */
    width: 100%;
-   font-size: 1rem;
+   font-size: 1.1rem;
    color: var(--main-whitest-color);
    align-items: center;
    background-color: var(--main-darkblue-color);
@@ -40,8 +40,18 @@ h2{
    color:#F9F9F9;
 }
 
-.navbar-toggler span{
+.navbar-toggler{
    background-color: #F9F9F9;
+}
+
+.navbar-collapse #container-logo{
+   display: flex;
+   justify-content: center;
+   margin-left: 5vw;
+   /* margin-bottom: 5vh; */
+}
+.otroLs{
+   width: auto;
 }
 .otrosL:hover {
    /* background-color: var(--main-yelllowish-color); */
@@ -55,9 +65,8 @@ h2{
    border: none;
 }
 .nav-item{
-   padding: 0 2vw 0 2vw;
+   padding: 0 4vw 0 4vw;
    border-right: 2px solid #F9F9F9;
-   width: 13vw;
    text-align: center;
 }
 #container-logo{
@@ -68,7 +77,6 @@ h2{
    width:4vw;
    height:100%;
    border-radius: 100%;
-
 }
 
  /* ==================================================================================== */
