@@ -28,7 +28,7 @@ h2{
 .navbar-nav {
    display: flex;
    justify-content: center;
-   gap: 60px;
+   /* gap: 30px; */
    width: 100%;
    font-size: 1rem;
    color: var(--main-whitest-color);
@@ -43,7 +43,6 @@ h2{
 .navbar-toggler span{
    background-color: #F9F9F9;
 }
-
 .otrosL:hover {
    /* background-color: var(--main-yelllowish-color); */
    color: #FDC264;
@@ -52,14 +51,20 @@ h2{
 .container-fluid{
    background-color: var(--main-darkblue-color);
 }
+#nosotros-nav{
+   border: none;
+}
 .nav-item{
+   padding: 0 2vw 0 2vw;
    border-right: 2px solid #F9F9F9;
-   width: 11vw;
+   width: 13vw;
+   text-align: center;
 }
 #container-logo{
    object-fit: contain;
 }
 #container-logo img{
+   margin-right: 5vw;
    width:4vw;
    height:100%;
    border-radius: 100%;
@@ -76,23 +81,9 @@ body{
    gap: 15px;
 }
 
-/* ============================ Sidebar*/
-/* .sidebar{
-   background-color: #ffffff;
-   margin-left: 5px;
-   position: fixed;
+.sidebar{
    width: auto;
-   padding: 10px;
 }
-
-
-#sidebartitle{
-   color:var(--main-orangeish-color);
-} */
-
-/* .sidebar{
-   position: fixed;
-} */
 .aside__genres {
    margin-top: 2.5rem;
    margin-left: 2rem; 
@@ -104,21 +95,18 @@ body{
 .aside__title{
    font-size: 1rem;
    text-align: center;
-   
    font-weight: bold;
 }
 
 .aside__item{
    list-style: none;
    margin-top: 1rem;
-   
 }
 
 .aside__link{
    text-decoration: none;
    color: var(--main-darkblue-color);
    padding: .5rem;
-   padding-right: 1rem;
 }
 .aside__link:hover{
    color: var(--main-orangeish-color);

@@ -217,18 +217,17 @@ function addNavbar(header){
               </li>
               
               
-              <li class="nav-item">
+              <li class="nav-item" id="nosotros-nav">
                 <a class="nav-link otrosL"  href="./nosotros.html">Nosotros</a>
               </li>
-              
-              <li>
-                <a class="nav-link otrosL"  href="./inicioSesion.html">
-                <div id="container-logo">
-                <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
-                </div>
-                </a>
-              </li>
             </ul>
+            
+              <a class="nav-link otrosL"  href="./inicioSesion.html">
+                <div id="container-logo">
+                  <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
+                </div>
+              </a>
+
           </div>
         </div>
       </nav>
