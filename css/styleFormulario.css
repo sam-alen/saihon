@@ -84,6 +84,14 @@ body{
    padding: 15px;
 }
 
+#edit{
+  margin-top: 0;
+   padding-top: 0%;
+   padding: auto;
+   justify-content:left;
+   
+}
+
 .classForm{
    width: 100%;
    padding: 20px;
@@ -94,7 +102,7 @@ body{
 }
 
 .picture{
-   width: 40vw;
+   width: 35vw;
    height: auto; 
    border-radius: 10px;
 }

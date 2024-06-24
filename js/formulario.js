@@ -12,6 +12,21 @@ const btnEnviar = document.getElementById("btnEnviar");
 const deleteID = document.getElementById("deleteID");
 const btnDelete = document.getElementById("btnDelete");
 
+//botones de las pestañas
+const btnagregar = document.getElementById("hello-tab");
+const btnmodificar = document.getElementById("bye-tab");
+const formularioContainer = document.getElementsByClassName("formularioContainer")[0];
+
+btnmodificar.addEventListener("click", () => {
+  formularioContainer.setAttribute("style", "display: none;");
+});
+
+btnagregar.addEventListener("click", () => {
+  formularioContainer.setAttribute("style", "display: flex;");
+});
+
+
+
 // Variables REGEX
 const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
 const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
@@ -127,6 +142,7 @@ if(idGet){
 btnDelete.addEventListener("click", function(event) {
   event.preventDefault();
   deletingBooks();
+  
 })
 
 // Validaciones
