@@ -146,30 +146,25 @@ if (localStorage.getItem("librosLocalStorage") != null){
   addBooks(librosLocalStorage)
 }
 
-// Funcionalidad anterior
-// librosLocalStorage = localStorage.getItem("libros");
-// localStorage.setItem("librosLocalStorage",librosLocalStorage);
-// librosLocalStorage = localStorage.getItem("librosLocalStorage");
-
-// catalogoLocalStorage = libros.concat(JSON.parse(librosLocalStorage));
-// localStorage.setItem("catalogoLocalStorage",JSON.stringify(catalogoLocalStorage));
-
 
 function addBooks(libros){
   libros.forEach(libro => {
-    seccionLibro.insertAdjacentHTML("afterbegin", `<div class="card" style="width: 18rem;">
-      <img src=${libro.cover_image} class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${libro.title}</h5>
-        <p class="card-text"> ${libro.author}</p>        
-        <p class="card-text"> ${libro.price}$</p>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
-          Ver más
-        </button>
+    seccionLibro.insertAdjacentHTML("afterbegin", 
+      `
+        <div class="card" style="width: 18rem;">
+          <img src=${libro.cover_image} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${libro.title}</h5>
+            <p class="card-text"> ${libro.author}</p>        
+            <p class="card-text"> ${libro.price}$</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
+              Ver más
+            </button>
 
-      </div>
-    </div>
+          </div>
+        </div>
+        
     <!-- Modal -->
     <div class="modal fade" id="exampleModal_${libro.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -193,16 +188,11 @@ function addBooks(libros){
       </div>
     </div>
     `)
-
-    
   });
 }
 
 
 function addNavbar(header){
-  console.log('se cargó navbar')
-
-
   header.insertAdjacentHTML('afterbegin', `
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -235,9 +225,6 @@ function addNavbar(header){
               <li class="nav-item">
                 <a class="nav-link otrosL"  href="./inicioSesion.html">Inicia Sesión</a>
               </li>
-              
-              
-              
             </ul>
           </div>
         </div>

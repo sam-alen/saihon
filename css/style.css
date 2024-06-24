@@ -36,6 +36,7 @@
 
 .otrosL:hover {
    background-color: var(--main-yelllowish-color);
+   /* color: #FDC264; */
    font-weight: bold;
 }
 .container-fluid{
