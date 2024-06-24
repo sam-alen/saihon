@@ -6,6 +6,13 @@ const email = document.getElementById("exampleInputEmail1");
 const telefono = document.getElementById("telefono");
 const confirmacion = document.getElementById("exampleConfirm");
 
+const CampoResgitro = document.getElementById("CampoResgitro");
+const formularioInicioSesion = document.getElementById("formularioInicioSesion");
+const formularioRegistro = document.getElementById("formularioRegistro");
+const emailDos = document.getElementById("exampleInputEmail2");
+const passwordDos = document.getElementById("exampleInputPassword2");
+const submitSesion = document.getElementById("submit");
+
 const btn = document.getElementsByClassName("btn");
 const submitRegistro = document.getElementById("submitSupremo");
 
@@ -17,6 +24,7 @@ const reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
 const reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
 const rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
 const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
+
 
 //Validaciones version 1
 
@@ -41,6 +49,12 @@ const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
 //     let rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
 //     return telefono.value.trim().match(rePhone);
 // }
+
+//Funcion para mostrar el registro
+function ocultar(){
+  formularioInicioSesion.style.display="none";
+  formularioRegistro.style.display="block";
+}
 
 function crearUsuario(){
   // Limpiamos los errores 
@@ -124,12 +138,43 @@ function crearUsuario(){
     }
 }
 
+//Validar inicio de sesion
+function validarOpcion(){
+  let userError= document.getElementById("userError");
+  let users = JSON.parse(localStorage.getItem("user"));
+  let validUser = false;
+    for (let i = 0; i < users.length; i++) {
+      if ((users[i].Email === emailDos.value) && (users[i].Password === passwordDos.value)) {
+      validUser = true;
+      break; }}
+    if (validUser) {
+    window.location.href = "index.html";
+}   else {
+    userError.innerHTML = "El usuario y/o contraseña son incorrectos";
+}}
+
+
+
 //EventListener
 submitRegistro.addEventListener("click", function(event){
     event.preventDefault();
-    crearUsuario()
+    crearUsuario();
+    setTimeout(() => {
+      window.location.href = "inicioSesion.html";
+    }, 1000);
 })
 
+//EventListener Ocultar 
+CampoResgitro.addEventListener("click", function(event){
+  event.preventDefault();
+  ocultar();
+})
+
+//Event iniciar sesion
+submitSesion.addEventListener("click", function(event){
+  event.preventDefault();
+  validarOpcion();
+})
 
 //HEADER 
 function addNavbar(header){

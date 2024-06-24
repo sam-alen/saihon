@@ -72,6 +72,10 @@ body{
    background-color: var(--main-darkblue-color);
 }
 /* =================================FORMULARIO=================================================== */
+#formularioRegistro{
+   display: none;
+}
+
 .encabezado h1, h2{
    text-align: center;
    color: var(--main-darkbrown-color);
