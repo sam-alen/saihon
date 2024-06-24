@@ -33,31 +33,53 @@ function validateForm() {
 
   if (!namePattern.test(name.value.trim())) {
     errorNombre.innerHTML = "Por favor ingresa un nombre válido (al menos 3 caracteres)";
-    name.setAttribute("style", "border-color: red;");
+    
+    name.setAttribute("style", "background-color: #D97575;");
     valid = false;
   }
 
   if (!emailPattern.test(email.value.trim())) {
     errorEmail.innerHTML = "Por favor ingresa un email válido";
-    email.setAttribute("style", "border-color: red;");
+    
+    email.setAttribute("style", "background-color: #D97575;");
     valid = false;
   }
 
   if (!phonePattern.test(phone.value.trim())) {
     errorTelefono.innerHTML = "Por favor ingresa un teléfono válido (entre 10 y 12 dígitos)";
-    phone.setAttribute("style", "border-color: red;");
+
+    phone.setAttribute("style", "background-color: #D97575;");
     valid = false;
   }
 
   if (!messagePattern.test(message.value.trim())) {
     errorMensaje.innerHTML = "Por favor ingresa un mensaje válido (al menos 20 caracteres)";
-    message.setAttribute("style", "border-color: red;");
+    
+    message.setAttribute("style", "background-color: #D97575;");
     valid = false;
   }
+  
 
+  
   return valid;
 }
 
+//Funcion para limpiar errores
+function clearErrors() {
+  let name = document.getElementById("exampleInputName");
+  let email = document.getElementById("exampleInputEmail");
+  let phone = document.getElementById("exampleInputPhone");
+  let message = document.getElementById("exampleFormControlTextarea1");
+
+  name.setAttribute("style", "border-color: #ced4da;");
+  name.setAttribute("style", "background-color: white;");
+  email.setAttribute("style", "border-color: #ced4da;");
+  email.setAttribute("style", "background-color: white;");
+  phone.setAttribute("style", "border-color: #ced4da;");
+  phone.setAttribute("style", "background-color: white;");
+  message.setAttribute("style", "border-color: #ced4da;");
+  message.setAttribute("style", "background-color: white;");
+}
 btnReal.addEventListener("click", function(e) {
     e.preventDefault();
     if (validateForm()) {
@@ -91,6 +113,8 @@ btnReal.addEventListener("click", function(e) {
                 document.getElementById("exampleInputEmail").value = "";
                 document.getElementById("exampleInputPhone").value = "";
                 document.getElementById("exampleFormControlTextarea1").value = "";
+                clearErrors();
+
         
             }, function(error) {
                 console.log('FAILED...', error);
