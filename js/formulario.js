@@ -6,6 +6,7 @@ const precioLibro = document.getElementById("precioLibro");
 const generoLibro = document.getElementById("generoLibro");  
 const cantidadLibro = document.getElementById("cantidadLibro");
 const descripcionLibro = document.getElementById("descripcionLibro");
+const yearLibro = document.getElementById("yearLibro");
 const btnEnviar = document.getElementById("btnEnviar");
 
 // Variables REGEX
@@ -14,6 +15,7 @@ const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
 const regexNL = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"() ]+$/;
 const regexDes = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"()&%$#@*\n\r ]+$/;
 const regexStock = /^\d+$/;
+const regexPublication = /^\d{4}$/;
 
 let libros = []; //lista de libros
 //const regexGen = /^[a-zA-ZÀ-ÿ\u00f1\u00d1'’\-., ]+$/;
@@ -41,11 +43,12 @@ document.getElementById("upload_widget").addEventListener("click", function() {
 }, false);
 
 function agregarLibros() {
-  if (validateAutor() && validateTitulo() && validatePrecio() && validateDescripcion() && validategenero() && validateStock()) {
+  if (validateAutor() && validateTitulo() && validatePrecio() && validateDescripcion() && validategenero() && validateStock() && validateYear()) {
     let libro = { 
       title: nombreLibro.value,
       price: precioLibro.value,
       author: autorLibro.value,
+      publication_year: yearLibro.value,
       description: descripcionLibro.value,
       id: libros.length + 1,
       genre: [generoLibro.value],
@@ -68,6 +71,7 @@ function agregarLibros() {
     nombreLibro.value = "";
     precioLibro.value = "";
     autorLibro.value = "";
+    yearLibro.value = "";
     descripcionLibro.value = "";
     generoLibro.value = "";
     cantidadLibro.value = "";
@@ -94,6 +98,8 @@ btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
   agregarLibros();
 });
+
+
 
 // Validaciones
 
@@ -145,6 +151,15 @@ function validategenero() {
 function validateStock() {
   let istrue = regexStock.test(cantidadLibro.value);
   if (istrue) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validateYear(){
+  let istrue = regexPublication.test(yearLibro.value);
+  if (istrue){
     return true;
   } else {
     return false;
