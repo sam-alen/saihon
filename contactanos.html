@@ -23,6 +23,7 @@
         
       }
       @media (min-width: 427px) and (max-width: 990px){
+        
         .footer-info, .footer-infotation {
           font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
           }
@@ -44,7 +45,15 @@
       }
 
       @media(max-width: 991px) {
-     .separador{
+        .col.datos{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 2rem;
+          font-family: 'inter', sans-serif;
+        }
+        
+        .separador{
           display: none;
         }
         .libro-container{
@@ -68,15 +77,11 @@
         #btnEnviar{
           width: 50%;
           height: 4rem;
-          border-radius: 5rem;
+          border-radius: 1rem;
           font-size: 1.6rem;
           margin-top: 1rem;
           padding-bottom: .5rem;
           height: 90%;
-        }
-        #btnEnviar:hover{
-          background-color: #cf6153;
-
         }
         .tituloMain h1{
           font-size: 3.5rem;
@@ -98,6 +103,7 @@
 
       }
       @media (min-width: 1024px) {
+        
         body{
           margin: 0;
           padding: 0;
@@ -195,6 +201,7 @@
         <p class="footer-info">Correo electroónico: saihon.bookstore@gmail.com</p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
