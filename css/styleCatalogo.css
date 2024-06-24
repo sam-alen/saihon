@@ -65,7 +65,7 @@ h2{
    border: none;
 }
 .nav-item{
-   padding: 0 4vw 0 4vw;
+   padding: 0 3vw 0 3vw;
    border-right: 2px solid #F9F9F9;
    text-align: center;
 }
@@ -73,23 +73,25 @@ h2{
    display: flex;
    flex-direction: row;
    justify-content: center;
+   margin-right: 5vw;
 }
 #container-logo, #container-carrito{
    object-fit: contain;
 }
 #container-logo img{
-   width:4vw;
-   height:100%;
+   width: 3.5vw;
+   height: 100%;
    border-radius: 100%;
+}
+#container-carrito{
+   display: flex;
+   align-items: center;
 }
 #container-carrito img{
-   width:4vw;
-   height:100%;
+   width: 3.5vw;
+   height: 100%;
    border-radius: 100%;
    fill:#F9F9F9;
-}
-#carritosvg{
-   filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg) brightness(2); /* Ajusta los valores según sea necesario */
 }
 
  /* ==================================================================================== */
@@ -149,11 +151,14 @@ a:hover{
    text-decoration: none;
 }
 
-#seccionLibro{
+#seccionLibro-todos, #seccionLibro-romance, #seccionLibro-terror, #seccionLibro-CF{
    display: flex;
    justify-content: center;
    align-items: center;
    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+   max-width: 100%;
+   padding: 20px;
+   margin-bottom: 10vh;
 }
 
 .card{
@@ -184,9 +189,14 @@ a:hover{
    width: 100%;
 }
 
-/*.filtro:visited{
-   border-left: 1px solid #E1351F ;
-} */
+.container-botones-card{
+   display: flex;
+   flex-direction: row;
+   gap: 25px;
+}
+.carrito-svg-card{
+   width: 40px;
+}
 
  /*================== FOOTER ======================*/
  .foot {

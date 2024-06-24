@@ -1,6 +1,6 @@
 const header = document.getElementById('header');
 const main = document.getElementById("main");
-const seccionLibro= document.getElementById("seccionLibro")
+const seccionLibro_todos= document.getElementById("seccionLibro-todos")
 
 let librosLocalStorage = [];
 
@@ -149,7 +149,7 @@ if (localStorage.getItem("librosLocalStorage") != null){
 
 function addBooks(libros){
   libros.forEach(libro => {
-    seccionLibro.insertAdjacentHTML("afterbegin", 
+    seccionLibro_todos.insertAdjacentHTML("beforeend", 
       `
         <div class="card" style="width: 18rem;">
           <img src=${libro.cover_image} class="card-img-top" alt="...">
@@ -157,11 +157,13 @@ function addBooks(libros){
             <h5 class="card-title">${libro.title}</h5>
             <p class="card-text"> ${libro.author}</p>        
             <p class="card-text"> ${libro.price}$</p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
-              Ver más
-            </button>
-
+            <div class="container-botones-card">
+                  <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
+                  Ver más
+                </button>
+                  <img id="carrito_${libro.id}" class="carrito-svg-card" src="assets/imagenes/logo/carrito2.svg" alt="">
+            </div>
           </div>
         </div>
         
@@ -222,12 +224,12 @@ function addNavbar(header){
               </li>
             </ul>
                 <div id="container-iconos">
-                  <a class="nav-link otrosL"  href="#">
+                  <a class="nav-link"  href="#">
                     <div id="container-carrito">
-                      <img id="carritosvg" src="assets/imagenes/logo/carrito.svg" alt="">
+                      <img id="carritosvg" src="assets/imagenes/logo/mb-cart-96x96.svg" alt="">
                     </div>
                   </a>
-                  <a class="nav-link otrosL"  href="./inicioSesion.html">
+                  <a class="nav-link"  href="./inicioSesion.html">
                     <div id="container-logo">
                       <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
                     </div>
