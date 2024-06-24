@@ -133,6 +133,9 @@ function crearUsuario(){
         showConfirmButton: false,
         timer: 1500
       });
+      setTimeout(() => {
+        window.location.href = "inicioSesion.html";
+      }, 1000);
     } else {
       errorCampos.innerHTML= errorString;
     }
@@ -155,13 +158,10 @@ function validarOpcion(){
 
 
 
-//EventListener
+//EventListener Registro
 submitRegistro.addEventListener("click", function(event){
     event.preventDefault();
     crearUsuario();
-    setTimeout(() => {
-      window.location.href = "inicioSesion.html";
-    }, 1000);
 })
 
 //EventListener Ocultar 
