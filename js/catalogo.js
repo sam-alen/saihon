@@ -205,25 +205,28 @@ function addNavbar(header){
               <li class="nav-item">
                 <a class="nav-link otrosL" aria-current="page" href="./index.html">Inicio</a>
               </li>
-              <p class="separador">|</p>
+              
               
               <li class="nav-item">
                 <a class="nav-link otrosL" href="./catalogo.html">Catálogo</a>
               </li>
-              <p class="separador">|</p>
+              
               
               <li class="nav-item">
                 <a class="nav-link otrosL" href="./contactanos.html">Contáctanos</a>
               </li>
-              <p class="separador">|</p>
+              
               
               <li class="nav-item">
                 <a class="nav-link otrosL"  href="./nosotros.html">Nosotros</a>
               </li>
-              <p class="separador">|</p>
-
-              <li class="nav-item">
-                <a class="nav-link otrosL"  href="./inicioSesion.html">Inicia Sesión</a>
+              
+              <li>
+                <a class="nav-link otrosL"  href="./inicioSesion.html">
+                <div id="container-logo">
+                <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
+                </div>
+                </a>
               </li>
             </ul>
           </div>
