@@ -7,6 +7,8 @@ const telefono = document.getElementById("telefono");
 const confirmacion = document.getElementById("exampleConfirm");
 
 const CampoResgitro = document.getElementById("CampoResgitro");
+const CampoInicioSesion = document.getElementById("CampoInicioSesion");
+
 const formularioInicioSesion = document.getElementById("formularioInicioSesion");
 const formularioRegistro = document.getElementById("formularioRegistro");
 const emailDos = document.getElementById("exampleInputEmail2");
@@ -168,6 +170,12 @@ submitRegistro.addEventListener("click", function(event){
 CampoResgitro.addEventListener("click", function(event){
   event.preventDefault();
   ocultar();
+})
+
+//EventListener regresoInicio de sesion
+CampoInicioSesion.addEventListener("click", function(event){
+  event.preventDefault();
+  window.location.href = "inicioSesion.html";
 })
 
 //Event iniciar sesion
