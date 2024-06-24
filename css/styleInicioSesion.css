@@ -81,7 +81,15 @@ body{
    background-color: var(--main-darkblue-color);
 }
 /* =================================FORMULARIO=================================================== */
+#userError{
+   display: none;
+}
+
 #formularioRegistro{
+   display: none;
+}
+
+#errorCampos{
    display: none;
 }
 
