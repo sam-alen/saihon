@@ -117,6 +117,15 @@ if(idGet){
 
     localStorage.setItem("librosLocalStorage", JSON.stringify(toParse));
     console.log("Se eliminó el libro");
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "El libro se ha eliminado",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
   } else {
     console.log("Ese libro no se encontró");
   }
