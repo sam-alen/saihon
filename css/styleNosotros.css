@@ -114,6 +114,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   
  }
 
  /*para acomodar los logos de linkedin y github en las cards*/
@@ -131,10 +132,10 @@
 
  /*Color y ancho de las cards*/
  .card{
-
+   object-fit: contain;
    background-color: var(--main-yelllowish-color);
    width: 20vw;
-   height: 18vw;
+  
    opacity: 0.9;
     box-shadow: 0 4px 8px rgba(10, 0, 10, .5); 
     border-radius: 3.5rem;
@@ -178,8 +179,8 @@
 
 .divlogo a:hover{
    background-color: var(--main-whitest-color);
-   padding: .5rem;
-   border-radius: .5rem;
+   padding: .3rem;
+   border-radius: .3rem;
    transform: scale(1.1);
    transition: .4s;
 }
@@ -187,7 +188,7 @@
  /*ajuste de tamaño de las fotos de perfil en las cards*/
 .fotoperfil{
    width: 100%; /* Tamaño fijo de ancho */
-   height: 50%; /* Tamaño fijo de alto */
+   height: 60%; /* Tamaño fijo de alto */
    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
    object-position: center;
    box-shadow: 0 1.5rem 10px -6px rgba(0, 0, 0, 0.5);
