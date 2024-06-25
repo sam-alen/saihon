@@ -1,4 +1,21 @@
+/*
+*****************************************
+*   SE AGREGA LA PLANTILLA DEL PROYECTO *
+*       NAVBAR Y FOOTER                 *
+*****************************************
+
+*/
+
+import { addNavbar, addFooter } from './plantilla.js';
+
 const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+
+addNavbar(header);
+addFooter(footer);
+
+
+
 const main = document.getElementById("main");
 const seccionLibro_todos= document.getElementById("seccionLibro-todos")
 
@@ -137,7 +154,7 @@ let libros= [
     },
 ];
 
-addNavbar(header)
+
 addBooks(libros)
 // Condiciones para el almacenamiento local
 if (localStorage.getItem("librosLocalStorage") != null){
@@ -193,52 +210,3 @@ function addBooks(libros){
   });
 }
 
-
-function addNavbar(header){
-  header.insertAdjacentHTML('afterbegin', `
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><h2 id="logo">Saihon</h2></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link otrosL" aria-current="page" href="./index.html">Inicio</a>
-              </li>
-              
-              
-              <li class="nav-item">
-                <a class="nav-link otrosL" href="./catalogo.html">Catálogo</a>
-              </li>
-              
-              
-              <li class="nav-item">
-                <a class="nav-link otrosL" href="./contactanos.html">Contáctanos</a>
-              </li>
-              
-              
-              <li class="nav-item" id="nosotros-nav">
-                <a class="nav-link otrosL"  href="./nosotros.html">Nosotros</a>
-              </li>
-            </ul>
-                <div id="container-iconos">
-                  <a class="nav-link"  href="#">
-                    <div id="container-carrito">
-                      <img id="carritosvg" src="assets/imagenes/logo/mb-cart-96x96.svg" alt="">
-                    </div>
-                  </a>
-                  <a class="nav-link"  href="./inicioSesion.html">
-                    <div id="container-logo">
-                      <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
-                    </div>
-                  </a>
-                </div>
-              
-          </div>
-        </div>
-      </nav>
-      `)
-
-}
