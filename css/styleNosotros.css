@@ -176,7 +176,7 @@
    cursor: pointer;
    transform:scale(1.1);
    z-index: 1;
-   background-color: #FDC264;
+   background-color: #FDC264 !important;
    opacity: 1; /* Opacidad completa al pasar el mouse */
    transform: translateY(-7px); /* Elevación sutil */
   

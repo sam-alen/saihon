@@ -70,7 +70,7 @@ body{
 }
 .otrosL:hover {
    /* background-color: var(--main-yelllowish-color); */
-   color: #FDC264;
+   color: #FDC264 !important;
    font-weight: bold;
 }
 .container-fluid{
