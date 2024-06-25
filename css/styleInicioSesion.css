@@ -34,51 +34,79 @@ body{
    object-fit: cover;
 }
 /* =================================NAVBAR=================================================== */
-#CampoInicioSesion,#CampoResgitro {
-   text-decoration: none;
-   color: black
-}
-
-#CampoInicioSesion:hover,#CampoResgitro:hover {
-   color: var(--main-orangeish-color); 
-}
-
 #logo{
    font-size: 3.3rem;
-   margin-left: 1rem;
-   margin-right: 1.5rem;
+   margin-left: 5vw;
    color: var(--main-whitest-color);
 }
 
 .navbar-nav {
    display: flex;
-   margin-right: 2rem;
    justify-content: center;
-   gap: 60px;
+   /* gap: 30px; */
    width: 100%;
-   font-size: 20px;
+   font-size: 1.1rem;
    color: var(--main-whitest-color);
    align-items: center;
    background-color: var(--main-darkblue-color);
 }
 
-.nav-item a{
+.navbar-nav a{
    color:#F9F9F9;
 }
-.nav-link {
-   color:#F9F9F9 !important ; 
-}
 
-.navbar-toggler span{
+.navbar-toggler{
    background-color: #F9F9F9;
 }
 
+.navbar-collapse #container-logo{
+   display: flex;
+   justify-content: center;
+   margin-left: 5vw;
+   /* margin-bottom: 5vh; */
+}
+.otroLs{
+   width: auto;
+}
 .otrosL:hover {
-   background-color: var(--main-yelllowish-color);
+   /* background-color: var(--main-yelllowish-color); */
+   color: #FDC264;
    font-weight: bold;
 }
 .container-fluid{
    background-color: var(--main-darkblue-color);
+}
+#nosotros-nav{
+   border: none;
+}
+.nav-item{
+   padding: 0 3vw 0 3vw;
+   border-right: 2px solid #F9F9F9;
+   text-align: center;
+}
+#container-iconos{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-right: 5vw;
+}
+#container-logo, #container-carrito{
+   object-fit: contain;
+}
+#container-logo img{
+   width: 3.5vw;
+   height: 100%;
+   border-radius: 100%;
+}
+#container-carrito{
+   display: flex;
+   align-items: center;
+}
+#container-carrito img{
+   width: 3.5vw;
+   height: 100%;
+   border-radius: 100%;
+   fill:#F9F9F9;
 }
 /* =================================FORMULARIO=================================================== */
 #userError{
