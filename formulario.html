@@ -125,9 +125,15 @@
                 <label for="autorLibro" class="form-label">Autor</label>
                 <input type="text" class="form-control" id="autorLibro">
               </div>
+
+              <div class="mb-3">
+                <label for="yearLibro" class="form-label">Año de publicación</label>
+                <input type="text" class="form-control" id="yearLibro">
+              </div>
+
               <div class="mb-3">
                 <label for="precioLibro" class="form-label">Precio (MXN)</label>
-                <input type="number" class="form-control" id="precioLibro">
+                <input type="text" class="form-control" id="precioLibro">
               </div>
               <div class="mb-3">
                 <label for="descripcionLibro" class="form-label">Descripción</label>
@@ -135,7 +141,7 @@
               </div>
               <div class="mb-3">
                 <label for="cantidadLibro" class="form-label">Cantidad en Stock</label>
-                <input type="number" class="form-control" id="cantidadLibro">
+                <input type="text" class="form-control" id="cantidadLibro">
               </div>
               <div class="mb-3">
                 <label for="button">Sube la imagen del archivo</label>
@@ -147,20 +153,66 @@
             </div>
             </form> 
                 <div class="imagen">
-                  <img src="assets/imagenes/bookworms-delight-a-towering-stack-of-books-at-the-bookshop-vertical-mobile-wallpaper-ai-generated-free-photo.jpg" class="picture">
+                <img src="assets/imagenes/bookworms-delight-a-towering-stack-of-books-at-the-bookshop-vertical-mobile-wallpaper-ai-generated-free-photo.jpg" class="picture">
                 </div>  
           </div> 
         </div>
 
 
              <div class="tab-pane fade" id="bye" role="tabpanel" aria-labelledby="bye-tab">
-                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <div>
+                <form action="formulario2" id="edit">
+                  <h2>Editar un libro</h2>
+                  <label for=""> Ingresa el titulo</label>
+                  <input type="text" class="form-control" id="nombreLibro" >
+                  <div class="mb-3">
+                    <label for="generoLibro" class="form-label">Género Literario</label>
+                    <select class="form-select" aria-label="Disabled select example" id="generoLibro">
+                        <option selected>Seleccionar</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Ciencia Ficcion">Ciencia Ficción</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="autorLibro" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="autorLibro">
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="yearLibro" class="form-label">Año de publicación</label>
+                    <input type="text" class="form-control" id="yearLibro">
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="precioLibro" class="form-label">Precio (MXN)</label>
+                    <input type="text" class="form-control" id="precioLibro">
+                  </div>
+                  <div class="mb-3">
+                    <label for="descripcionLibro" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcionLibro" rows="3"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cantidadLibro" class="form-label">Cantidad en Stock</label>
+                    <input type="text" class="form-control" id="cantidadLibro">
+                  </div>
+                  <div class="mb-3">
+                    <label for="button">Sube la imagen del archivo</label>
+                    <button type="button" id="upload_widget" class="cloudinary-button">Imagen del libro</button>
+                  </div>
+                  <br><br>
+                  <div class="botonContainer">
+                    <button type="submit" class="btn btn-primary" id="btnEnviar">Guardar</button>
+                  </div>
+                </form>
+              </div>
+              <br>
+                <div class="mb-3" >
+                  <h2>Eliminar un libro</h2>
+                    <label for="deleteID" class="form-label">Ingresa el ID del libro a eliminar:</label>
+                    <input type="text" class="form-control" id="deleteID" placeholder="ID">
+                    <br>
+                    <button type="submit" class="btn btn-primary mb-3" id="btnDelete">Eliminar libro</button>
                 </div>
             </div>
       </div>
