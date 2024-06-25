@@ -127,7 +127,7 @@ h2 {
  }
 
  .acercaNosotros p{
-   font-size: 1.5rem;
+   font-size: 1.1rem;
    text-align: justify;
  }
  .img img{
@@ -170,7 +170,7 @@ h2 {
  .card{
    object-fit: contain;
    background-color: var(--main-yelllowish-color);
-   width: 20vw;
+   width: 25vw;
   
    opacity: 0.9;
     box-shadow: 0 4px 8px rgba(10, 0, 10, .5); 
@@ -201,7 +201,7 @@ h2 {
 }
 
 .card-text {
-   font-size: 1.3rem; /* Tamaño del texto */
+   font-size: 1rem; /* Tamaño del texto */
    color: var(--main-darkbrown-color); /* Color del texto */
    text-align: justify; /* Alineación del texto */
    margin-bottom: 10px; /* Espaciado antes de los logos */
