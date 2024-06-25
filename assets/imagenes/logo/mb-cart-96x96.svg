@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg5758" viewBox="0 0 96 96" version="1.1">
+  <title id="title5893">Cart medium</title>
+  <g id="layer1" transform="translate(0,48)">
+    <g id="g5509" transform="translate(-311.65 -878.68)">
+      <path id="path3920" style="color:#000000" d="m22 200.5c-2.4853 0-4.5-2.0147-4.5-4.5 0-2.0367 1.368-3.8195 3.3353-4.3467" transform="translate(318.65 695.68)" stroke="#dd4814" stroke-linecap="square" stroke-width="5" fill="none"/>
+      <path id="path3922" stroke="#dd4814" stroke-width="5" fill="none" d="m392.65 896.18h-52"/>
+      <path id="path3930" stroke="#dd4814" stroke-width="3" fill="none" d="m390.65 882.18-50 6-8-35-2-7h-4.5l-0.5-2h10l2 8h55z"/>
+      <path id="path3826-5" style="color:#000000" d="m17.919 296.26c0 2.7073-2.1947 4.9021-4.9021 4.9021-2.7073 0-4.9021-2.1947-4.9021-4.9021 0-2.7073 2.1947-4.9021 4.9021-4.9021 2.7073 0 4.9021 2.1947 4.9021 4.9021z" fill-rule="evenodd" transform="matrix(.30599 0 0 .30599 343.17 817.53)" fill="#dd4814"/>
+      <path id="path3828-2" d="m27.723 296.26c0 8.122-6.5842 14.706-14.706 14.706-8.122 0-14.706-6.5842-14.706-14.706 0-8.122 6.5842-14.706 14.706-14.706 8.122 0 14.706 6.5842 14.706 14.706z" transform="matrix(.30599 0 0 .30599 343.17 817.53)" stroke="#dd4814" stroke-width="9.8042" fill="none"/>
+      <path id="path3959" style="color:#000000" d="m17.919 296.26c0 2.7073-2.1947 4.9021-4.9021 4.9021-2.7073 0-4.9021-2.1947-4.9021-4.9021 0-2.7073 2.1947-4.9021 4.9021-4.9021 2.7073 0 4.9021 2.1947 4.9021 4.9021z" fill-rule="evenodd" transform="matrix(.30599 0 0 .30599 379.17 817.53)" fill="#dd4814"/>
+      <path id="path3961" d="m27.723 296.26c0 8.122-6.5842 14.706-14.706 14.706-8.122 0-14.706-6.5842-14.706-14.706 0-8.122 6.5842-14.706 14.706-14.706 8.122 0 14.706 6.5842 14.706 14.706z" transform="matrix(.30599 0 0 .30599 379.17 817.53)" stroke="#dd4814" stroke-width="9.8042" fill="none"/>
+      <path id="path3963" stroke="#dd4814" stroke-width="1.5" fill="none" d="m363.65 846.68-23 39"/>
+      <path id="path3965" stroke="#dd4814" stroke-width="1px" fill="none" d="m334.15 858.18h57"/>
+      <path id="path3967" stroke="#dd4814" stroke-width="1px" fill="none" d="m390.65 864.18h-55.5"/>
+      <path id="path3969" stroke="#dd4814" stroke-width="1px" fill="none" d="m337.15 870.18h53"/>
+      <path id="path3971" stroke="#dd4814" stroke-width="1px" fill="none" d="m390.15 876.18h-52"/>
+      <path id="path3973" stroke="#dd4814" stroke-width="1px" fill="none" d="m339.15 882.18h43.5"/>
+      <path id="path3975" stroke="#dd4814" stroke-width="1px" fill="none" d="m382.15 852.18v30"/>
+      <path id="path3977" stroke="#dd4814" stroke-width="1px" fill="none" d="m376.15 852.18v31"/>
+      <path id="path3979" stroke="#dd4814" stroke-width="1px" fill="none" d="m370.15 852.18v32"/>
+      <path id="path3981" stroke="#dd4814" stroke-width="1px" fill="none" d="m364.15 852.18v32"/>
+      <path id="path3983" stroke="#dd4814" stroke-width="1px" fill="none" d="m358.15 852.18v33"/>
+      <path id="path3985" stroke="#dd4814" stroke-width="1px" fill="none" d="m352.15 852.18v33.5"/>
+      <path id="path3987" stroke="#dd4814" stroke-width="1px" fill="none" d="m346.15 852.18v34"/>
+      <path id="path3989" stroke="#dd4814" stroke-width="1px" fill="none" d="m340.15 852.18v30.5"/>
+      <path id="path3991" stroke="#dd4814" stroke-width="1px" fill="none" d="m388.15 852.18v29"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Cart medium</dc:title>
+        <dc:date>2010-10-09T19:14:19</dc:date>
+        <dc:description>Medium sized shopping cart.</dc:description>
+        <dc:source>http://openclipart.org/detail/89299/cart-medium-by-martins.bruvelis</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>martins.bruvelis</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>cart</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>e-commerce</rdf:li>
+            <rdf:li>shopping</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

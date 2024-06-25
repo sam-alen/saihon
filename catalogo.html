@@ -9,8 +9,18 @@
     <style>
 
       @media (min-width: 320px) and (max-width: 426px){
-        .separador{
-          display: none;
+        .nav-item{
+          border: none;
+        }
+        .navbar-collapse{
+          margin-bottom: 5vh;
+        }
+        #container-logo{
+          margin-top: 2vh;
+        }
+        #container-logo img{
+          height: 5vh;
+          width: auto;
         }
         .footer-info, .footer-infotation {
           font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
@@ -43,10 +53,31 @@
         }
       }
      @media (min-width: 427px) and (max-width: 990px){
-        .separador{
-          display: none;
+        .nav-item{
+          border: none !important;
         }
-
+        .navbar-collapse{
+          margin-bottom: 5vh;
+        }
+        #container-iconos{
+          display: flex;
+          flex-direction: column;
+        }
+        #container-logo{
+          margin-top: 2vh;
+        }
+        #container-logo img{
+          height: 5vh;
+          width: auto;
+        }
+        #container-carrito{
+          margin-left: 5vw;
+          justify-content: center;
+        }
+        #container-carrito img{
+          height: 5vh;
+          width: auto;
+        }
         .card-img-top{
           width: 100%;
           height: 40vh;
@@ -83,17 +114,10 @@
           "sidebar main"
           "footer footer" ;
           }
-
-
-
-
       } 
-      @media (min-width: 991px)  {
-        /* .separador{
-          display: none;
-        } */
 
-        
+
+      @media (min-width: 991px)  {
         .card-img-top{
           width: 100%;
           height: 40vh;
@@ -108,14 +132,6 @@
           width: auto;
         }
 
-       /* #btnCanvas{
-          display: none;
-        }
-
-        #divCanvas{
-          display: none;
-        } */
-
         header {
             grid-area: header;
             background-color: lightcoral;
@@ -126,7 +142,6 @@
           }
           main {
             grid-area: main;
-            /* background-color: lightgreen; */
           }
           footer {
             grid-area: footer;
@@ -135,7 +150,7 @@
         body{
           display: grid;
           gap: 10px;
-          grid-template-columns: 1fr 3fr;
+          grid-template-columns: 1fr 4fr;
           grid-template-rows: auto 1fr auto;
           grid-template-areas:
           "header header"
@@ -150,42 +165,9 @@
   </head>
   <body>
 
-
-<!--    <button id="btnCanvas" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
-
-       <div id="divCanvas" class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-       <div class="offcanvas-body">
-         <p>Try scrolling the rest of the page to see this option in action.</p>
-       </div>
-      </div> -->
-
-
     <header id = "header"></header>
     <!-- sidebar -->
     <aside class="sidebar">
-      <!-- <div class="todos">
-        <div id="sidebartitle"><strong> Todas las categorías</strong></div> 
-      <ul>
-        <div><a href="" class="filtro">Ciencia</a></div>
-        <div><a href="" class="filtro">Ficción</a></div>
-        <div><a href="" class="filtro">Filosofía</a></div>
-        <div><a href="" class="filtro">Bibliografía</a></div>
-      </ul>
-      </div>
-    <div class="recomendaciones">
-      <div id="sidebartitle"><strong>Recomendaciones</strong></div>
-      <ul>
-        <div><a href="" class="filtro">Autor del mes</a></div>
-        <div><a href="" class="filtro">Libro del año</a></div>
-        <div><a href="" class="filtro">Top Géneros</a></div>
-        <div><a href="" class="filtro">Tendencias</a></div>
-      </ul>
-    </div> -->
-
       <div class="aside__genres">
         <span class="aside__title">Géneros por libros</span>
 
@@ -193,7 +175,7 @@
           <li class="aside__item"><a href="" class="aside__link">Todos los géneros</a></li>
           <li class="aside__item"><a href="" class="aside__link">Negocios</a></li>
           <li class="aside__item"><a href="" class="aside__link">Ciencia</a></li>
-          <li class="aside__item"><a href="" class="aside__link">Ficción</a></li>
+          <li class="aside__item"><a href="#seccionLibro-CF" class="aside__link">Ficción</a></li>
           <li class="aside__item"><a href="" class="aside__link">Filosofía</a></li>
           <li class="aside__item"><a href="" class="aside__link">Biología</a></li>
         </ul>
@@ -212,9 +194,20 @@
     </aside>
     <!-- main con cards -->
     <main id="main">
-      <div class="row" id="seccionLibro">        <!-- Card de ejemplo -->
+      <div class="row" id="seccionLibro-todos">        <!-- Card de ejemplo -->
+        <h2 id="titulo-todos-generos">Todos los géneros</h2>
+      </div>
 
-        
+      <div class="row" id="seccionLibro-romance">        <!-- Card de ejemplo -->
+        <h2 id="titulo-romance">Romance</h2>
+      </div>
+
+      <div class="row" id="seccionLibro-terror">        <!-- Card de ejemplo -->
+        <h2 id="titulo-terror">Terror</h2>
+      </div>
+
+      <div class="row" id="seccionLibro-CF">        <!-- Card de ejemplo -->
+        <h2 id="titulo-cf">Ciencia Ficción</h2>
       </div>
     </main>
 

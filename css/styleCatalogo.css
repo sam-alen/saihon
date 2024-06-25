@@ -28,9 +28,9 @@ h2{
 .navbar-nav {
    display: flex;
    justify-content: center;
-   gap: 60px;
+   /* gap: 30px; */
    width: 100%;
-   font-size: 20px;
+   font-size: 1.1rem;
    color: var(--main-whitest-color);
    align-items: center;
    background-color: var(--main-darkblue-color);
@@ -40,10 +40,19 @@ h2{
    color:#F9F9F9;
 }
 
-.navbar-toggler span{
+.navbar-toggler{
    background-color: #F9F9F9;
 }
 
+.navbar-collapse #container-logo{
+   display: flex;
+   justify-content: center;
+   margin-left: 5vw;
+   /* margin-bottom: 5vh; */
+}
+.otroLs{
+   width: auto;
+}
 .otrosL:hover {
    /* background-color: var(--main-yelllowish-color); */
    color: #FDC264;
@@ -51,6 +60,38 @@ h2{
 }
 .container-fluid{
    background-color: var(--main-darkblue-color);
+}
+#nosotros-nav{
+   border: none;
+}
+.nav-item{
+   padding: 0 3vw 0 3vw;
+   border-right: 2px solid #F9F9F9;
+   text-align: center;
+}
+#container-iconos{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-right: 5vw;
+}
+#container-logo, #container-carrito{
+   object-fit: contain;
+}
+#container-logo img{
+   width: 3.5vw;
+   height: 100%;
+   border-radius: 100%;
+}
+#container-carrito{
+   display: flex;
+   align-items: center;
+}
+#container-carrito img{
+   width: 3.5vw;
+   height: 100%;
+   border-radius: 100%;
+   fill:#F9F9F9;
 }
 
  /* ==================================================================================== */
@@ -63,23 +104,9 @@ body{
    gap: 15px;
 }
 
-/* ============================ Sidebar*/
-/* .sidebar{
-   background-color: #ffffff;
-   margin-left: 5px;
-   position: fixed;
+.sidebar{
    width: auto;
-   padding: 10px;
 }
-
-
-#sidebartitle{
-   color:var(--main-orangeish-color);
-} */
-
-/* .sidebar{
-   position: fixed;
-} */
 .aside__genres {
    margin-top: 2.5rem;
    margin-left: 2rem; 
@@ -91,21 +118,18 @@ body{
 .aside__title{
    font-size: 1rem;
    text-align: center;
-   
    font-weight: bold;
 }
 
 .aside__item{
    list-style: none;
    margin-top: 1rem;
-   
 }
 
 .aside__link{
    text-decoration: none;
    color: var(--main-darkblue-color);
    padding: .5rem;
-   padding-right: 1rem;
 }
 .aside__link:hover{
    color: var(--main-orangeish-color);
@@ -127,11 +151,14 @@ a:hover{
    text-decoration: none;
 }
 
-#seccionLibro{
+#seccionLibro-todos, #seccionLibro-romance, #seccionLibro-terror, #seccionLibro-CF{
    display: flex;
    justify-content: center;
    align-items: center;
    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+   max-width: 100%;
+   padding: 20px;
+   margin-bottom: 10vh;
 }
 
 .card{
@@ -162,9 +189,14 @@ a:hover{
    width: 100%;
 }
 
-/*.filtro:visited{
-   border-left: 1px solid #E1351F ;
-} */
+.container-botones-card{
+   display: flex;
+   flex-direction: row;
+   gap: 25px;
+}
+.carrito-svg-card{
+   width: 40px;
+}
 
  /*================== FOOTER ======================*/
  .foot {
