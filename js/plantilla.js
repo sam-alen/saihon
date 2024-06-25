@@ -74,7 +74,7 @@ export function addFooter(footer){
           <div><h3 class="footer-infotation">Información</h3></div>
           <div><p><strong class="footer-info">Dirección corporativa</strong><br>Ciudad de México</p></div>
           <p class="footer-info">Teléfono: 5589345677</p>
-          <p class="footer-info">Correo electroónico: saihon.bookstore@gmail.com</p>
+          <p class="footer-info">Correo electrónico: saihon.bookstore@gmail.com</p>
         </div>
         `
     );
