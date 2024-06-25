@@ -11,8 +11,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
      
     @media (min-width: 320px) and (max-width: 426px){
-      .separador{
-          display: none;
+      .nav-item{
+          border: none;
+        }
+        .navbar-collapse{
+          margin-bottom: 5vh;
+        }
+        #container-logo{
+          margin-top: 2vh;
+        }
+        #container-logo img{
+          height: 5vh;
+          width: auto;
         }
       .vista{
         display: flex;
@@ -52,8 +62,30 @@
     }
 
     @media (min-width: 427px) and (max-width: 990px){
-      .separador{
-          display: none;
+      .nav-item{
+          border: none !important;
+        }
+        .navbar-collapse{
+          margin-bottom: 5vh;
+        }
+        #container-iconos{
+          display: flex;
+          flex-direction: column;
+        }
+        #container-logo{
+          margin-top: 2vh;
+        }
+        #container-logo img{
+          height: 5vh;
+          width: auto;
+        }
+        #container-carrito{
+          margin-left: 5vw;
+          justify-content: center;
+        }
+        #container-carrito img{
+          height: 5vh;
+          width: auto;
         }
 
       .acercaNosotros h1{

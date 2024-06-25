@@ -40,7 +40,7 @@ h2 {
 }
 
 .navbar-toggler {
-   background-color: #F9F9F9;
+   background-color: #F9F9F9 !important;
 }
 
 .navbar-collapse #container-logo {
