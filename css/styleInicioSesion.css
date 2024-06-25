@@ -34,6 +34,15 @@ body{
    object-fit: cover;
 }
 /* =================================NAVBAR=================================================== */
+#CampoInicioSesion,#CampoResgitro {
+   text-decoration: none;
+   color: black
+}
+
+#CampoInicioSesion:hover,#CampoResgitro:hover {
+   color: var(--main-orangeish-color); 
+}
+
 #logo{
    font-size: 3.3rem;
    margin-left: 1rem;
@@ -72,6 +81,18 @@ body{
    background-color: var(--main-darkblue-color);
 }
 /* =================================FORMULARIO=================================================== */
+#userError{
+   display: none;
+}
+
+#formularioRegistro{
+   display: none;
+}
+
+#errorCampos{
+   display: none;
+}
+
 .encabezado h1, h2{
    text-align: center;
    color: var(--main-darkbrown-color);

@@ -130,9 +130,10 @@
         <div class="registro">
           <div class="encabezado">
             <h1>Bienvenido a Saihon</h1>
-            <h2>Inicia Sesión o Regístrate</h2>
+            <h2><a href="#" id="CampoInicioSesion">Inicia Sesión</a></a> o <a href="#" id="CampoResgitro">Regístrate</a> </h2> 
           </div>
-          <div class="formulario">
+          <div  class="formulario" id="userError"></div>
+          <div class="formulario" id="formularioInicioSesion">
             <form>
               <div class="mb-3">
                 <label for="exampleInputEmail2" class="form-label">Email</label>
@@ -149,8 +150,9 @@
             </form>
           </div>
 
-
-          <div class="formulario">
+          <div class="formulario" id="errorCampos">
+          </div>
+          <div class="formulario" id="formularioRegistro">
             <form>
               <div class="mb-3">
                 <label for="exampleName" class="form-label">Nombre completo</label>
@@ -177,8 +179,7 @@
                 <button type="submit" class="btn btn-primary" id="submitSupremo">Enviar</button>
               </div>
             </form>
-          </div>
-          <div id="errorCampos"></div>
+          </div>     
         </div>
 
         <!--Registro-->
