@@ -1,5 +1,6 @@
 const header = document.getElementById('header');
 
+
 //Función para agregar el navbar
 export function addNavbar(header){
     console.log('se cargó navbar')

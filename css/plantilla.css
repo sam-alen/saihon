@@ -1,0 +1,135 @@
+:root {
+    --main-whitest-color: #F9F9F9;
+    --main-darkblue-color: #170E2D;
+    --main-darkbrown-color: #321519;
+    --main-redish-color: #E1351F;
+    --main-orangeish-color: #E1351F;
+    --main-yelllowish-color: #FDC264;
+}
+ 
+
+/* ========================================= Navbar =================================*/
+#logo{
+    font-size: 3.3rem;
+    margin-left: 5vw;
+    color: var(--main-whitest-color);
+ }
+ 
+ .navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* gap: 30px; */
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--main-whitest-color);
+    align-items: center;
+    background-color: var(--main-darkblue-color);
+ }
+ 
+ .navbar-nav a{
+    color:#F9F9F9;
+ }
+ 
+ .navbar-toggler{
+    background-color: #F9F9F9 !important;
+ }
+ 
+ .navbar-collapse #container-logo{
+    display: flex;
+    justify-content: center;
+    margin-left: 5vw;
+    /* margin-bottom: 5vh; */
+ }
+ .otroLs{
+    width: auto;
+ }
+ .otrosL:hover {
+    /* background-color: var(--main-yelllowish-color); */
+    color: var(--main-yelllowish-color) !important; 
+    font-weight: bold;
+ }
+ .container-fluid{
+    background-color: var(--main-darkblue-color);
+ }
+ #nosotros-nav{
+    border: none;
+ }
+ .nav-item{
+    padding: 0 3vw 0 3vw;
+    border-right: 2px solid #F9F9F9;
+    text-align: center;
+ }
+ #container-iconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 5vw;
+ }
+ #container-logo, #container-carrito{
+    object-fit: contain;
+ }
+ #container-logo img{
+    width: 3.5vw;
+    height: 100%;
+    border-radius: 100%;
+ }
+ #container-carrito{
+    display: flex;
+    align-items: center;
+ }
+ #container-carrito img{
+    width: 3.5vw;
+    height: 100%;
+    border-radius: 100%;
+    fill:#F9F9F9;
+ }
+ 
+
+
+ /*================== FOOTER ======================*/
+ .foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 35vh;
+    background-color: #170E2D;
+    color: white;
+    padding: 2rem 0; /* */
+    text-align: center;
+    align-items: center;
+ }
+ 
+ h2 {
+    font-family: "bellefair-regular";
+ }
+ 
+ .footer-title {
+    font-size: 3.8rem;
+ }
+ 
+ .Redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+ }
+ 
+ .Redes img {
+    width: 1.8rem;
+ }
+ 
+ .footer-info {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+ }
+ 
+ .footer-infotation {
+    color: var(--cream);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+ }
+
+
+/* ========================================= RESPONSIVE =================================*/
