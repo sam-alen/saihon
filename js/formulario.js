@@ -79,13 +79,26 @@ document.getElementById("upload_widget").addEventListener("click", function() {
 
 function agregarLibros() {
   if (validateAutor() && validateTitulo() && validatePrecio() && validateDescripcion() && validategenero() && validateStock() && validateYear()) {
+    let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+    if (librosLocalStorage == null) {
+      librosLocalStorage = [];
+    }
+    let nextId = 1;
+    if (librosLocalStorage.length > 0 ) {
+      const ids = librosLocalStorage.map(libro => libro.id);
+      nextId = Math.max(...ids) + 1;
+    } 
+
+    console.log(librosLocalStorage);
+
+
     let libro = { 
       title: nombreLibro.value,
       price: precioLibro.value,
       author: autorLibro.value,
       publication_year: yearLibro.value,
       description: descripcionLibro.value,
-      id: libros.length + 1,
+      id: nextId,
       genre: [generoLibro.value],
       cover_image: imageUrl,
     };
@@ -100,8 +113,7 @@ function agregarLibros() {
     // Se almacena el libro en el localStorage
     librosLocalStorage.push(libro);
     localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
-    
-    console.log(libros);
+
 
     nombreLibro.value = "";
     precioLibro.value = "";
@@ -236,6 +248,49 @@ function validateYear(){
   }
 }
 
+function fillFields() {
+  let idBuscado = document.getElementById("idLibro").value;
+  let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+  
+  if(idBuscado === ""){
+    alert("Inserta un ID para buscar");
+    return;
+  }
+
+  if (librosLocalStorage) {
+    let libroEncontrado = librosLocalStorage.find(libro => libro.id == idBuscado);
+
+    if (libroEncontrado) {
+      document.getElementById("nombreLibro2").value = libroEncontrado.title;
+      
+      // Buscar el índice del género en el select
+      let generoSelect = document.getElementById("generoLibro2");
+      let generoIndex = Array.from(generoSelect.options).findIndex(option => option.value === libroEncontrado.genre[0]);
+
+      if (generoIndex !== -1) {
+        generoSelect.selectedIndex = generoIndex;
+      }
+
+      document.getElementById("autorLibro2").value = libroEncontrado.author;
+      document.getElementById("yearLibro2").value = libroEncontrado.publication_year;
+      document.getElementById("precioLibro2").value = libroEncontrado.price;
+      document.getElementById("descripcionLibro2").value = libroEncontrado.description;
+    } else {
+      console.log("No hay un libro con ese ID");
+    }
+  } else {
+    console.log("No hay libros en el Sistema");
+  }
+}
+
+
+//Conseguir el boton de buscar
+const btnBuscarLibro = document.getElementById("btnFindId"); 
+
+btnBuscarLibro.addEventListener("click", function(event) {
+  event.preventDefault(); 
+  fillFields();
+});
 
 
 
