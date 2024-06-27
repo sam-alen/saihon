@@ -1,57 +1,49 @@
-const header = document.getElementById('header');
+
 
 
 //Función para agregar el navbar
 export function addNavbar(header){
-    console.log('se cargó navbar')
   
   //en la clase de nav-link de Inicio, era "nav-link active otrosL", sin embargo esto impedia que agarrara el color blanco del css
     header.insertAdjacentHTML('afterbegin', `
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><h2 id="logo">Saihon</h2></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link otrosL" aria-current="page" href="./index.html">Inicio</a>
-              </li>
-              
-              
-              <li class="nav-item">
-                <a class="nav-link otrosL" href="./catalogo.html">Catálogo</a>
-              </li>
-              
-              
-              <li class="nav-item">
-                <a class="nav-link otrosL" href="./contactanos.html">Contáctanos</a>
-              </li>
-              
-              
-              <li class="nav-item" id="nosotros-nav">
-                <a class="nav-link otrosL"  href="./nosotros.html">Nosotros</a>
-              </li>
-            </ul>
-                <div id="container-iconos">
-                  <a class="nav-link"  href="#">
-                    <div id="container-carrito">
-                      <img id="carritosvg" src="assets/imagenes/logo/mb-cart-96x96.svg" alt="">
-                    </div>
-                  </a>
-                  <a class="nav-link"  href="./inicioSesion.html">
-                    <div id="container-logo">
-                      <img src="assets/imagenes/logo/Image20240624131039.jpg" alt="">
-                    </div>
-                  </a>
-                </div>
-              
-          </div>
+        <nav class="navbar">
+        <div class="navbar-brand"><h1>Saihon</h1></div>
+        <div class="navbar-links">
+          <a href="./index.html">Inicio</a>
+          <a href="./catalogo.html">Catálogo</a>
+          <a href="./contactanos.html">Contáctanos</a>
+          <a href="./nosotros.html">nosotros</a>
         </div>
+        <div class="navbar-icons">
+          <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
+          <a href=""><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
+        </div>
+        
+        <label class="bar" for="check">
+          <input type="checkbox" id="check">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+      </label>
+
+      <div class ="menu" id ="menu-display">
+        <div class="other-links">
+          <a href="./index.html">Inicio</a>
+          <a href="./catalogo.html">Catálogo</a>
+          <a href="./contactanos.html">Contáctanos</a>
+          <a href="./nosotros.html">nosotros</a>
+        </div>
+        <div class="other-icons">
+          <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
+          <a href=""><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
+        </div>
+      </div>
+
       </nav>
         `)
-  
+    
+
+    console.log('se cargó navbar')
   }
 
 
@@ -80,4 +72,20 @@ export function addFooter(footer){
         `
     );
     console.log('se cargó footer')
+}
+
+export function showMenu(){
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuDisplay = document.getElementById('menu-display');
+    const burgerMenu = document.getElementById('check');
+
+    // Cambiar 'Check' por 'change' para detectar cambios en el checkbox
+    burgerMenu.addEventListener('change', () => {
+      if (burgerMenu.checked) {
+        menuDisplay.style.display = 'block';
+      } else {
+        menuDisplay.style.display = 'none';
+      }
+    });
+  });
 }
