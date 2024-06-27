@@ -1,0 +1,224 @@
+:root {
+    --main-whitest-color: #F9F9F9;
+    --main-darkblue-color: #170E2D;
+    --main-darkbrown-color: #321519;
+    --main-redish-color: #E1351F;
+    --main-orangeish-color: #E1351F;
+    --main-yelllowish-color: #FDC264;
+}
+
+/* ========================================= Navbar =================================*/
+#header {
+    width: 100%;
+    background-color: var(--main-darkblue-color);
+}
+
+.navbar {
+    margin: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-darkblue-color);
+}
+
+.navbar-brand h1 {
+    font-family: "bellefair-regular";
+    font-size: 3.3rem;
+    color: var(--main-whitest-color);
+    transition: 2s;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.navbar-links a {
+    color: var(--main-whitest-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 1s;
+}
+
+.navbar-links a:hover {
+    color: var(--main-yelllowish-color);
+}
+
+.navbar-icons img {
+    width: 3.3rem;
+    transition: all 1s;
+    border-radius: 100%;
+    margin: 0 1rem;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    width: 50%;
+    background-color: var(--main-darkblue-color);
+    top: 5.4rem;
+    right: -1rem;
+    border-radius: 1rem;
+    transition: 2s;
+    z-index: 1000;
+}
+
+.other-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.other-links a {
+    color: var(--main-whitest-color);
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 1s;
+    margin: 1rem 0;
+    padding: 0 5rem;
+}
+
+.other-links a:hover {
+    background-color: var(--main-orangeish-color);
+}
+
+.other-icons {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.other-icons img {
+    width: 3.3rem;
+    border-radius: 50%;
+    margin: 0 2rem;
+}
+
+.other-icons img:hover {
+    transform: scale(1.2);
+    transition: all 1.3s;
+}
+
+/*================== FOOTER ======================*/
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 35vh;
+    background-color: #170E2D;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    align-items: center;
+}
+
+h2 {
+    font-family: "bellefair-regular";
+}
+
+.footer-title {
+    font-size: 3.8rem;
+}
+
+.Redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.Redes img {
+    width: 1.8rem;
+}
+
+.footer-info {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-infotation {
+    color: var(--cream);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bar {
+    display: none;
+}
+
+/* ========================================= RESPONSIVE =================================*/
+@media screen and (max-width: 860px) {
+    .navbar {
+        margin: 0 2rem;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-icons {
+        display: none;
+    }
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        display: none;
+        visibility: hidden;
+    }
+
+    .bar {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        width: 50px;
+        height: 40px;
+        margin: 0 2rem;
+    }
+
+    .bar span {
+        position: absolute;
+        width: 45px;
+        height: 7px;
+        background: #f1faee;
+        border-radius: 100px;
+        display: inline-block;
+        transition: 0.3s ease;
+        left: 0;
+    }
+
+    .bar span.top {
+        top: 0;
+    }
+
+    .bar span.middle {
+        top: 17px;
+    }
+
+    .bar span.bottom {
+        bottom: 0;
+    }
+
+    input[type="checkbox"]:checked ~ span.top {
+        transform: rotate(45deg);
+        transform-origin: top left;
+        width: 48px;
+        left: 5px;
+    }
+
+    input[type="checkbox"]:checked ~ span.bottom {
+        transform: rotate(-45deg);
+        transform-origin: top left;
+        width: 48px;
+        bottom: -1px;
+        box-shadow: 0 0 10px #495057;
+    }
+
+    input[type="checkbox"]:checked ~ span.middle {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+}

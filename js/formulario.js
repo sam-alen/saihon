@@ -6,13 +6,15 @@
 
 */
 
-import { addNavbar, addFooter } from './plantilla.js';
+import { addNavbar, addFooter, showMenu } from './plantilla.js';
 
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 
+
 addNavbar(header);
 addFooter(footer);
+showMenu();
 
 
 // Elementos del DOM
