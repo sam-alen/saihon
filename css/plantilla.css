@@ -61,6 +61,7 @@
     right: -1rem;
     border-radius: 1rem;
     transition: 2s;
+    z-index: 1000;
 }
 
 .other-links {
