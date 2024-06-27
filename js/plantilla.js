@@ -12,7 +12,7 @@ export function addNavbar(header){
           <a href="./index.html">Inicio</a>
           <a href="./catalogo.html">Catálogo</a>
           <a href="./contactanos.html">Contáctanos</a>
-          <a href="./nosotros.html">nosotros</a>
+          <a href="./nosotros.html">Nosotros</a>
         </div>
         <div class="navbar-icons">
           <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
@@ -31,7 +31,7 @@ export function addNavbar(header){
           <a href="./index.html">Inicio</a>
           <a href="./catalogo.html">Catálogo</a>
           <a href="./contactanos.html">Contáctanos</a>
-          <a href="./nosotros.html">nosotros</a>
+          <a href="./nosotros.html">Nosotros</a>
         </div>
         <div class="other-icons">
           <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
