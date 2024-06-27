@@ -8,111 +8,116 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-      @media (min-width: 320px) and (max-width: 426px){
-        .footer-info, .footer-infotation {
-          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+      @media (min-width: 320px) and (max-width: 426px) {
+        .footer-info,
+        .footer-infotation {
+          font-size: 0.7rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
         }
-        .foot{
-        height: 50vh;
+        .foot {
+          height: 50vh;
         }
-        .imagen{
+        .imagen {
           display: none;
         }
-        .registro{
+        .registro {
           padding: 0;
           width: 80%;
         }
-        .formulario{
+        .formulario {
           margin-left: 1px;
           margin-right: 1px;
           width: auto;
           align-content: center;
         }
-
-        .form-label{
+        .form-label {
           font-size: 1rem;
         }
-
-        .condiciones{
+        .condiciones {
           gap: 8px;
         }
-        .condiciones-- p{
-        font-size: 10px;
-      }
-      .imagen img{
+        .condiciones-- p {
+          font-size: 10px;
+        }
+        .imagen img {
           display: none;
         }
-        
+
+        div.condiciones--{  
+          display: block; /* Mostrar cada etiqueta en bloque */
+          padding: 10px;
+          width: 300px; 
+          margin-left: 75px;
+        }
       }
-    @media (min-width: 426px) and (max-width: 990px){
-        .footer-info, .footer-infotation {
-          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
-          }
-          .foot{
-            margin: 0;
-          }
-          .foot{
-            height: 50vh;
-            display: flex; 
-          }
-          .foot dos{
-            flex-direction: column;
-          }
-          body{
+    
+      @media (min-width: 426px) and (max-width: 990px) {
+        .footer-info,
+        .footer-infotation {
+          font-size: 0.7rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+        }
+        .foot {
+          margin: 0;
+          height: 50vh;
+          display: flex;
+        }
+        .foot dos {
+          flex-direction: column;
+        }
+        body {
           width: 100vw;
-          }
-          .registro{
+        }
+        .registro {
           padding: 0;
           width: 80%;
         }
-        .formulario{
+        .formulario {
           margin-left: 1px;
           margin-right: 1px;
           width: auto;
           align-content: center;
         }
-        
-        .condiciones{
+        .condiciones {
           gap: 8px;
         }
-
-        .imagen{
+        .imagen {
           display: none;
         }
-        
-      }
 
-     @media (max-width: 991px) {
-      body{
+      }
+    
+      @media (max-width: 992px) {
+        body {
           width: 100vw;
           display: flex;
           flex-direction: column;
-          }
-      .imagen{
+        }
+        .imagen {
           display: none;
         }
-        .registro{
+        .registro {
           padding: 0;
           width: 80%;
         }
-        .formulario{
+        .formulario {
           margin-left: 1px;
           margin-right: 1px;
           width: auto;
           align-content: center;
         }
-        .foot{
-            margin: 0;
-          }
-
-      }
-      @media (min-width: 1024px) {
-      .foot{
-            margin: 0;
-            padding: 0;
-          }
+        .foot {
+          margin: 0;
+        }
       }
     
+      @media (max-width: 1024px) {
+        .imagen img {
+          width: 500px;
+        }
+        .foot {
+          margin: 0;
+          padding: 0;
+        }
+      }
     </style>
   </head>
 
@@ -187,12 +192,53 @@
 
 
         <!--Termino y condiciones-->
+      <Section id="Termino">
         <div class="condiciones--">
-          <p>Termino y condiciones</p>      
-          <p>Politica de privacidad</p>
+          <label>
+            <input type="checkbox" id="acepto-terminos" name="acepto-terminos">
+            Acepto los términos y condiciones
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" id="acepto-privacidad" name="acepto-privacidad">
+            Acepto la política de privacidad
+          </label>
+        </div>
+      
+        <div id="modal-terminos" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>
+              <strong>Condiciones de venta:</strong> Términos para realizar compras en el sitio. <br>
+              <strong>Política de devoluciones y reembolsos:</strong> Procedimientos para devolver productos y obtener reembolsos. <br>
+              <strong>Privacidad:</strong> Manejo de datos personales y políticas de cookies. <br>
+              <strong>Propiedad intelectual:</strong> Uso de marcas registradas, derechos de autor y propiedad de contenido. <br>
+            </p>
+          </div>
+        </div>
+      
+        <!-- Política de privacidad -->
+        <div id="modal-privacidad" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Política de Privacidad</h2>
+            <p>
+              <strong>Datos personales:</strong> Información que puede identificar a una persona, como nombre, dirección, número de teléfono, etc. <br>
+              <strong>Consentimiento:</strong> Permiso que otorga el usuario para que se procesen sus datos personales de acuerdo con la política de privacidad. <br>
+              <strong>Cookies:</strong> Pequeños archivos de texto que los sitios web guardan en tu dispositivo para recopilar información sobre tu actividad en línea. <br>
+              <strong>Seguridad de datos:</strong> Medidas implementadas para proteger la información personal contra pérdida, uso no autorizado o acceso indebido. <br>
+              <strong>Transferencia internacional de datos:</strong> Movimiento de información personal entre países o regiones que pueden tener diferentes leyes de protección de datos. <br>
+            </p>
+          </div>
         </div>
 
-      </main>
+        <div class="botones-container">
+          <button type="button" id="btn-terminos">Ver Términos y Condiciones</button>
+          <button type="button" id="btn-privacidad">Ver Política de Privacidad</button>
+        </div>
+      </Section>
+    </main>
 
       <footer class="foot dos"  id = "footer">
 
