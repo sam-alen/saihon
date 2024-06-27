@@ -43,7 +43,7 @@ const reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
 const rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
 const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
 
-
+const termino = document.getElementById("Termino");
 //Validaciones version 1
 
 // function validarNombre(){
@@ -72,6 +72,7 @@ const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
 function ocultar(){
   formularioInicioSesion.style.display="none";
   formularioRegistro.style.display="block";
+  termino.style.display="block";
 }
 
 function crearUsuario(){
@@ -178,8 +179,6 @@ function validarOpcion(){
 
 }}
 
-
-
 //EventListener Registro
 submitRegistro.addEventListener("click", function(event){
     event.preventDefault();
@@ -193,6 +192,7 @@ CampoResgitro.addEventListener("click", function(event){
   ocultar();
 })
 
+
 //EventListener regresoInicio de sesion
 CampoInicioSesion.addEventListener("click", function(event){
   event.preventDefault();
@@ -204,6 +204,24 @@ submitSesion.addEventListener("click", function(event){
   event.preventDefault();
   validarOpcion();
 })
+
+
+// Funciones de términos y condiciones y política de privacidad
+document.getElementById('btn-terminos').addEventListener('click', function() {
+  document.getElementById('modal-terminos').style.display = 'block';
+});
+
+document.getElementById('btn-privacidad').addEventListener('click', function() {
+  document.getElementById('modal-privacidad').style.display = 'block';
+});
+
+const closeButtons = document.querySelectorAll('.close');
+closeButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    let modal = button.parentElement.parentElement;
+    modal.style.display = 'none';
+  });
+});
 
 
 
