@@ -81,7 +81,7 @@
 }
 
 .other-links a:hover {
-    color: var(--main-yelllowish-color);
+    background-color: var(--main-orangeish-color);
 }
 
 .other-icons {
