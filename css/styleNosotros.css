@@ -144,7 +144,7 @@ h2 {
  }
 
  .carousel-indicators .indicadorCarousel.active {
-   background-color: #E1351F /* Cambia el color de fondo cuando está activo */
+   background-color: none; /* #E1351FCambia el color de fondo cuando está activo */
  }
  .set-cards{
    display: flex;
