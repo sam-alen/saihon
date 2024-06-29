@@ -78,6 +78,17 @@ export function showMenu(){
   document.addEventListener('DOMContentLoaded', () => {
     const menuDisplay = document.getElementById('menu-display');
     const burgerMenu = document.getElementById('check');
+    
+    
+    function windowmenu(){
+      if (window.innerWidth>=860) {
+        menuDisplay.style.display='none';
+        burgerMenu.checked=false;
+        
+      }
+    };
+
+    window.addEventListener("resize",windowmenu);
 
     // Cambiar 'Check' por 'change' para detectar cambios en el checkbox
     burgerMenu.addEventListener('change', () => {
