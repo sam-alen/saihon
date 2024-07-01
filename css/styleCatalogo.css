@@ -60,7 +60,6 @@ body{
 .aside__link:hover{
    color: var(--main-orangeish-color);
    font-weight: bold;
-   background-color: var(--main-whitest-color);
    border-radius: 5px;
    padding-right: 2.5rem;
 }
