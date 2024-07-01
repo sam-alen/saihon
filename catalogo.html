@@ -133,6 +133,10 @@
           "sidebar main"
           "footer footer" ;
           }
+
+          #navcita{
+          display: none;
+        }
       } 
 
 
@@ -179,12 +183,24 @@
         .sidebar{
           background-color: white;
         } 
+        #navcita{
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
 
     <header id = "header"></header>
+
+<nav id="navcita">
+  <a href="#seccionLibro-todos" class="aside__link" id="genresnav">Todos los libros</a>
+  <a href="#seccionLibro-romance" class="aside__link" id="genresnav">Romance</a>
+  <a href="#seccionLibro-terror" class="aside__link" id="genresnav">Terror</a>
+  <a href="#seccionLibro-CF" class="aside__link" id="genresnav">Ciencia</a>
+</nav>
+
+
     <!-- sidebar -->
     <aside class="sidebar">
       <div class="aside__genres">

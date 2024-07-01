@@ -61,9 +61,22 @@ body{
    color: var(--main-orangeish-color);
    font-weight: bold;
    border-radius: 5px;
-   padding-right: 2.5rem;
+   padding-right: 1rem;
 }
 
+#navcita{
+   display: flex;
+   justify-content: center;
+   gap: 0.5em;
+   flex-wrap: wrap;
+   width: auto;
+   margin: 0.5rem;
+}
+#genresnav{
+   background-color: var(--main-whitest-color);
+   border-radius: 4px;
+   width: auto;
+}
 
 /* ================================================================================== */
 div>ul>div>a{
