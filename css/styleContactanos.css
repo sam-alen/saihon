@@ -180,7 +180,7 @@ col {
 
 .libros {
    height: 100%;
-   width: 100%;
+   width: 125%;
    border-radius: 3rem;
    rotate: 90deg;
 }
@@ -208,4 +208,8 @@ col {
 
 .campos {
    text-align: left;
+}
+
+.info{
+   font-size: 1rem;
 }

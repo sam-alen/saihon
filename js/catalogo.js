@@ -203,7 +203,7 @@ function generateBooksHTML(libro){
       <div class="card-body">
         <h5 class="card-title">${libro.title}</h5>
         <p class="card-text">${libro.author}</p>        
-        <p class="card-text">${libro.price}$</p>
+        <p class="card-text">$${libro.price}</p>
         <div class="container-botones-card">
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
@@ -226,7 +226,7 @@ function generateBooksHTML(libro){
             <h3>${libro.publication_year}</h3>
             <h3>${libro.genre.join(', ')}</h3>
             <p>${libro.description}</p>
-            <h4>${libro.price}$</h4>
+            <h4>$${libro.price}</h4>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
