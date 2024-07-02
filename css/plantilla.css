@@ -30,7 +30,7 @@
 .navbar-links {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .navbar-links a {
@@ -39,6 +39,11 @@
     text-decoration: none;
     font-weight: bold;
     transition: 1s;
+    /* cambios*/
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-links a:hover {
@@ -55,7 +60,9 @@
 .menu {
     display: none;
     position: absolute;
-    width: 50%;
+    /* width: 50%; */
+    /* width: 70%; */
+    width: auto;
     background-color: var(--main-darkblue-color);
     top: 5.4rem;
     right: -1rem;
@@ -68,6 +75,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .other-links a {
@@ -87,6 +95,8 @@
 .other-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
     margin: 2rem 0;
 }
 
@@ -99,6 +109,12 @@
 .other-icons img:hover {
     transform: scale(1.2);
     transition: all 1.3s;
+}
+
+/*Cambios*/
+.nav-border{
+    border-right: 1px solid var(--main-whitest-color);
+    padding: 0 2vw 0 2vw;
 }
 
 /*================== FOOTER ======================*/
@@ -164,8 +180,6 @@ h2 {
         display: none;
     }
 
-
-
     .menu-check{
         -webkit-appearance: none;
         display: none;
@@ -228,11 +242,16 @@ h2 {
     .bar{
       margin: 0;
     }
-    .other-links{
+    /* .other-links{
         margin-right: 2vh;
-    }
+    } */
     .other-links a{
-        margin-right: 2vh;
-        padding: 0 1rem;
+        /* margin-right: 2vh;
+        padding: 0 1rem; */
+        display: flex;
+        justify-content: center;
+    }
+    .other-icons{
+        gap: 2vh;
     }
 }
