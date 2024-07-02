@@ -20,10 +20,16 @@
         #container-logo{
           margin-top: 2vh;
         }
+        .mb-3{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
         #container-logo img{
           height: 5vh;
           width: auto;
         }
+        
         .footer-info, .footer-infotation {
           font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
         }
@@ -34,6 +40,15 @@
         }
         .foot{
         height: 50vh;
+        }
+        .libro-container{
+            display: none;
+          }
+        .datos{
+          margin-top: 5vh;
+        }
+        .tituloMain h1{
+          font-size: 2rem !important;
         }
         
       }
@@ -81,9 +96,15 @@
           .foot dos{
             flex-direction: column;
           }
+          .libro-container{
+            display: none;
+          }
+          form{
+            padding-left: 3vw;
+          }
       }
 
-      @media(max-width: 991px) {
+     /*@media(max-width: 991px) { 
         .col.datos{
           display: flex;
           flex-direction: column;
@@ -136,11 +157,11 @@
         .input-form:focus{
           box-shadow: #000 0 0 2rem;
         }
-        foot{
+        .foot{
             margin: 0;
           }
 
-      }
+       } */
       @media (min-width: 1024px) {
         
         body{
@@ -151,10 +172,16 @@
           grid-template-columns: 1fr;
           grid-template-rows: auto 1fr auto;
         }
+        .libros{
+          height: 100%;
+          width: 125%;
+          border-radius: 3rem;
+          rotate: 90deg;
+        }
         #btnEnviar{
           height: 100%;
         }
-        foot{
+        .foot{
             margin: 0;
             padding: 0;
           }
@@ -169,7 +196,7 @@
       <div class="container text-center">
           <div class="row contenido">
               <div class="col libro-container"> <!--Imagen libros-->
-                  <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto" width="100%" class="libros">
+                  <img src="assets/imagenes/Contactenos.webp" alt="Imgcontacto"  class="libros">
               </div>
               <div class="col">
                   <div class="tituloMain"><!--Titulo-->
@@ -191,7 +218,8 @@
                           <div class="mb-3 campos">
                               <label for="exampleInputEmail" class="form-label">Correo electrónico</label>                              
                               <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ usuario@ejemplo.com">
-                              <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+                              <div id="emailHelp" class="form-text"></div>
+                              <h5 class="info">Nunca compartiremos tu información personal con terceros.</h5>
                               <span id="errorEmail"></span>
                           </div>
                           <div class="mb-3 campos">
@@ -204,13 +232,13 @@
                   </div>
               </div>
               <div class="col datos">
-                  <div><!--Datos de contacto-->
+                  <div class="datos-saihon"><!--Datos de contacto-->
                       <h2 id="contacto">Contacto</h2>
                       <h3>saihon.bookstore@gmail.com</h3>
                   </div>
                   <br>
                   <br>
-                  <div><!--Datos de contacto-->
+                  <div class="datos-saihon"><!--Datos de contacto-->
                       <h2 id="telefono">Teléfonos</h2>
                       <h3>+52 5514535455</h3>
                       <h3>+52 5589345677</h3>

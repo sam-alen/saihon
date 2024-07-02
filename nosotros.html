@@ -26,13 +26,15 @@
           height: 5vh;
           width: auto;
         }
-        main{
-          margin-left: 1vh;
-        }
+        .mb-3{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
       .vista{
         display: flex;
         flex-direction: column;
-        height: 60vh;
+        height: auto;
         gap: 20px;
       }
       .img img{
@@ -46,9 +48,10 @@
         }
 
       .acercaNosotros p{
-          font-size: 1rem;
+          font-size: .85rem;
           text-align: justify;
         }
+
       .card{
           width: 100vw;
           padding: 0;
@@ -66,7 +69,7 @@
       }
     }
 
-    @media (min-width: 427px) and (max-width: 990px){
+    @media (min-width: 426px) and (max-width: 990px){
       .nav-item{
           border: none !important;
         }
@@ -101,9 +104,10 @@
           font-size: 0.8rem;
           text-align: justify;
         }
-    .card{
+      .card{
           width: 45vw;
       }
+      
     }
 
     @media (min-width: 991px) {
@@ -132,7 +136,7 @@
     <header id="header">
     </header>
   <br><br>
-  <section>
+  <section class="carrusel">
     <!-- data-bs-ride="carousel" -->
     <div id="carouselExampleIndicators" class="carousel slide"> 
         <div class="carousel-indicators">
@@ -196,7 +200,7 @@
 </section>
 
 
-<main> 
+<main class="tarjetas"> 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-5">
     <!-- MIEMBRO 1-->
       <div class="col set-cards">
@@ -223,7 +227,7 @@
             <img class="fotoperfil" src="assets/imagenes/integrantes/Andrea.png" class="card-img-top" alt="foto de Andrea">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Andrea Estefanía Castellanos Suárez</h5>
-                <p class="card-text">Soy Desarrolladora Java Jr. e Ingeniero Biónico. Me entusiasma aprender nuevas habilidades y siempre busco poner las al servicio de los demás. En los últimos años me enfoqué en expandir mis habilidades y conocimientos del mundo de la programación.</p>
+                <p class="card-text">Soy Desarrolladora Fullsrack Jr. e Ingeniero Biónico. Me entusiasma aprender nuevas habilidades y siempre busco poner las al servicio de los demás. En los últimos años me enfoqué en expandir mis habilidades y conocimientos del mundo de la programación.</p>
                 <div class="divlogo">
                   <a href="https://www.linkedin.com/in/andrea-castellanos-40b99423a/" target="_blank">
                     <img class="logo" src="src/linkedin-svgrepo-com.svg" class="card-img-top" alt="foto de ...">
@@ -319,7 +323,7 @@
           <img class="fotoperfil" src="assets/imagenes/integrantes/Jose.png" class="card-img-top" alt="foto de ...">
             <div div class="card-body d-flex flex-column">
             <h5 class="card-title">José Salazar Pérez</h5>
-              <p class="card-text">Ingeniero en Sistemas Automotrices egresado del IPN. Interesado en el constante aprendizaje. Actualmente me encuentro interesado en fortalecer mis habilidades y conocimientos en el área de Tecnologías de la información al cursar el bootcamp de Full Stack Java Developer Jr de Generation.</p>
+              <p class="card-text">Ingeniero en Sistemas Automotrices egresado del IPN. Interesado en el aprendizaje continuo. Actualmente me encuentro interesado en fortalecer mis habilidades y conocimientos en el área de Tecnologías de la información al cursar el bootcamp de Full Stack Java Developer Jr de Generation.</p>
                 <div class="divlogo">
                   <a href="https://www.linkedin.com/in/jose-salazar-perez-1a5828232/" target="_blank">
                     <img class="logo" src="src/linkedin-svgrepo-com.svg" class="card-img-top" alt="foto de ...">

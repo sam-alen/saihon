@@ -2,31 +2,33 @@
 
 
 //Función para agregar el navbar
-export function addNavbar(header){
-  
-  //en la clase de nav-link de Inicio, era "nav-link active otrosL", sin embargo esto impedia que agarrara el color blanco del css
-    header.insertAdjacentHTML('afterbegin', `
-        <nav class="navbar">
-        <div class="navbar-brand"><h1>Saihon</h1></div>
-        <div class="navbar-links">
-          <a class="nav-border" href="./index.html">Inicio</a>
-          <a class="nav-border" href="./catalogo.html">Catálogo</a>
-          <a class="nav-border" href="./contactanos.html">Contáctanos</a>
-          <a href="./nosotros.html" style="margin-left:2vw">Nosotros</a>
-        </div>
-        <div class="navbar-icons">
-          <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
-          <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
-        </div>
-        
-        <label class="bar" for="check">
-          <input type="checkbox" class="menu-check" id="check">
-          <span class="top"></span>
-          <span class="middle"></span>
-          <span class="bottom"></span>
+export function addNavbar(header) {
+  header.insertAdjacentHTML('afterbegin', `
+    <nav class="navbar">
+      <div class="navbar-brand"><h1>Saihon</h1></div>
+      <div class="navbar-links">
+        <a class="nav-border" href="./index.html">Inicio</a>
+        <a class="nav-border" href="./catalogo.html">Catálogo</a>
+        <a class="nav-border" href="./contactanos.html">Contáctanos</a>
+        <a href="./nosotros.html" style="margin-left:2vw">Nosotros</a>
+      </div>
+      <div class="navbar-icons">
+        <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
+        <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
+      </div>
+      <div id="user-info" style="display: none;">
+        <span id="user-name"></span>
+        <button id="logout-button">Logout</button>
+      </div>
+      
+      <label class="bar" for="check">
+        <input type="checkbox" class="menu-check" id="check">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
       </label>
 
-      <div class ="menu" id ="menu-display">
+      <div class="menu" id="menu-display">
         <div class="other-links">
           <a href="./index.html">Inicio</a>
           <a href="./catalogo.html">Catálogo</a>
@@ -38,13 +40,29 @@ export function addNavbar(header){
           <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
         </div>
       </div>
+    </nav>
+  `);
+  console.log('se cargó navbar');
+}
 
-      </nav>
-        `)
-    
+document.addEventListener('DOMContentLoaded', () => {
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+  const userNameElement = document.getElementById("user-name");
+  const logoutButton = document.getElementById("logout-button");
+  const userInfo = document.getElementById("user-info");
 
-    console.log('se cargó navbar')
+  if (loggedUser) {
+    userNameElement.textContent = `Hola, ${loggedUser.UserName.split(" ")[0]}`; // Mostrar el primer nombre
+    userInfo.style.display = "flex"; // Mostrar el contenedor del usuario
+    logoutButton.style.display = "inline"; // Mostrar el botón de logout
+
+    logoutButton.addEventListener('click', () => {
+      localStorage.removeItem("loggedUser");
+      window.location.href = "inicioSesion.html"; // Redirigir al inicio de sesión
+    });
   }
+});
+
 
 
 //función para agregar el footer
