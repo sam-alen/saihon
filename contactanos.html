@@ -41,6 +41,15 @@
         .foot{
         height: 50vh;
         }
+        .libro-container{
+            display: none;
+          }
+        .datos{
+          margin-top: 5vh;
+        }
+        .tituloMain h1{
+          font-size: 2rem !important;
+        }
         
       }
       @media (min-width: 427px) and (max-width: 990px){
@@ -87,9 +96,15 @@
           .foot dos{
             flex-direction: column;
           }
+          .libro-container{
+            display: none;
+          }
+          form{
+            padding-left: 3vw;
+          }
       }
 
-      @media(max-width: 991px) {
+      /* @media(max-width: 991px) { */
         .col.datos{
           display: flex;
           flex-direction: column;
@@ -146,7 +161,7 @@
             margin: 0;
           }
 
-      }
+      /* } */
       @media (min-width: 1024px) {
         
         body{
@@ -211,13 +226,13 @@
                   </div>
               </div>
               <div class="col datos">
-                  <div><!--Datos de contacto-->
+                  <div class="datos-saihon"><!--Datos de contacto-->
                       <h2 id="contacto">Contacto</h2>
                       <h3>saihon.bookstore@gmail.com</h3>
                   </div>
                   <br>
                   <br>
-                  <div><!--Datos de contacto-->
+                  <div class="datos-saihon"><!--Datos de contacto-->
                       <h2 id="telefono">Teléfonos</h2>
                       <h3>+52 5514535455</h3>
                       <h3>+52 5589345677</h3>

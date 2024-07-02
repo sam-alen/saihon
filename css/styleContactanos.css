@@ -179,18 +179,18 @@ col {
 }
 
 .libros {
-   height: 100%;
-   width: 125%;
+   /* height: 100%; */
+   /* width: 125%; */
    border-radius: 3rem;
    rotate: 90deg;
 }
 
 
 #btnEnviar {
-   width: 40%;
-   height: 3rem;
+   width: 25%;
+   /* height: 3rem; */
    border-radius: 1rem;
-   font-size: 1.6rem;
+   font-size: 1.1rem;
    margin-top: 1rem;
    padding-bottom: .5rem;
    background-color: #E1351F;
@@ -200,8 +200,19 @@ col {
    background-color: var(--main-redish-color);
 }
 
+input::placeholder, textarea::placeholder, span, #emailHelp{
+   font-size: 0.8rem;
+}
+.input-form{
+   box-shadow: #000 0 0 .5rem;
+ }
+.input-form:focus{
+   box-shadow: #000 0 0 2rem;
+ }
+
 #contacto,
 #telefono {
+   font-size: 1.6rem;
    font-family: 'Inter', sans-serif;
    font-weight: bold;
 }
@@ -212,4 +223,8 @@ col {
 
 .info{
    font-size: 1rem;
+}
+
+.datos-saihon h3{
+   font-size: 1.3rem;
 }
