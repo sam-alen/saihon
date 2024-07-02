@@ -17,9 +17,44 @@ addFooter(footer);
 showMenu();
 
 
-
 const main = document.getElementById("main");
 const seccionLibro_todos= document.getElementById("seccionLibro-todos");
+
+document.addEventListener('DOMContentLoaded', function() {
+  const linkaside = document.querySelectorAll('.aside__link');
+  const secciones = document.querySelectorAll('.row');
+
+  linkaside.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); 
+
+      
+      secciones.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.style.display = 'flex';
+      }
+
+    });
+  });
+
+  // Mostrar la seccion "Todos los libros" por defecto
+  const defaultSection = seccionLibro_todos;
+  const romancesec = document.getElementById('seccionLibro-romance');
+  const terrorsec = document.getElementById('seccionLibro-terror');
+  const cienciasec = document.getElementById('seccionLibro-CF');
+  if (defaultSection) {
+    defaultSection.style.display = 'flex';
+    romancesec.style.display = 'none';
+    terrorsec.style.display = 'none';
+    cienciasec.style.display = 'none';
+  }
+});
+
 
 
 let librosLocalStorage = [];
