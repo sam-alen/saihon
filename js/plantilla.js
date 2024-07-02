@@ -16,11 +16,11 @@ export function addNavbar(header){
         </div>
         <div class="navbar-icons">
           <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
-          <a href=""><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
+          <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
         </div>
         
         <label class="bar" for="check">
-          <input type="checkbox" id="check">
+          <input type="checkbox" class="menu-check" id="check">
           <span class="top"></span>
           <span class="middle"></span>
           <span class="bottom"></span>
@@ -35,7 +35,7 @@ export function addNavbar(header){
         </div>
         <div class="other-icons">
           <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
-          <a href=""><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
+          <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
         </div>
       </div>
 
@@ -78,6 +78,17 @@ export function showMenu(){
   document.addEventListener('DOMContentLoaded', () => {
     const menuDisplay = document.getElementById('menu-display');
     const burgerMenu = document.getElementById('check');
+    
+    
+    function windowmenu(){
+      if (window.innerWidth>=860) {
+        menuDisplay.style.display='none';
+        burgerMenu.checked=false;
+        
+      }
+    };
+
+    window.addEventListener("resize",windowmenu);
 
     // Cambiar 'Check' por 'change' para detectar cambios en el checkbox
     burgerMenu.addEventListener('change', () => {
