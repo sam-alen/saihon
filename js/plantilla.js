@@ -9,10 +9,10 @@ export function addNavbar(header){
         <nav class="navbar">
         <div class="navbar-brand"><h1>Saihon</h1></div>
         <div class="navbar-links">
-          <a href="./index.html">Inicio</a>
-          <a href="./catalogo.html">Catálogo</a>
-          <a href="./contactanos.html">Contáctanos</a>
-          <a href="./nosotros.html">Nosotros</a>
+          <a class="nav-border" href="./index.html">Inicio</a>
+          <a class="nav-border" href="./catalogo.html">Catálogo</a>
+          <a class="nav-border" href="./contactanos.html">Contáctanos</a>
+          <a href="./nosotros.html" style="margin-left:2vw">Nosotros</a>
         </div>
         <div class="navbar-icons">
           <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
