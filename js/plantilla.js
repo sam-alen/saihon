@@ -20,7 +20,7 @@ export function addNavbar(header){
         </div>
         
         <label class="bar" for="check">
-          <input type="checkbox" id="check">
+          <input type="checkbox" class="menu-check" id="check">
           <span class="top"></span>
           <span class="middle"></span>
           <span class="bottom"></span>

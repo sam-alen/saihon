@@ -164,7 +164,9 @@ h2 {
         display: none;
     }
 
-    input[type="checkbox"] {
+
+
+    .menu-check{
         -webkit-appearance: none;
         display: none;
         visibility: hidden;
