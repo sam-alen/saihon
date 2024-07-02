@@ -109,6 +109,14 @@ h2 {
 body{
     font-family: "inter";
  }
+
+ .h1-name{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+ }
+
 .vista{
    display: flex;
    justify-content: center;
