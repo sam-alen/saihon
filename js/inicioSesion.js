@@ -165,21 +165,29 @@ function crearUsuario(){
 
 //Validar inicio de sesion
 function validarOpcion(){
-  let userError= document.getElementById("userError");
+  let userError = document.getElementById("userError");
   let users = JSON.parse(localStorage.getItem("user"));
   let validUser = false;
-    for (let i = 0; i < users.length; i++) {
-      if ((users[i].Email === emailDos.value) && (users[i].Password === passwordDos.value)) {
+  let loggedUser;
+
+  for (let i = 0; i < users.length; i++) {
+    if ((users[i].Email === emailDos.value) && (users[i].Password === passwordDos.value)) {
       validUser = true;
-      break; }}
-    if (validUser) {
+      loggedUser = users[i];
+      break; 
+    }
+  }
+
+  if (validUser) {
+    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
     window.location.href = "index.html";
-}   else {
-    userError.style.display="block"
+  } else {
+    userError.style.display = "block";
     userError.innerHTML = "El usuario y/o contraseña son incorrectos";
     userError.style.color = "red";
+  }
+}
 
-}}
 
 //EventListener Registro
 submitRegistro.addEventListener("click", function(event){

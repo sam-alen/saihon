@@ -46,6 +46,14 @@
     align-items: center;
 }
 
+#user-name {
+    color: var(--main-whitest-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 1s;
+}
+
 .navbar-links a:hover {
     color: var(--main-yelllowish-color);
 }
@@ -116,6 +124,32 @@
     border-right: 1px solid var(--main-whitest-color);
     padding: 0 2vw 0 2vw;
 }
+
+/*InicioSesión*/
+
+#user-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#logout-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0d2e52;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}
+
+#logout-button:hover {
+    background-color: #0056b3;
+}
+
+
 
 /*================== FOOTER ======================*/
 .foot {
