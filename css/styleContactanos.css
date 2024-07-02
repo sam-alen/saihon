@@ -16,6 +16,7 @@
 
 body {
    font-family: "inter";
+   
 }
 /* ========================================= Navbar =================================*/
 #logo{
@@ -179,8 +180,8 @@ col {
 }
 
 .libros {
-   /* height: 100%; */
-   /* width: 125%; */
+   height: 100%; 
+   width: 125%; 
    border-radius: 3rem;
    rotate: 90deg;
 }
