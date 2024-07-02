@@ -26,6 +26,33 @@
    background-color: var(--main-darkblue-color);
 }
 
+/* Hover */
+
+.nav-item {
+   padding: 0 3vw 0 3vw;
+   text-align: center;
+}
+
+
+button#bye-tab, button#hello-tab {
+   color: #E1351F;
+   background-color: #F9F9F9;
+   border: 2px solid #E1351F;
+   padding: 10px;
+   font-size: 1.2rem; 
+   margin: 0 5px; 
+   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+   border-radius: 3px; 
+}
+
+button#bye-tab:hover, button#hello-tab:hover {
+   background-color: #E1351F;
+   color: #F9F9F9;
+   border-color: #E1351F;
+}
+
+
+/* ----------------------------------------- */
 .navbar-nav a{
    color:#F9F9F9;
 }
@@ -54,11 +81,7 @@
 #nosotros-nav{
    border: none;
 }
-.nav-item{
-   padding: 0 3vw 0 3vw;
-   border-right: 2px solid #F9F9F9;
-   text-align: center;
-}
+
 #container-iconos{
    display: flex;
    flex-direction: row;
@@ -146,22 +169,24 @@ body{
    width: 35vw;
    height: auto; 
    border-radius: 10px;
-}
+}  
 
 .botonContainer{
-   display: flex;
-   justify-content: center;
+   text-align: center;
+   margin: none;
 }
 
-#btnEnviar{
+#btnEnviar, #upload_widget, #btnUpdateId, #btnFindId, #btnDelete{
    width: auto;
    background-color: var(--main-orangeish-color);
    border: none;
+   
 }
 
-#btnEnviar:hover{
-   background-color: var(--main-darkblue-color);
+#btnEnviar:hover, #upload_widget:hover, #btnUpdateId:hover, #btnFindId:hover, #btnDelete:hover {
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
+
 
  /* =================================FOOTER=================================================== */
  

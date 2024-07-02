@@ -275,6 +275,7 @@ function fillFields() {
       document.getElementById("yearLibro2").value = libroEncontrado.publication_year;
       document.getElementById("precioLibro2").value = libroEncontrado.price;
       document.getElementById("descripcionLibro2").value = libroEncontrado.description;
+      document.getElementById("cantidadLibro2").value = libroEncontrado.cantidad_libro;
     } else {
       console.log("No hay un libro con ese ID");
     }
@@ -283,6 +284,76 @@ function fillFields() {
   }
 }
 
+//Funcion Para Actualizar cambios
+function updateFields() {
+  let idBuscado = document.getElementById("idLibro").value;
+  let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+
+  if (idBuscado === "") {
+    alert("Inserta un ID para actualizar");
+    return;
+  }
+
+  if (librosLocalStorage) {
+    let libroEncontrado = librosLocalStorage.find(libro => libro.id == idBuscado);
+    
+    if (libroEncontrado) {
+      let nuevoTitulo = document.getElementById("nombreLibro2").value;
+      let nuevoGenero = document.getElementById("generoLibro2").value;
+      let nuevoAutor = document.getElementById("autorLibro2").value;
+      let nuevoYear = document.getElementById("yearLibro2").value;
+      let nuevoPrecio = document.getElementById("precioLibro2").value;
+      let nuevaDescripcion = document.getElementById("descripcionLibro2").value;
+      let nuevaCantidadLibro = document.getElementById("cantidadLibro2").value;
+
+      //bandera para cambios
+      let hayCambios = false;
+
+      if (libroEncontrado.title !== nuevoTitulo) {
+        libroEncontrado.title = nuevoTitulo;
+        hayCambios = true;
+      }
+      if (libroEncontrado.genre[0] !== nuevoGenero) {
+        libroEncontrado.genre[0] = nuevoGenero;
+        hayCambios = true;
+      }
+      if (libroEncontrado.author !== nuevoAutor) {
+        libroEncontrado.author = nuevoAutor;
+        hayCambios = true;
+      }
+      if (libroEncontrado.publication_year !== nuevoYear) {
+        libroEncontrado.publication_year = nuevoYear;
+        hayCambios = true;
+      }
+      if (libroEncontrado.price !== nuevoPrecio) {
+        libroEncontrado.price = nuevoPrecio;
+        hayCambios = true;
+      }
+      if (libroEncontrado.description !== nuevaDescripcion) {
+        libroEncontrado.description = nuevaDescripcion;
+        hayCambios = true;
+      }
+      if (libroEncontrado.cantidad_libro !== nuevaCantidadLibro) {
+        libroEncontrado.cantidad_libro = nuevaCantidadLibro;
+        hayCambios = true;
+      }
+
+      // Si hubo cambios, actualizar el localStorage
+      if (hayCambios) {
+        localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
+        alert("Los campos han sido actualizados exitosamente.");
+      } else {
+        alert("No hay cambios para actualizar.");
+      }
+    } else {
+      alert("No hay un libro con ese ID");
+    }
+  } else {
+    alert("No hay libros en el Sistema");
+  }
+}
+
+
 
 //Conseguir el boton de buscar
 const btnBuscarLibro = document.getElementById("btnFindId"); 
@@ -290,6 +361,13 @@ const btnBuscarLibro = document.getElementById("btnFindId");
 btnBuscarLibro.addEventListener("click", function(event) {
   event.preventDefault(); 
   fillFields();
+});
+
+const btnActualizarLibro = document.getElementById("btnUpdateId");
+
+btnActualizarLibro.addEventListener("click", function(event) {
+  event.preventDefault();
+  updateFields();
 });
 
 
