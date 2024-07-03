@@ -19,12 +19,13 @@
 
 <main>
 <div class="TituloCarrito">
-    <h2> <img src="assets/imagenes/logo/shopping-cart.svg" alt="carrito de compras" id="carritoMain">CARRITO DE COMPRAS</h2>
+    <h2> <img src="assets/imagenes/logo/shopping-cart.svg" alt="carrito de compras" id="carritoMain">MI CARRITO <span style="color: #E1351F;">DE COMPRAS</span> </h2>
 </div>
 <hr>
 <table class="compras">
     <thead>
-      <tr>
+      <tr class="title">
+        <th></th>
         <th class="col libro">LIBROS</th>
         <th class="col precio">PRECIO</th>
         <th class="col cantidad">CANTIDAD</th>
@@ -33,20 +34,21 @@
     </thead>
     <tbody>
       <tr>
+        <th class="col"><img src="./assets/imagenes/imageneslibros/libro4-FSF.webp" alt="" class="miniLibro"></th>
         <td class="col libro" id="libroInfo">TITULO DEL LIBRO</td>
         <td class="col precio" id="precio">$273</td>
         <td class="col cantidad" id="qty">1</td>
         <td class="col subtotal" id="subtotal">$273</td>
       </tr>
     </tbody>
-  </table>
+</table>
 
   <div>
     <span> 
         <h5>TOTAL: <span id="total"></span></h5> 
     </span>
     <br>
-        <button class="btn btn-light">Limpiar carrito</button>
+        <button class="btn btn-light">Vaciar carrito</button>
         <button class="btn btn-success">Pagar</button>
   </div>
 
@@ -64,10 +66,11 @@
         <button type="button" class="btn btn-primary" href="#tarjetaFormulario"> + Agregar Tarjeta</button>
       </div>
   </div>
+  <div class="addTarjeta">
   <div>
     <form class="datosTarjeta"><!--Formulario-->
         <div class="mb-3 campos">
-            <h3>Datos de contácto</h3>
+            <h3>Datos de personales</h3>
             <label for="exampleInputName" class="form-label">Nombre completo</label>
             <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo López">
             <span id="errorNombre"></span>
@@ -77,23 +80,25 @@
           <label for="exampleInputPhone" class="form-label">Número telefónico</label>
           <input type="tel" class="form-control input-form" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
             <span id="errorTelefono"></span>
-      </div>
+        </div>
         <div class="mb-3 campos">
             <label for="exampleInputEmail" class="form-label">Correo electrónico</label>                              
             <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ usuario@ejemplo.com">
             <div id="emailHelp" class="form-text"></div>
             <span id="errorEmail"></span>
         </div>
-    </form>
-</div>
-  <div id="tarjetaFormulario" class="datosTarjeta">
-    <h3>Datos de la tarjeta</h3>
-        <label for="inputNombre" class="form-label">Propietario</label>
-        <input type="name" id="inputNombre" class="form-control" aria-describedby="propietarioHelpBlock">
-        <div id="propietarioHelpBlock" class="form-text">
-             Ingresa el nombre de la propietario de la tarjeta
+        <div class="mb-3 campos">
+          <div id="emailHelp" class="form-text"></div>
+          <label for="exampleInputPhone" class="form-label">Dirección completa</label>
+          <input type="text" class="form-control input-form" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="🏠 Villa de Avala #140 Valleverde  ">
+            <span id="errorTelefono"></span>
         </div>
-        <br>
+    </form>
+  </div>
+  <br>
+  <div class="datosTarjeta">
+    <div id="tarjetaFormulario" >
+      <h3>Datos de la tarjeta</h3>
         <label for="inputNumero" class="form-label">Número de tarjeta</label>
         <input type="text" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
         <div id="numeroHelpBlock" class="form-text">
@@ -106,8 +111,15 @@
              Ingresa el mes y año de vencimiento
         </div>
         <br>
-        <button type="button" class="btn btn-primary">Guardar tarjeta</button>
+        <label for="inputFecha" class="form-label">Código de seguridad</label>
+        <input type="text" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock">
+        <div id="fechaHelpBlock" class="form-text">
+          <br>
+          <button type="button" class="btn btn-primary">Guardar tarjeta</button>
+        </div>
+    </div>
   </div>
+</div>
   
 
 

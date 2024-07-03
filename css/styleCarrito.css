@@ -45,13 +45,16 @@
 
 
 .compras{
-    width: 80vw;
+    width: 70vw;
     height: auto;
     margin: 3em;
  }
  
  table>thead{
     font-size: 1.2rem;
+ }
+ .title th{
+   text-decoration: underline #170E2D;
  }
 
 .col{
@@ -62,6 +65,10 @@
  #libroInfo{
     width: 40%;
     height: auto;
+ }
+ .miniLibro{
+   width: 60%;
+   height: 10vw;
  }
 
  #qty, #precio, #subtotal{
@@ -91,7 +98,14 @@
 
 .datosTarjeta{
    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-   width: 70vw;
+   width: 35vw; 
+   height: 100%;
    padding: 2em;
+   
 }
 
+.addTarjeta{
+   display: flex;
+   flex-direction: row;
+   
+}
