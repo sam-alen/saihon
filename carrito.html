@@ -63,32 +63,52 @@
       <div class="agregarTarjeta">
         <button type="button" class="btn btn-primary" href="#tarjetaFormulario"> + Agregar Tarjeta</button>
       </div>
-
-      <div id="tarjetaFormulario">
-            <label for="inputNombre" class="form-label">Propietario</label>
-            <input type="name" id="inputNombre" class="form-control" aria-describedby="propietarioHelpBlock">
-            <div id="propietarioHelpBlock" class="form-text">
-                 Ingresa el nombre de la propietario de la tarjeta
-            </div>
-            <br>
-            <label for="inputNumero" class="form-label">Número de tarjeta</label>
-            <input type="number" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
-            <div id="numeroHelpBlock" class="form-text">
-                 Ingresa el número de tarjeta
-            </div>
-            <br>
-            <label for="inputFecha" class="form-label">Vigencia</label>
-            <input type="date" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock">
-            <div id="fechaHelpBlock" class="form-text">
-                 Ingresa el mes y año de vencimiento
-            </div>
-            <br>
-            <button type="button" class="btn btn-primary">Guardar tarjeta</button>
-      </div>
-
-
   </div>
-
+  <div>
+    <form class="datosTarjeta"><!--Formulario-->
+        <div class="mb-3 campos">
+            <h3>Datos de contácto</h3>
+            <label for="exampleInputName" class="form-label">Nombre completo</label>
+            <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo López">
+            <span id="errorNombre"></span>
+        </div>
+        <div class="mb-3 campos">
+          <div id="emailHelp" class="form-text"></div>
+          <label for="exampleInputPhone" class="form-label">Número telefónico</label>
+          <input type="tel" class="form-control input-form" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="📞 844 606 2578">
+            <span id="errorTelefono"></span>
+      </div>
+        <div class="mb-3 campos">
+            <label for="exampleInputEmail" class="form-label">Correo electrónico</label>                              
+            <input type="email" class="form-control input-form" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="✉️ usuario@ejemplo.com">
+            <div id="emailHelp" class="form-text"></div>
+            <span id="errorEmail"></span>
+        </div>
+    </form>
+</div>
+  <div id="tarjetaFormulario" class="datosTarjeta">
+    <h3>Datos de la tarjeta</h3>
+        <label for="inputNombre" class="form-label">Propietario</label>
+        <input type="name" id="inputNombre" class="form-control" aria-describedby="propietarioHelpBlock">
+        <div id="propietarioHelpBlock" class="form-text">
+             Ingresa el nombre de la propietario de la tarjeta
+        </div>
+        <br>
+        <label for="inputNumero" class="form-label">Número de tarjeta</label>
+        <input type="text" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
+        <div id="numeroHelpBlock" class="form-text">
+             Ingresa el número de tarjeta
+        </div>
+        <br>
+        <label for="inputFecha" class="form-label">Vigencia</label>
+        <input type="text" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock" placeholder="mm/aa">
+        <div id="fechaHelpBlock" class="form-text">
+             Ingresa el mes y año de vencimiento
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary">Guardar tarjeta</button>
+  </div>
+  
 
 
 </main>
