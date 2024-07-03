@@ -123,7 +123,7 @@ h2 {
    filter: invert(51%) sepia(97%) saturate(4677%) hue-rotate(348deg) brightness(90%) contrast(108%) !important;
 }
 
-#carousel-recomendaciones{
+#carousel-recomendaciones, #carousel-populares{
    display: flex !important;
    justify-content: center !important;
 }
@@ -132,13 +132,13 @@ h2 {
    border: none !important;
    background-color: var(--main-whitest-color) !important;
 }
-.container-boton-recom{
+.container-boton{
    display: flex;
    justify-content: center;
-   padding-top: 10vh;
+   padding-top: 2vh;
    width: 100%;
 }
-#ver-recomendaciones{
+#ver-recomendaciones, #ver-libro-año, #ver-populares{
    width: auto;
 }
 
@@ -146,6 +146,10 @@ h2 {
    object-fit: contain !important;
    height: 30vh !important;
    width: 100% !important;
+}
+
+#card-libro-año{
+   margin: 0 20vw;
 }
 /*
 ***************************************
@@ -197,48 +201,6 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-
-/*
-***************************************
-*            Media Query              *
-***************************************
-*/
-/* */
-/* @media (min-width: 320px) and (max-width: 426px){
-   .main{
-      display: flex;
-      flex-direction: column;
-      margin-right: 1rem;
-   }
-   .h1-name{
-      font-size: 3rem;
-      top: 10%;
-      left: 5%;
-   }
-   .aside{
-      display: none;
-   }
-   
-}
-@media (min-width: 427px) and (max-width: 990px){
-   .main{
-      display: flex;
-      flex-direction: column;
-      margin-right: 1rem;
-   }
-   .h1-name{
-      font-size: 4rem;
-      top: 20%;
-      left: 10%;
-   }
-   .aside{
-      display: none;
-   }
-}
-
-@media(max-width: 991px) {
-
-} */
 
 
 

@@ -26,9 +26,17 @@
           width: auto;
         }
         */
+        .div-container{
+          display: none;
+         }
         .aside{
           display: none;
         }
+        .main{
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.5rem;
+         }
         .footer-info, .footer-infotation {
           font-size: 0.7rem; 
       }
@@ -40,15 +48,13 @@
       .foot{
           height: 50vh;
         }
-        /* .h1-name{
-          justify-content: center;
-          padding: 3.2rem 1.2rem;
-         
-        }  */
+      #card-libro-año{
+        margin: 0 0 0 0;
+      }
 
       }
 
-      @media (min-width: 427px) and (max-width: 990px){
+      @media (min-width: 427px) and (max-width: 1023px){
         /* .nav-item{
           border: none !important;
         }
@@ -77,15 +83,28 @@
          .aside{
           display: none;
          }
+         .div-container{
+          display: none;
+         }
          .main{
-          display: grid;
-          grid-template-columns: auto;
+          display: flex;
+          flex-direction: column;
+          margin-left: 1rem;
          }
-         .section{
-          margin-left: 0;
+         .row{
+          display: flex;
+          justify-content: center;
          }
+
       }
-      @media (max-width: 1023px) {
+      @media (min-width: 1024px) and (max-width: 1439px) {
+        #books-img{
+          height: 25vh;
+        }
+        #logo-img{
+          height: 20vh;
+        }
+
       }
     </style>
 </head>
@@ -109,12 +128,12 @@
           <span class="aside__title">Libros por género</span>
 
           <ul class="aside__list">
-            <li class="aside__item"><a href="" class="aside__link">Todos los géneros</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Negocios</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Ciencia</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Ficción</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Filosofía</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Biología</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Todos los géneros</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Negocios</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Ciencia</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Ficción</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Filosofía</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Biología</a></li>
           </ul>
         </div>
 
@@ -122,8 +141,9 @@
           <span class="aside__title">Recomendaciones</span>
 
           <ul class="aside__list">
-            <li class="aside__item"><a href="" class="aside__link">Autores(as) del mes</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Libro del año</a></li>
+            <li class="aside__item"><a href="#sec-autores-mes" class="aside__link">Autores(as) del mes</a></li>
+            <li class="aside__item"><a href="#sec-libro-año" class="aside__link">Libro del año</a></li>
+            <li class="aside__item"><a href="#sec-populares" class="aside__link">Populares</a></li>
             <li class="aside__item"><a href="" class="aside__link">Top géneros</a></li>
             <li class="aside__item"><a href="" class="aside__link">Tendencias</a></li>
           </ul>
@@ -131,8 +151,9 @@
       </aside>
 
       <section class="section">
-        <div class="section__content">
-          <h3>Recomendaciones</h3>
+        <!-- Seccion Autores(as) del mes -->
+        <div class="section__content" id="sec-autores-mes">
+          <h3>Autores(as) del mes</h3>
           <div id="carousel-recomendaciones" class="carousel slide">
             <div class="carousel-inner">
               <!-- Slide 1 -->
@@ -281,81 +302,192 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="container-boton-recom">
+          <div class="container-boton">
             <a type="button" class="btn btn-dark" id="ver-recomendaciones" href="./catalogo.html">Ver más</a>
           </div>
         </div>
-        <!-- Seccion Populares -->
-        <div class="section__content">
-          <h3>Populares</h3>
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
-                </div>
+
+        <!-- Seccion libro del año -->
+        <div class="section__content" id="sec-libro-año">
+          <h3>Libro del año</h3>
+          <div class="card mb-3" id="card-libro-año" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/imagenes/imageneslibros/libro1-HL.webp" class="img-fluid rounded-start img-card" alt="...">
               </div>
-              <div class="carousel-item">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          </div>
+
+          <div class="container-boton">
+            <a type="button" class="btn btn-dark" id="ver-libro-año" href="./catalogo.html">Ver más</a>
+          </div>
+        </div>
+
+        <!-- Seccion Populares -->
+        <div class="section__content" id="sec-populares">
+          <h3>Populares</h3>
+          <div id="carousel-populares" class="carousel slide">
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row">
+
+                    <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/imagenes/imageneslibros/libro1-HL.webp" class="img-fluid rounded-start img-card" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/imagenes/imageneslibros/libro2-GO.jpg" class="img-fluid rounded-start img-card" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/imagenes/imageneslibros/libro3-JA.webp" class="img-fluid rounded-start img-card" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/imagenes/imageneslibros/libro4-FSF.webp" class="img-fluid rounded-start img-card" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+
+                <div class="row">
+
+                  <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="assets/imagenes/imageneslibros/libro5-HM.webp" class="img-fluid rounded-start img-card" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="assets/imagenes/imageneslibros/LIBRO6-JRT.webp" class="img-fluid rounded-start img-card" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="assets/imagenes/imageneslibros/LIBRO7-JDS.webp" class="img-fluid rounded-start img-card" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="assets/imagenes/imageneslibros/LIBRO8-JRT.webp" class="img-fluid rounded-start img-card" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+              </div>
+
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-populares" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-populares" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <div class="container-boton">
+            <a type="button" class="btn btn-dark" id="ver-populares" href="./catalogo.html">Ver más</a>
+          </div>
         </div>
-        </div>
+
+
+
       </section>
     </main>
 
