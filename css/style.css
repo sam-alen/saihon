@@ -112,6 +112,9 @@ h2 {
    flex-direction: column;
    justify-content: center;
 }
+.section__content h3{
+   margin-bottom: 5vh;
+}
 
 .carousel-inner{
    width: 90% !important;
@@ -123,7 +126,7 @@ h2 {
    filter: invert(51%) sepia(97%) saturate(4677%) hue-rotate(348deg) brightness(90%) contrast(108%) !important;
 }
 
-#carousel-recomendaciones, #carousel-populares{
+#carousel-recomendaciones, #carousel-populares, #carousel-tendencias{
    display: flex !important;
    justify-content: center !important;
 }
@@ -138,7 +141,7 @@ h2 {
    padding-top: 2vh;
    width: 100%;
 }
-#ver-recomendaciones, #ver-libro-año, #ver-populares{
+#ver-recomendaciones, #ver-libro-año, #ver-populares, #ver-tendencias{
    width: auto;
 }
 
