@@ -18,9 +18,77 @@
 <!------BODY------->    
 
 <main>
- <h3>
-    <span>CARRITO DE COMPRAS</span>
- </h3>
+<div class="TituloCarrito">
+    <h2> <img src="assets/imagenes/logo/shopping-cart.svg" alt="carrito de compras" id="carritoMain">CARRITO DE COMPRAS</h2>
+</div>
+<hr>
+<table class="compras">
+    <thead>
+      <tr>
+        <th class="col libro">LIBROS</th>
+        <th class="col precio">PRECIO</th>
+        <th class="col cantidad">CANTIDAD</th>
+        <th class="col subtotal">SUBTOTAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col libro" id="libroInfo">TITULO DEL LIBRO</td>
+        <td class="col precio" id="precio">$273</td>
+        <td class="col cantidad" id="qty">1</td>
+        <td class="col subtotal" id="subtotal">$273</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <span> 
+        <h5>TOTAL: <span id="total"></span></h5> 
+    </span>
+    <br>
+        <button class="btn btn-light">Limpiar carrito</button>
+        <button class="btn btn-success">Pagar</button>
+  </div>
+
+  <div id="pago">
+    <h5>Forma de pago</h5>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
+            Tarjeta Visa terminación **98      |    Juan Pérez   |      05/25
+        </label>
+
+      </div>
+
+      <div class="agregarTarjeta">
+        <a href="#tarjetaFormulario">Agregar Tarjeta</a>
+      </div>
+
+      <div id="tarjetaFormulario">
+            <label for="inputNombre" class="form-label">Propietario</label>
+            <input type="name" id="inputNombre" class="form-control" aria-describedby="propietarioHelpBlock">
+            <div id="propietarioHelpBlock" class="form-text">
+                 Ingresa el nombre de la propietario de la tarjeta
+            </div>
+            <br>
+            <label for="inputNumero" class="form-label">Número de tarjeta</label>
+            <input type="number" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
+            <div id="numeroHelpBlock" class="form-text">
+                 Ingresa el número de tarjeta
+            </div>
+            <br>
+            <label for="inputFecha" class="form-label">Vigencia</label>
+            <input type="date" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock">
+            <div id="fechaHelpBlock" class="form-text">
+                 Ingresa el mes y año de vencimiento
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary">Guardar tarjeta</button>
+      </div>
+
+
+  </div>
+
 
 
 </main>
