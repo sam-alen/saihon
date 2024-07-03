@@ -27,22 +27,24 @@ h2 {
 ***************************************
 */
 
-
-.h1-name{
-   font-family: "bellefair-regular";
-   position: absolute;
+ .div-container{
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   gap: 8vw;
+ }
+#logo-portada, #libros-portada{
+   object-fit: cover;
    display: flex;
    justify-content: center;
    align-items: center;
-   top: 30%;
-   left: 15%;
-   font-size: 7rem;
 }
 
-.books-img {
-   object-fit: cover;
-   height: 100%;
-   width: 100%;
+#books-img{
+   height: 40vh;
+}
+#logo-img{
+   height: 25vh;
 }
 
 /*
@@ -57,7 +59,6 @@ h2 {
 }
 
 /*ASIDE*/
-
 .aside__genres {
    margin-top: 2.5rem;
    margin-left: 2rem; 
@@ -95,8 +96,10 @@ h2 {
 
 /*SECTION*/
 .section{
-   margin-top: 1rem;
-   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 0.5rem 0.5rem 0 0;
    background-color: var(--main-whitest-color);
    border-radius: .5rem;
    box-shadow: rgb(160, 160, 160) 0px 0px 20px .1px;
@@ -104,10 +107,46 @@ h2 {
 }
 
 .section__content{
-   padding: 3rem;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 }
 
+.carousel-inner{
+   width: 90% !important;
+}
+.carousel-control-prev, .carousel-control-next{
+   width: auto !important;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+   filter: invert(51%) sepia(97%) saturate(4677%) hue-rotate(348deg) brightness(90%) contrast(108%) !important;
+}
 
+#carousel-recomendaciones{
+   display: flex !important;
+   justify-content: center !important;
+}
+
+.card{
+   border: none !important;
+   background-color: var(--main-whitest-color) !important;
+}
+.container-boton-recom{
+   display: flex;
+   justify-content: center;
+   padding-top: 10vh;
+   width: 100%;
+}
+#ver-recomendaciones{
+   width: auto;
+}
+
+.img-card{
+   object-fit: contain !important;
+   height: 30vh !important;
+   width: 100% !important;
+}
 /*
 ***************************************
 *            Main container           *
@@ -165,7 +204,7 @@ h2 {
 ***************************************
 */
 /* */
-@media (min-width: 320px) and (max-width: 426px){
+/* @media (min-width: 320px) and (max-width: 426px){
    .main{
       display: flex;
       flex-direction: column;
@@ -199,7 +238,7 @@ h2 {
 
 @media(max-width: 991px) {
 
-}
+} */
 
 
 
