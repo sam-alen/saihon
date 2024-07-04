@@ -244,7 +244,7 @@ function generateBooksHTML(libro){
           <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
             Ver más
           </button>
-          <img id="carrito_${libro.id}" class="carrito-svg-card" src="assets/imagenes/logo/carrito2.svg" alt="">
+          <img id="carrito_${libro.id}" type="button" class="carrito-svg-card" src="assets/imagenes/logo/carrito2.svg" alt="">
         </div>
       </div>
     </div>
@@ -272,3 +272,14 @@ function generateBooksHTML(libro){
   `;
 }
 
+const btnCarrito = document.getElementsByClassName('carrito-svg-card');
+cart = [];
+
+btnCarrito.addEventListener("click", function(event){
+    event.preventDefault();
+
+    
+
+
+
+})
