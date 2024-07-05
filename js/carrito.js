@@ -121,7 +121,13 @@ btnLimpiar.addEventListener('click', function(e){
 
 //desplegar los datos para agregar tarejta
 agregarTarjeta.addEventListener('click', function(){
-    datosPago.style.display = "block";
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Chanchito feliz",
+        showConfirmButton: false,
+        timer: 1500
+      });
 });
 
 
