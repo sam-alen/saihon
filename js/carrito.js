@@ -20,11 +20,21 @@ showMenu();
 const btnPagar = document.getElementById("pagar");
 const btnLimpiar = document.getElementById("limpiar");
 const datosPago = document.getElementsByClassName("addTarjeta");
+const agregarTarjeta = document.getElementById("btnTarjeta");
+const nuevaTarjeta = document.getElementById("nuevaTarjeta");
 
 btnPagar.addEventListener("click", () => {
-  datosPago.setAttribute("style", "display: flex;");
+  //datosPago.setAttribute("style", "display: flex;");
+  
+  //Alerta de pago
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Gracias por su compra",
+    showConfirmButton: false,
+    timer: 1500
+  });
 });
-
 
 
 
@@ -97,3 +107,31 @@ function actualizarCantidad(event, index){
 }
 
 document.addEventListener('DOMContentLoaded', cartInicio);
+
+//Limpiar tabla ****FALTA PROBAR***
+btnLimpiar.addEventListener('click', function(e){
+    e.preventDefault();
+    tituloCelda.value = " ";
+    precioCelda.value = " ";
+    cantidadCelda.value = " ";
+    subtotalCelda.value = " ";
+    totalSpan.value = " ";
+
+})
+
+//desplegar los datos para agregar tarejta
+agregarTarjeta.addEventListener('click', function(){
+    datosPago.style.display = "block";
+});
+
+
+//Alerta para guardar la nueva tarjeta
+nuevaTarjeta.addEventListener("click", () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Datos guardados",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  });

@@ -105,10 +105,10 @@
 }
 
 .addTarjeta{
-   display: flex;
+   display: none;
    flex-direction: row;
-   
 }
+
 
 #eliminarLibroVSG{
    width: 2rem;
