@@ -154,6 +154,15 @@ h2 {
 #card-libro-año{
    margin: 0 20vw;
 }
+
+#ver-recomendaciones, #ver-libro-año, #ver-populares, #ver-tendencias{
+   background-color: #321519 !important;
+   color: #F9F9F9;
+}
+
+#ver-recomendaciones:hover, #ver-libro-año:hover, #ver-populares:hover, #ver-tendencias:hover{
+   background-color: #E1351F !important;
+}
 /*
 ***************************************
 *            Main container           *
