@@ -27,22 +27,24 @@ h2 {
 ***************************************
 */
 
-
-.h1-name{
-   font-family: "bellefair-regular";
-   position: absolute;
+ .div-container{
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   gap: 8vw;
+ }
+#logo-portada, #libros-portada{
+   object-fit: cover;
    display: flex;
    justify-content: center;
    align-items: center;
-   top: 30%;
-   left: 15%;
-   font-size: 7rem;
 }
 
-.books-img {
-   object-fit: cover;
-   height: 100%;
-   width: 100%;
+#books-img{
+   height: 40vh;
+}
+#logo-img{
+   height: 25vh;
 }
 
 /*
@@ -57,7 +59,6 @@ h2 {
 }
 
 /*ASIDE*/
-
 .aside__genres {
    margin-top: 2.5rem;
    margin-left: 2rem; 
@@ -95,8 +96,10 @@ h2 {
 
 /*SECTION*/
 .section{
-   margin-top: 1rem;
-   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 0.5rem 0.5rem 0 0;
    background-color: var(--main-whitest-color);
    border-radius: .5rem;
    box-shadow: rgb(160, 160, 160) 0px 0px 20px .1px;
@@ -104,10 +107,62 @@ h2 {
 }
 
 .section__content{
-   padding: 3rem;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.section__content h3{
+   margin-bottom: 5vh;
 }
 
+.carousel-inner{
+   width: 90% !important;
+}
+.carousel-control-prev, .carousel-control-next{
+   width: auto !important;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+   filter: invert(51%) sepia(97%) saturate(4677%) hue-rotate(348deg) brightness(90%) contrast(108%) !important;
+}
 
+#carousel-recomendaciones, #carousel-populares, #carousel-tendencias{
+   display: flex !important;
+   justify-content: center !important;
+}
+
+.card{
+   border: none !important;
+   background-color: var(--main-whitest-color) !important;
+}
+.container-boton{
+   display: flex;
+   justify-content: center;
+   padding-top: 2vh;
+   width: 100%;
+}
+#ver-recomendaciones, #ver-libro-año, #ver-populares, #ver-tendencias{
+   width: auto;
+}
+
+.img-card{
+   object-fit: contain !important;
+   height: 30vh !important;
+   width: 100% !important;
+}
+
+#card-libro-año{
+   margin: 0 20vw;
+}
+
+#ver-recomendaciones, #ver-libro-año, #ver-populares, #ver-tendencias{
+   background-color: #321519 !important;
+   color: #F9F9F9;
+}
+
+#ver-recomendaciones:hover, #ver-libro-año:hover, #ver-populares:hover, #ver-tendencias:hover{
+   background-color: #E1351F !important;
+}
 /*
 ***************************************
 *            Main container           *
@@ -115,14 +170,14 @@ h2 {
 */
 
 
-.foot {
+/* .foot {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
    height: 20rem;
    background-color: #170E2D;
    color: white;
-   padding: 2rem 0; /* */
+   padding: 2rem 0;
    text-align: center;
    align-items: center;
 }
@@ -158,49 +213,4 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-
-/*
-***************************************
-*            Media Query              *
-***************************************
-*/
-/* */
-@media (min-width: 320px) and (max-width: 426px){
-   .main{
-      display: flex;
-      flex-direction: column;
-      margin-right: 1rem;
-   }
-   .h1-name{
-      font-size: 3rem;
-      top: 10%;
-      left: 5%;
-   }
-   .aside{
-      display: none;
-   }
-   
-}
-@media (min-width: 427px) and (max-width: 990px){
-   .main{
-      display: flex;
-      flex-direction: column;
-      margin-right: 1rem;
-   }
-   .h1-name{
-      font-size: 4rem;
-      top: 20%;
-      left: 10%;
-   }
-   .aside{
-      display: none;
-   }
-}
-
-@media(max-width: 991px) {
-
-}
-
-
-
-
+ */

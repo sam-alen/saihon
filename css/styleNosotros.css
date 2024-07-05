@@ -129,7 +129,6 @@ body{
  .acercaNosotros{
    /* margin: 0 5vw 0 0; */
    width: 90%;
-
  }
 
 .acercaNosotros h1{
@@ -139,6 +138,7 @@ body{
  .acercaNosotros p{
    font-size: 1.1rem;
    text-align: justify;
+   width: 90%;
  }
  .img img{
    width: 30vw;
@@ -156,6 +156,11 @@ body{
  .carousel-indicators .indicadorCarousel.active {
    background-color: none; /* #E1351FCambia el color de fondo cuando está activo */
  }
+
+.row{
+   width: 100vw;
+}
+
  .set-cards{
    display: flex;
    align-items: center;

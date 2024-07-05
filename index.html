@@ -12,66 +12,67 @@
     <script src="js/main.js" type="module"></script>
     <style>
        @media (min-width: 320px) and (max-width: 426px){
-        .nav-item{
-          border: none;
+        .div-container{
+          display: none;
+         }
+        .aside{
+          display: none;
         }
-        .navbar-collapse{
-          margin-bottom: 5vh;
-        }
-        #container-logo{
-          margin-top: 2vh;
-        }
-        #container-logo img{
-          height: 5vh;
-          width: auto;
-        }
+        .main{
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.5rem;
+         }
         .footer-info, .footer-infotation {
-          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+          font-size: 0.7rem; 
       }
       .dos{
           display: flex;
           flex-direction: column;
           gap: 40px;
         }
-        .h1-name{
-          justify-content: center;
-          /* align-items: center; */
-          padding: 3.2rem 1.2rem;
-         
-        }
       .foot{
           height: 50vh;
         }
+      #card-libro-año{
+        margin: 0 0 0 0;
       }
 
-      @media (min-width: 427px) and (max-width: 990px){
-        .nav-item{
-          border: none !important;
-        }
-        .navbar-collapse{
-          margin-bottom: 5vh;
-        }
-        #container-iconos{
+      }
+
+      @media (min-width: 427px) and (max-width: 1023px){
+         .aside{
+          display: none;
+         }
+         .div-container{
+          display: none;
+         }
+         .main{
           display: flex;
           flex-direction: column;
-        }
-        #container-logo{
-          margin-top: 2vh;
-        }
-        #container-logo img{
-          height: 5vh;
-          width: auto;
-        }
-        #container-carrito{
-          margin-left: 5vw;
+          margin-left: 1rem;
+         }
+         .row{
+          display: flex;
           justify-content: center;
-        }
-        #container-carrito img{
-          height: 5vh;
-          width: auto;
-        }
+         }
+
       }
-      @media (max-width: 1023px) {
+      @media (min-width: 1024px) and (max-width: 1439px) {
+        #books-img{
+          height: 25vh;
+        }
+        #logo-img{
+          height: 20vh;
+        }
+
+        /* body{
+          display: grid;
+          margin: 0;
+          padding:0;
+          grid-template-columns: auto;
+          grid-template-rows: 1fr  auto auto 1fr;
+        } */
       }
     </style>
 </head>
@@ -79,25 +80,28 @@
     <header id = "header">
       
     </header>
+
     <div class="div-container">
-        <div class="portada">
-          <h1 class="h1-name">Saihon</h1>
-          <img src="./src/books-5937823_1280.jpg" alt="100$" class="books-img">
+        <div id="logo-portada">
+          <img src="./assets/imagenes/logo/saihon-logo.png" alt="" id="logo-img">
         </div>
-  </div>
+        <div id="libros-portada">
+          <img src="./src/books-5937823_1280.jpg" alt="100$" id="books-img">
+        </div>
+    </div>
 
     <main class="main">
       <aside class="aside">
         <div class="aside__genres">
-          <span class="aside__title">Géneros por libros</span>
+          <span class="aside__title">Libros por género</span>
 
           <ul class="aside__list">
-            <li class="aside__item"><a href="" class="aside__link">Todos los géneros</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Negocios</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Ciencia</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Ficción</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Filosofía</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Biología</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Todos los géneros</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Negocios</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Ciencia</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Ficción</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Filosofía</a></li>
+            <li class="aside__item"><a href="./catalogo.html" class="aside__link">Biología</a></li>
           </ul>
         </div>
 
@@ -105,92 +109,124 @@
           <span class="aside__title">Recomendaciones</span>
 
           <ul class="aside__list">
-            <li class="aside__item"><a href="" class="aside__link">Autores del mes</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Libro del año</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Top géneros</a></li>
-            <li class="aside__item"><a href="" class="aside__link">Tendencias</a></li>
+            <li class="aside__item"><a href="#sec-autores-mes" class="aside__link">Autores(as) del mes</a></li>
+            <li class="aside__item"><a href="#sec-libro-año" class="aside__link">Libro del año</a></li>
+            <li class="aside__item"><a href="#sec-populares" class="aside__link">Populares</a></li>
+            <!-- <li class="aside__item"><a href="" class="aside__link">Top géneros</a></li> -->
+            <li class="aside__item"><a href="#sec-tendencias" class="aside__link">Tendencias</a></li>
           </ul>
         </div>
       </aside>
 
       <section class="section">
-        <div class="section__content">
-          <h3>Recomendaciones</h3>
-          <div>
-
-          </div>
-      
-        </div>
-        <div class="section__content">
-          <h3>Populares</h3>
-          <div id="carouselExample" class="carousel slide">
+        <!-- Seccion Autores(as) del mes -->
+        <div class="section__content" id="sec-autores-mes">
+          <h3>Autores(as) del mes</h3>
+          <div id="carousel-recomendaciones" class="carousel slide">
             <div class="carousel-inner">
+              <!-- Slide 1 -->
               <div class="carousel-item active">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
+                <div class="row" id="autores-mes-uno">
+
                 </div>
               </div>
+              <!-- Slide 2 -->
               <div class="carousel-item">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m1.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                        <div class="col">
-                            <img src="src/img m2.jpg" class="d-block w-100" alt="..." width="100%">
-                        </div>
-                    </div>
+                <div class="row" id="autores-mes-dos">
+
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-recomendaciones" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-recomendaciones" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <div class="container-boton">
+            <a type="button" class="btn" id="ver-recomendaciones" href="./catalogo.html">Ver más</a>
+          </div>
         </div>
+
+        <!-- Seccion libro del año -->
+        <div class="section__content" id="sec-libro-año">
+
+          <div class="container-boton">
+            <a type="button" class="btn" id="ver-libro-año" href="./catalogo.html">Ver más</a>
+          </div>
         </div>
+
+        <!-- Seccion Populares -->
+        <div class="section__content" id="sec-populares">
+          <h3>Populares</h3>
+          <div id="carousel-populares" class="carousel slide">
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row" id="populares-uno">
+
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+
+                <div class="row" id="populares-dos">
+
+              </div>
+
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-populares" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-populares" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="container-boton">
+            <a type="button" class="btn" id="ver-populares" href="./catalogo.html">Ver más</a>
+          </div>
+        </div>
+
+        <!-- Seccion Tendencias  -->
+        <div class="section__content" id="sec-tendencias">
+          <h3>Tendencias</h3>
+          <div id="carousel-tendencias" class="carousel slide">
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row" id="tendencias-uno">
+
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+
+                <div class="row" id="tendencias-dos">
+
+              </div>
+
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-tendencias" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-tendencias" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="container-boton">
+            <a type="button" class="btn" id="ver-tendencias" href="./catalogo.html">Ver más</a>
+          </div>
+        </div>
+
       </section>
     </main>
 
