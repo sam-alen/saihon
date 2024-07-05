@@ -131,6 +131,19 @@ body{
    color: var(--main-darkbrown-color);
 }
 
+.encabezado a {
+   text-decoration: none;
+   color: #170E2D;
+   font-family: var(--bs-body-font-family);
+   transition: color 0.3s ease, text-decoration 0.3s ease; /* Transición suave para color y subrayado */
+}
+
+.encabezado a:hover {
+   color: var(--main-orangeish-color); /* Cambio de color al hacer hover */
+   text-decoration: underline; /* Subrayado al hacer hover */
+}
+
+
 .registro{
    margin: 0 auto;
    margin-top: 3rem;

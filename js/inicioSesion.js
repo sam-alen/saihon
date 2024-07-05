@@ -44,6 +44,9 @@ const reName = RegExp(/[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/);
 const reMail = RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
 const rePass = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
 const rePhone = /(?:\+52\s?)?(\(?\d{2,3}\)?)?(\s|-)?(\d{4})(\s|-)?(\d{4})/;
+const terminosCheckbox = document.getElementById("acepto-terminos");
+const privacidadCheckbox = document.getElementById("acepto-privacidad");
+
 
 const termino = document.getElementById("Termino");
 //Validaciones version 1
@@ -75,6 +78,12 @@ function ocultar(){
   formularioInicioSesion.style.display="none";
   formularioRegistro.style.display="block";
   termino.style.display="block";
+}
+
+function mostrar() {
+  formularioInicioSesion.style.display="block";
+  formularioRegistro.style.display="none";
+  termino.style.display="none";
 }
 
 function crearUsuario(){
@@ -127,9 +136,26 @@ function crearUsuario(){
     telefono.style.border = "2px solid crimson";
     telefonoValido = false;
   }
+  //validacion de terminos
+  let terminosAceptados = terminosCheckbox.checked;
+  let privacidadAceptada = privacidadCheckbox.checked;
+
+  if (!terminosAceptados) {
+      errorString += " Debes aceptar los términos y condiciones <br>";
+      terminosCheckbox.style.outline = "2px solid crimson";
+  } else {
+      terminosCheckbox.style.outline = "none";
+  }
+
+  if (!privacidadAceptada) {
+      errorString += " Debes aceptar la política de privacidad <br>";
+      privacidadCheckbox.style.outline = "2px solid crimson";
+  } else {
+      privacidadCheckbox.style.outline = "none";
+  }
 
     // if (validarNombre() && validarEmail() && validarPassword() && validarTelefono()){
-    if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales){ 
+    if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales  && terminosAceptados && privacidadAceptada){ 
       
       if (localStorage.getItem("user") != null){
         user = JSON.parse(localStorage.getItem("user"));
@@ -206,7 +232,8 @@ CampoResgitro.addEventListener("click", function(event){
 //EventListener regresoInicio de sesion
 CampoInicioSesion.addEventListener("click", function(event){
   event.preventDefault();
-  window.location.href = "inicioSesion.html";
+  userError.style.display="none";
+  mostrar();
 })
 
 //Event iniciar sesion
