@@ -161,14 +161,14 @@ h2 {
 */
 
 
-.foot {
+/* .foot {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
    height: 20rem;
    background-color: #170E2D;
    color: white;
-   padding: 2rem 0; /* */
+   padding: 2rem 0;
    text-align: center;
    align-items: center;
 }
@@ -204,7 +204,4 @@ h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
 }
-
-
-
-
+ */
