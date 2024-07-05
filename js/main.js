@@ -264,13 +264,13 @@ function addBooksPopulares2(libros){
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src="${libros[index].cover_image}" class="img-fluid rounded-start img-card" alt="...">
+                          <img src="${element.cover_image}" class="img-fluid rounded-start img-card" alt="...">
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">${libros[index].title}</h5>
-                            <p class="card-text">${libros[index].description}</p>
-                            <p class="card-text"><small class="text-body-secondary">${libros[index].author}</small></p>
+                            <h5 class="card-title">${element.title}</h5>
+                            <p class="card-text">${element.description}</p>
+                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
                           </div>
                         </div>
                       </div>
@@ -288,13 +288,13 @@ function addBooksTendencias1(libros){
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src="${libros[index].cover_image}" class="img-fluid rounded-start img-card" alt="...">
+                          <img src="${element.cover_image}" class="img-fluid rounded-start img-card" alt="...">
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">${libros[index].title}</h5>
-                            <p class="card-text">${libros[index].description}</p>
-                            <p class="card-text"><small class="text-body-secondary">${libros[index].author}</small></p>
+                            <h5 class="card-title">${element.title}</h5>
+                            <p class="card-text">${element.description}</p>
+                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
                           </div>
                         </div>
                       </div>
@@ -312,13 +312,13 @@ function addBooksTendencias2(libros){
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src="${libros[index].cover_image}" class="img-fluid rounded-start img-card" alt="...">
+                          <img src="${element.cover_image}" class="img-fluid rounded-start img-card" alt="...">
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title">${libros[index].title}</h5>
-                            <p class="card-text">${libros[index].description}</p>
-                            <p class="card-text"><small class="text-body-secondary">${libros[index].author}</small></p>
+                            <h5 class="card-title">${element.title}</h5>
+                            <p class="card-text">${element.description}</p>
+                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
                           </div>
                         </div>
                       </div>
