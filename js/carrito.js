@@ -19,9 +19,10 @@ showMenu();
 //ocultar info de tarjetas
 const btnPagar = document.getElementById("pagar");
 const btnLimpiar = document.getElementById("limpiar");
-const datosPago = document.getElementsByClassName("addTarjeta");
+const datosPago = document.getElementById("datosPago");
 const agregarTarjeta = document.getElementById("btnTarjeta");
 const nuevaTarjeta = document.getElementById("nuevaTarjeta");
+
 
 btnPagar.addEventListener("click", () => {
   //datosPago.setAttribute("style", "display: flex;");
@@ -36,6 +37,11 @@ btnPagar.addEventListener("click", () => {
   });
 });
 
+//desplegar los datos para agregar tarejta
+agregarTarjeta.addEventListener('click', function() {
+    datosPago.style.display="flex";
+    
+});
 
 
 //Cargar elementos del LocalStorage
@@ -119,20 +125,12 @@ btnLimpiar.addEventListener('click', function(e){
 
 })
 
-//desplegar los datos para agregar tarejta
-agregarTarjeta.addEventListener('click', function(){
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Chanchito feliz",
-        showConfirmButton: false,
-        timer: 1500
-      });
-});
 
 
 //Alerta para guardar la nueva tarjeta
 nuevaTarjeta.addEventListener("click", () => {
+   
+   
     Swal.fire({
       position: "center",
       icon: "success",
@@ -141,3 +139,5 @@ nuevaTarjeta.addEventListener("click", () => {
       timer: 1500
     });
   });
+
+  beforened
