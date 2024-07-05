@@ -127,10 +127,18 @@ btnLimpiar.addEventListener('click', function(e){
 
 
 
-//Alerta para guardar la nueva tarjeta
+//Guardar la nueva tarjeta ***falta arreglar la función y agregar validaciones REJEX
+const numeroTarjeta = document.getElementById("inputNumero").value;
+const nombreUsuario = document.getElementById("exampleInputName").value;
+const fechaExp = document.getElementById("fechaHelpBlock").value;
+
+const checkTarjeta = document.getElementById("checkTarjeta");
+const nuevosDatos = `<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
+            Tarjeta Visa terminación **${numeroTarjeta.slice(-2)} | ${nombreUsuario} | ${fechaExp}</label>`;
+
 nuevaTarjeta.addEventListener("click", () => {
-   
-   
+   //alerta de datos guardados
     Swal.fire({
       position: "center",
       icon: "success",
@@ -138,6 +146,11 @@ nuevaTarjeta.addEventListener("click", () => {
       showConfirmButton: false,
       timer: 1500
     });
-  });
 
-  beforened
+    //agregar la nueva tarjeta
+    
+    checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
+
+    //limpiar datos ***falta implementar
+
+  });
