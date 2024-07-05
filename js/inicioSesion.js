@@ -154,12 +154,22 @@ function crearUsuario(){
       privacidadCheckbox.style.outline = "none";
   }
 
-    // if (validarNombre() && validarEmail() && validarPassword() && validarTelefono()){
-    if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales  && terminosAceptados && privacidadAceptada){ 
-      
-      if (localStorage.getItem("user") != null){
-        user = JSON.parse(localStorage.getItem("user"));
-      }
+  
+  if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales && terminosAceptados && privacidadAceptada) {
+    let users = JSON.parse(localStorage.getItem("user")) || [];
+
+    // Verificar si el usuario ya está registrado
+    let userExists = users.some(user => user.Email === email.value.trim());
+    
+    if (userExists) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "El usuario ya está registrado",
+        showConfirmButton: true
+      });
+      return;
+    }
 
       let Usuario = {
             UserName: nombre.value,
