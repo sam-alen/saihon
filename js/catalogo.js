@@ -272,14 +272,67 @@ function generateBooksHTML(libro){
   `;
 }
 
-const btnCarrito = document.getElementsByClassName('carrito-svg-card');
-cart = [];
 
-btnCarrito.addEventListener("click", function(event){
-    event.preventDefault();
+//CARRITO 
 
-    
+//Para obtener o crear el cart en el localstorage
+let cart = JSON.parse(localStorage.getItem('cart') || []);
+
+//Agregar los elementos seleccionados al localstorage y sumarlos
+function agregarAlCart(libro){
+  const libroExist = cart.find(item => item.id == libro.id);
+
+  if(libroExist){
+    libroExist.quantity++;
+  } else {
+    libro.quantity = 1;
+    cart.push(libro);
+  }
+
+  //cargar en el localstorage
+localStorage.setItem('cart', JSON.stringify(cart));
+
+actualizarCarrito();
+
+} //Función para agregar libro al Cart
+
+//Para actualizar el número que se mostrará en el carrito
+function actualizarCarrito(){
+  const conteoCart = cart.reduce((total, item) => total + item.quantity, 0);
+  document.getElementById('cart-contador').innerText = conteoCart;  //se va agregar este contador en un span en el carrito del navbar
+}
 
 
+//para que se guarden los datos de los libros que seleccionemos cuando hagamos click en el carrito de su card
+function carritoCardClick(event){
+  const libroId = event.target.id.split('_')[1]; //para cortar y dejar solo el numero del ID
+  const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
 
+  if(!elementoCarrito){
+    console.log("No se encontró elemento con ese ID");
+    return;
+  }
+
+  const elementoLibro = elementoCarrito.closest('.card');
+
+  if(!elementoLibro){
+    console.error("No se encontró ancestro (closest) con la clase .card");
+    return;
+  }
+
+  const libroSelected = {
+    id: libroId,
+    title: elementoLibro.querySelector('.card-title').innerText,
+    author: elementoLibro.querySelector('.card-text:nth-child(2)').innerText,
+    price: parseFloat(elementoLibro.querySelector('.card-text:nth-child(3)').innerText.replace('$', '')), //quitamos el simbolo de $
+    cover_image: elementoLibro.querySelector('.card-img-top').src
+  };
+  agregarAlCart(libroSelected);
+}
+
+//se le agrega evento al bton del carrito
+document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+  cartIcon.addEventListener('click', carritoCardClick);
 })
+
+document.addEventListener('DOMContentLoaded', actualizarCarrito);

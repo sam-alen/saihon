@@ -43,29 +43,21 @@ agregarTarjeta.addEventListener('click', function() {
     
 });
 
-
-//Cargar elementos del LocalStorage
-
-function cartInicio(){
-    let cart = JSON.parse(localStorage.getItem('cart'))
-
-    if (cart ==null){
-        cart=[];
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }
-
-    actualizarCarrito(cart);
+function obtenerCarrito() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    return cart;
 }
 
-function actualizarCarrito(cart) {
+function actualizarTabla(cart) {
+    let cartObtenido = obtenerCarrito();
     const cuerpoTabla = document.querySelector('.compras tbody');
-    const totalSpan = document.getElementsById("total");
+    const totalSpan = document.getElementById("total");
     cuerpoTabla.innerHTML = '';
     totalSpan.innerHTML = '';
 
     let total = 0;
 
-    cart.forEach((item, index) => {
+    cartObtenido.forEach((item, index) => {
 
         const row = document.createElement('tr');
 
@@ -81,7 +73,7 @@ function actualizarCarrito(cart) {
 
         //insertar en celda 'cantidad'
         const cantidadCelda = document.createElement('td');
-        const cantidadInput = document.createElement('input');
+        let cantidadInput = document.createElement('input');
         cantidadInput.type = 'number';
         cantidadInput.min = 1;
         cantidadInput.value = item.quantity || 1;
@@ -92,27 +84,34 @@ function actualizarCarrito(cart) {
         //insertar en celda subtotal
         const subtotalCelda = document.createElement('td');
         const subtotal = (item.price * cantidadInput.value).toFixed(2);
-        subtotalCelda.appendChild(row);
+        subtotalCelda.innerText = `$${subtotal}`;
+        row.appendChild(subtotalCelda);
+
+        const btnDelete = document.createElement('td');
+        btnDelete.innerHTML = `<button id="btnEliminar" type="button" class="btn btn-secondary">Eliminar</button>`;
+        row.appendChild(btnDelete)
 
         cuerpoTabla.appendChild(row);
-
-        //actualizar el total
-        totalSpan.appendChild(total += parseFloat(subtotal));
     })
+    actualizarTotal()
 }
 
-function actualizarCantidad(event, index){
-
-    let cart = JSON.parse(localStorage.getItem('cart'));
-
-    cart[index].quantity = parseInt(event.target.value); //event: cuando el usuario cambia la cantidad
-
+//Las cantidades y los precios no funcionaban, me desesperé y chatGTP me recomendó estas dos funciones :'D
+function actualizarCantidad(event, index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart[index].quantity = parseInt(event.target.value);
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    actualizarCarrito(cart);
+    actualizarTabla();
 }
 
-document.addEventListener('DOMContentLoaded', cartInicio);
+function actualizarTotal() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalSpan = document.getElementById("total");
+    let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    totalSpan.innerText = `$${total.toFixed(2)}`;
+}
+
+document.addEventListener('DOMContentLoaded', actualizarTabla);
 
 //Limpiar tabla ****FALTA PROBAR***
 btnLimpiar.addEventListener('click', function(e){

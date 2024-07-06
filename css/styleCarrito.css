@@ -119,3 +119,11 @@
    background-color: var(--main-whitest-color);
    border-radius: 20%;
 }
+
+#btnEliminar{
+   width: auto;
+   height: 1.4rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
