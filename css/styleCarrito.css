@@ -43,7 +43,7 @@
     border-radius: 50%;
  }
 
-
+/*====TABLA=====*/
 .compras{
     width: 80vw;
     height: auto;
@@ -55,25 +55,16 @@
  }
  .title th{
    text-decoration: underline #170E2D;
+   margin: 1rem;
+   padding: 1rem;
  }
 
-.col{
-    width: auto;
-    margin: 2em;
+ .col{
+   width: 20vw;
  }
 
- #libroInfo{
-    width: 40%;
-    height: auto;
- }
- .miniLibro{
-   width: 60%;
-   height: 10vw;
- }
 
- #qty, #precio, #subtotal{
-    width: 15%;
- }
+/*====DIVS DE LAS TARJETAS=====*/
 
 #pago{
     margin: 3em;

@@ -276,7 +276,12 @@ function generateBooksHTML(libro){
 //CARRITO 
 
 //Para obtener o crear el cart en el localstorage
-let cart = JSON.parse(localStorage.getItem('cart') || []);
+let cart = JSON.parse(localStorage.getItem('cart'));
+if (!cart) {
+  cart = [];
+} else if (!Array.isArray(cart)) {
+  cart = [];
+} 
 
 //Agregar los elementos seleccionados al localstorage y sumarlos
 function agregarAlCart(libro){

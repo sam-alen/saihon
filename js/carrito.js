@@ -23,6 +23,7 @@ const datosPago = document.getElementById("datosPago");
 const agregarTarjeta = document.getElementById("btnTarjeta");
 const nuevaTarjeta = document.getElementById("nuevaTarjeta");
 
+btnLimpiar.addEventListener("click", () => eliminarTodos());
 
 btnPagar.addEventListener("click", () => {
   //datosPago.setAttribute("style", "display: flex;");
@@ -43,11 +44,18 @@ agregarTarjeta.addEventListener('click', function() {
     
 });
 
+//Obtener Cart del localStorage
 function obtenerCarrito() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     return cart;
 }
 
+//Actualizar el LocalStorage
+function actualizarCart(cart){
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+//Agregar o modificar los elementos en la tabla
 function actualizarTabla(cart) {
     let cartObtenido = obtenerCarrito();
     const cuerpoTabla = document.querySelector('.compras tbody');
@@ -89,6 +97,7 @@ function actualizarTabla(cart) {
 
         const btnDelete = document.createElement('td');
         btnDelete.innerHTML = `<button id="btnEliminar" type="button" class="btn btn-secondary">Eliminar</button>`;
+        btnDelete.querySelector('button').addEventListener("click", () => eliminarUnLibro());
         row.appendChild(btnDelete)
 
         cuerpoTabla.appendChild(row);
@@ -111,19 +120,21 @@ function actualizarTotal() {
     totalSpan.innerText = `$${total.toFixed(2)}`;
 }
 
+//funcion para eliminar un libro de la tabla
+function eliminarUnLibro(index){
+    let cart = obtenerCarrito();
+    cart.splice(index, 1);
+    actualizarCart(cart);
+    actualizarTabla();
+}
+
+//funcion para eliminar todos los libros de la tabla
+function eliminarTodos(index){
+    actualizarCart(limpiar);
+    actualizarTabla();
+}
+
 document.addEventListener('DOMContentLoaded', actualizarTabla);
-
-//Limpiar tabla ****FALTA PROBAR***
-btnLimpiar.addEventListener('click', function(e){
-    e.preventDefault();
-    tituloCelda.value = " ";
-    precioCelda.value = " ";
-    cantidadCelda.value = " ";
-    subtotalCelda.value = " ";
-    totalSpan.value = " ";
-
-})
-
 
 
 //Guardar la nueva tarjeta ***falta arreglar la función y agregar validaciones REJEX
