@@ -150,7 +150,8 @@ const fechaExp = document.getElementById("fechaHelpBlock").value;
 const checkTarjeta = document.getElementById("checkTarjeta");
 const nuevosDatos = `<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
-            Tarjeta Visa terminación **${numeroTarjeta.slice(-2)} | ${nombreUsuario} | ${fechaExp}</label>`;
+            Tarjeta Visa terminación **${numeroTarjeta.slice(-2)} | ${nombreUsuario} | ${fechaExp} </label>`;
+
 
 nuevaTarjeta.addEventListener("click", () => {
    //alerta de datos guardados
@@ -162,10 +163,17 @@ nuevaTarjeta.addEventListener("click", () => {
       timer: 1500
     });
 
+    
     //agregar la nueva tarjeta
     
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
 
-    //limpiar datos ***falta implementar
-
+    //limpiar datos
+    document.getElementById("inputNumero").value = ""; //numero de tarejta
+    document.getElementById("inputFecha").value = ""; //fecha de expiración
+    document.getElementById("inputCod").value = ""; //codigo seguridad
+    document.getElementById("exampleInputName").value = ""; //nombre usuario
+    document.getElementById("exampleInputPhone").value=""; //numero de telefono
+    document.getElementById("exampleInputEmail").value="";//correo
+    document.getElementById("exampleInputAddress").value="";//direcion
   })
