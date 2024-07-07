@@ -97,7 +97,7 @@ function actualizarTabla(cart) {
 
         const btnDelete = document.createElement('td');
         btnDelete.innerHTML = `<button id="btnEliminar" type="button" class="btn btn-secondary">Eliminar</button>`;
-        btnDelete.querySelector('button').addEventListener("click", () => eliminarUnLibro());
+        btnDelete.querySelector('button').addEventListener("click", () => eliminarUnLibro(item.id));
         row.appendChild(btnDelete)
 
         cuerpoTabla.appendChild(row);
@@ -121,15 +121,20 @@ function actualizarTotal() {
 }
 
 //funcion para eliminar un libro de la tabla
-function eliminarUnLibro(index){
-    let cart = obtenerCarrito();
-    cart.splice(index, 1);
+function eliminarUnLibro(itemId){
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+   
+    // Encontrar el índice del producto a eliminar
+   cart = cart.filter(item => item.id !== itemId);
+    
     actualizarCart(cart);
     actualizarTabla();
 }
 
+
 //funcion para eliminar todos los libros de la tabla
 function eliminarTodos(index){
+    localStorage.clear();
     actualizarCart(limpiar);
     actualizarTabla();
 }
@@ -163,4 +168,4 @@ nuevaTarjeta.addEventListener("click", () => {
 
     //limpiar datos ***falta implementar
 
-  });
+  })

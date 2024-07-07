@@ -19,8 +19,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: first baseline;
-    margin: 0em;
+    padding: 0;
+    margin: 0;
  }
 
  .TituloCarrito{
@@ -47,10 +47,17 @@
     height: auto;
     margin: 1em;
  }
- 
-table{
-  width: 100vw;
+
+ .col{
+  margin: 0.5rem;
+  padding: 0.5rem;
+ }
+
+.tablaDiv{
   margin: 1em;
+  width: 100%;
+  max-width: 500px;
+  overflow-x: auto;
 }
 
  table>thead{
@@ -59,6 +66,12 @@ table{
  .title th{
    text-decoration: underline #170E2D;
  }
+
+.compras>td{
+  font-size: 1rem;
+ }
+
+
 
 }
 
@@ -86,6 +99,7 @@ table{
 </div>
 <hr>
 
+<div class="tablaDiv">
 <table class="compras">
     <thead>
       <tr class="title">
@@ -100,7 +114,7 @@ table{
  
     </tbody>
 </table>
-
+</div>
 
   <div>
     <div> 
