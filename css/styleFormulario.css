@@ -186,6 +186,9 @@ body{
 #btnEnviar:hover, #upload_widget:hover, #btnUpdateId:hover, #btnFindId:hover, #btnDelete:hover {
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
+#bye{
+   display: flex;
+}
 
 
  /* =================================FOOTER=================================================== */
