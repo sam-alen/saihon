@@ -58,7 +58,7 @@ function actualizarCart(cart){
 //Agregar o modificar los elementos en la tabla
 function actualizarTabla(cart) {
     let cartObtenido = obtenerCarrito();
-    const cuerpoTabla = document.querySelector('.compras tbody');
+    const cuerpoTabla = document.querySelector('.compras .tbody');
     const totalSpan = document.getElementById("total");
     cuerpoTabla.innerHTML = '';
     totalSpan.innerHTML = '';
@@ -66,21 +66,24 @@ function actualizarTabla(cart) {
     let total = 0;
 
     cartObtenido.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.classList.add('row');
 
-        const row = document.createElement('tr');
-
-        //insertar en celda 'titulo'
-        const tituloCelda = document.createElement('td');
+        // Insertar en celda 'titulo'
+        const tituloCelda = document.createElement('div');
+        tituloCelda.classList.add('col');
         tituloCelda.innerText = item.title;
         row.appendChild(tituloCelda);
 
-        //insertar en celda 'precio'
-        const precioCelda = document.createElement('td');
+        // Insertar en celda 'precio'
+        const precioCelda = document.createElement('div');
+        precioCelda.classList.add('col');
         precioCelda.innerText = `$${item.price.toFixed(2)}`;
         row.appendChild(precioCelda);
 
-        //insertar en celda 'cantidad'
-        const cantidadCelda = document.createElement('td');
+        // Insertar en celda 'cantidad'
+        const cantidadCelda = document.createElement('div');
+        cantidadCelda.classList.add('col');
         let cantidadInput = document.createElement('input');
         cantidadInput.type = 'number';
         cantidadInput.min = 1;
@@ -89,20 +92,23 @@ function actualizarTabla(cart) {
         cantidadCelda.appendChild(cantidadInput);
         row.appendChild(cantidadCelda);
 
-        //insertar en celda subtotal
-        const subtotalCelda = document.createElement('td');
+        // Insertar en celda subtotal
+        const subtotalCelda = document.createElement('div');
+        subtotalCelda.classList.add('col');
         const subtotal = (item.price * cantidadInput.value).toFixed(2);
         subtotalCelda.innerText = `$${subtotal}`;
         row.appendChild(subtotalCelda);
 
-        const btnDelete = document.createElement('td');
+        // Insertar botón de eliminar
+        const btnDelete = document.createElement('div');
+        btnDelete.classList.add('col');
         btnDelete.innerHTML = `<button id="btnEliminar" type="button" class="btn btn-secondary">Eliminar</button>`;
         btnDelete.querySelector('button').addEventListener("click", () => eliminarUnLibro(item.id));
-        row.appendChild(btnDelete)
+        row.appendChild(btnDelete);
 
         cuerpoTabla.appendChild(row);
-    })
-    actualizarTotal()
+    });
+    actualizarTotal();
 }
 
 //Las cantidades y los precios no funcionaban, me desesperé y chatGTP me recomendó estas dos funciones :'D
