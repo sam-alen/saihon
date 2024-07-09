@@ -207,27 +207,25 @@ function addBooks(libros){
 
     seccionLibro_todos.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
 
-
-libro.genre.forEach(g=> {
-  let seccionLibro_categoria;
-  switch (g.toLowerCase()){
-    case 'fiction':
-    case 'science fiction':
-    case 'ciencia ficcion':
-      seccionLibro_categoria = document.getElementById("seccionLibro-CF");
-    break;
-    case 'romance':
-      seccionLibro_categoria = document.getElementById("seccionLibro-romance");
-    break;
-    case 'terror':
-      seccionLibro_categoria = document.getElementById("seccionLibro-terror");
-    break;
-    default:
-      return;
-  }
-  seccionLibro_categoria.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
-
-     });
+  libro.genre.forEach(g=> {
+      let seccionLibro_categoria;
+      switch (g.toLowerCase()){
+        case 'fiction':
+        case 'science fiction':
+        case 'ciencia ficcion':
+          seccionLibro_categoria = document.getElementById("seccionLibro-CF");
+        break;
+        case 'romance':
+          seccionLibro_categoria = document.getElementById("seccionLibro-romance");
+        break;
+        case 'terror':
+          seccionLibro_categoria = document.getElementById("seccionLibro-terror");
+        break;
+        default:
+          return;
+      }
+      seccionLibro_categoria.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
+    });
   });
 }
 
@@ -254,7 +252,7 @@ function generateBooksHTML(libro){
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">${libro.title}</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
             <h3>${libro.author}</h3>
@@ -264,7 +262,7 @@ function generateBooksHTML(libro){
             <h4>$${libro.price}</h4>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
