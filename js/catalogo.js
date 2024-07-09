@@ -295,9 +295,12 @@ function agregarAlCart(libro){
   }
 
   //cargar en el localstorage
-localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart));
 
-actualizarCarrito();
+  actualizarCarrito();
+  
+  
+  
 
 } //Función para agregar libro al Cart
 
@@ -341,3 +344,14 @@ document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
 })
 
 document.addEventListener('DOMContentLoaded', actualizarCarrito);
+const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
+elementoCarrito.addEventListener("click",() =>{
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Artículo agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500
+      })
+  
+})
