@@ -270,7 +270,6 @@ function generateBooksHTML(libro){
   `;
 }
 
-
 //CARRITO 
 
 //Para obtener o crear el cart en el localstorage
