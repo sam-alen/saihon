@@ -288,4 +288,10 @@ h2 {
     .other-icons{
         gap: 2vh;
     }
+    #user-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
