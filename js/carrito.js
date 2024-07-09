@@ -172,12 +172,7 @@ function agregarNuevaTarjeta() {
 
     // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
-
-    
-   
 }
-//para validar la funcion
-const valid = true;
 
 function validateForm(){
     //error datos personales
@@ -200,9 +195,10 @@ function validateForm(){
     errorTarjeta.innerHTML = "";
     errorFecha.innerHTML = "";
     errorCodigo.innerHTML = "";
-    clearErrors();
-
     
+    clearErrors();
+    let valid = true;
+
     //variables REGEX
     let nombrePattern = /^[a-zA-Z\s]{3,}$/; //nombre del usuario
     let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
@@ -288,8 +284,11 @@ function clearErrors() {
 
 nuevaTarjeta.addEventListener("click", (event) => {
     event.preventDefault();
+    agregarNuevaTarjeta;
+    validateForm;
+  
 
-    if(valid){
+    /*if(valid){
         agregarNuevaTarjeta();
         // Alerta del boton
         Swal.fire({
@@ -309,7 +308,9 @@ nuevaTarjeta.addEventListener("click", (event) => {
         telefono.value=""; //numero de telefono
         email.value="";//correo
         direccion.value="";//direcion
-    }
+    }else{
+        clearErrors();
+    }*/
 
     
 });
