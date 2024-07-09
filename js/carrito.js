@@ -147,11 +147,20 @@ function eliminarTodos(index){
 
 document.addEventListener('DOMContentLoaded', actualizarTabla);
 
+//variables Datos Personales
+const nombreUsuario = document.getElementById("exampleInputName");
+const telefono = document.getElementById("exampleInputPhone");
+const email = document.getElementById("exampleInputEmail");
+const direccion =  document.getElementById("exampleInputAddress");
+
+
+//variables datos tarjetas
+const numeroTarjeta = document.getElementById("inputNumero");
+const fechaExp = document.getElementById("inputFecha");
+const codigo =document.getElementById("inputCod");
+
 //Guardar la nueva tarjeta
 function agregarNuevaTarjeta() {
-    const numeroTarjeta = document.getElementById("inputNumero");
-    const nombreUsuario = document.getElementById("exampleInputName");
-    const fechaExp = document.getElementById("fechaHelpBlock");
     const checkTarjeta = document.getElementById("checkTarjeta");
 
     // Crear el nuevo HTML para la tarjeta
@@ -164,33 +173,145 @@ function agregarNuevaTarjeta() {
     // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
 
-    // Alerta del boton
-    Swal.fire({
+    
+   
+}
+//para validar la funcion
+const valid = true;
+
+function validateForm(){
+    //error datos personales
+    let errorNombre = document.getElementById("errorNombre");
+    let errorTelefono = document.getElementById("errorTelefono");
+    let errorEmail = document.getElementById("errorEmail");
+    let errorDireccion = document.getElementById("errorDireccion");
+
+    //error datos de tarjeta
+    let errorTarjeta = document.getElementById("errorTarjeta");
+    let errorFecha = document.getElementById("errorFecha");
+    let errorCodigo = document.getElementById("errorCodigo");
+
+    //limpiar errores:
+    errorNombre.innerHTML = "";
+    errorTelefono.innerHTML = "";
+    errorEmail.innerHTML = "";
+    errorDireccion.innerHTML = "";
+
+    errorTarjeta.innerHTML = "";
+    errorFecha.innerHTML = "";
+    errorCodigo.innerHTML = "";
+    clearErrors();
+
+    
+    //variables REGEX
+    let nombrePattern = /^[a-zA-Z\s]{3,}$/; //nombre del usuario
+    let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+    let phonePattern = /^((?!000)\d{3})[-\s]?\d{3}[-\s]?\d{4}$/
+    let addressPattern = /^[a-zA-Z0-9\s\-\#\.]+$/;
+
+    let tarjetaPattern = /^4\d{15}$/;
+    let FechaPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    let CodPattern = /^\d{3}$/;
+
+    if(!nombrePattern.test(nombreUsuario.value.trim())){
+        errorNombre.innerHTML = "Por favor ingresa un nombre válido (al menos 3 caracteres)";
+        
+        nombreUsuario.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//nombreUsuario
+
+    if(!phonePattern.test(telefono.value.trim())){
+        errorTelefono.innerHTML = "Por favor ingresa un teléfono válido";
+        
+        telefono.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//telefono
+
+    if(!emailPattern.test(email.value.trim())){
+        errorEmail.innerHTML = "Por favor ingresa un email válido";
+        
+        email.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//email
+
+    if(!addressPattern.test(direccion.value.trim())){
+        errorDireccion.innerHTML = "Por favor ingresa una dirección valida";
+        
+        direccion.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//DIRECCION
+
+    if(!tarjetaPattern.test(numeroTarjeta.value.trim())){
+        errorTarjeta.innerHTML = "Por favor ingresa un número válido de tarjeta (de 16 caracteres)";
+        
+        numeroTarjeta.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//Tarjeta
+
+    if(!FechaPattern.test(fechaExp.value.trim())){
+        errorFecha.innerHTML = "Por favor ingresa un fecha de expiración válida";
+        
+        fechaExp.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//fechaExp
+
+    if(!CodPattern.test(codigo.value.trim())){
+        errorCodigo.innerHTML = "Por favor codigo válido (3 caracteres)";
+        
+        codigo.setAttribute("style", "background-color: #D97575;");
+        valid = false;
+    }//Codigo
+
+    return valid;
+}
+
+function clearErrors() {
+    //datos personales
+    nombreUsuario.setAttribute("style", "border-color: #ced4da;");
+    nombreUsuario.setAttribute("style", "background-color: white;");
+    email.setAttribute("style", "border-color: #ced4da;");
+    email.setAttribute("style", "background-color: white;");
+    telefono.setAttribute("style", "border-color: #ced4da;");
+    telefono.setAttribute("style", "background-color: white;");
+    direccion.setAttribute("style", "border-color: #ced4da;");
+    direccion.setAttribute("style", "background-color: white;");
+
+  //datos de tarejta
+    numeroTarjeta.setAttribute("style", "border-color: #ced4da;");
+    numeroTarjeta.setAttribute("style", "background-color: white;");
+    fechaExp.setAttribute("style", "border-color: #ced4da;");
+    fechaExp.setAttribute("style", "background-color: white;");
+    codigo.setAttribute("style", "border-color: #ced4da;");
+    codigo.setAttribute("style", "background-color: white;");
+  
+}
+
+nuevaTarjeta.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if(valid){
+        agregarNuevaTarjeta();
+        // Alerta del boton
+        Swal.fire({
         position: "center",
         icon: "success",
         title: "Datos guardados",
         showConfirmButton: false,
         timer: 1500
-    });
+        });
     
-    //Limpiar los campos del formulario 
-        document.getElementById("inputNumero").value = ""; //numero de tarejta
-        document.getElementById("inputFecha").value = ""; //fecha de expiración
-        document.getElementById("inputCod").value = ""; //codigo seguridad
-        document.getElementById("exampleInputName").value = ""; //nombre usuario
-        document.getElementById("exampleInputPhone").value=""; //numero de telefono
-        document.getElementById("exampleInputEmail").value="";//correo
-        document.getElementById("exampleInputAddress").value="";//direcion
-   
-}
+        //Limpiar los campos del formulario 
+        numeroTarjeta.value = ""; //numero de tarejta
+        fechaExp.value = ""; //fecha de expiración
+        codigo.value = ""; //codigo seguridad
 
-function ValidateForm(){
+        nombreUsuario.value = ""; //nombre usuario
+        telefono.value=""; //numero de telefono
+        email.value="";//correo
+        direccion.value="";//direcion
+    }
 
-}
-
-nuevaTarjeta.addEventListener("click", (event) => {
-    event.preventDefault();
-    agregarNuevaTarjeta();
+    
 });
     
 
