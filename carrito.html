@@ -280,18 +280,21 @@ input{
       <h3>Datos de la tarjeta</h3>
         <label for="inputNumero" class="form-label">Número de tarjeta</label>
         <input type="text" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
+        <span id="errorTarjeta"></span>
         <div id="numeroHelpBlock" class="form-text">
              Ingresa el número de tarjeta
         </div>
         <br>
         <label for="inputFecha" class="form-label">Vigencia</label>
         <input type="text" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock" placeholder="mm/aa">
+        <span id="errorFecha"></span>
         <div id="fechaHelpBlock" class="form-text">
              Ingresa el mes y año de vencimiento
         </div>
         <br>
         <label for="inputFecha" class="form-label">Código de seguridad</label>
         <input type="text" id="inputCod" class="form-control" aria-describedby="fechaHelpBlock">
+        <span id="errorCodigo"></span>
         <div id="fechaHelpBlock" class="form-text">
           <br>
           <button type="button" class="btn btn-primary" id="nuevaTarjeta">Guardar tarjeta</button>

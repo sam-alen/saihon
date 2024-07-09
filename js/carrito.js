@@ -147,39 +147,53 @@ function eliminarTodos(index){
 
 document.addEventListener('DOMContentLoaded', actualizarTabla);
 
+//Guardar la nueva tarjeta
+function agregarNuevaTarjeta() {
+    const numeroTarjeta = document.getElementById("inputNumero");
+    const nombreUsuario = document.getElementById("exampleInputName");
+    const fechaExp = document.getElementById("fechaHelpBlock");
+    const checkTarjeta = document.getElementById("checkTarjeta");
 
-//Guardar la nueva tarjeta ***falta arreglar la función y agregar validaciones REJEX
-const numeroTarjeta = document.getElementById("inputNumero").value;
-const nombreUsuario = document.getElementById("exampleInputName").value;
-const fechaExp = document.getElementById("fechaHelpBlock").value;
+    // Crear el nuevo HTML para la tarjeta
+    const nuevosDatos = `<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+            <img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
+            Tarjeta Visa terminación **${numeroTarjeta.value.slice(-2)} | ${nombreUsuario.value} | ${fechaExp.value}
+        </label>`;
 
-const checkTarjeta = document.getElementById("checkTarjeta");
-const nuevosDatos = `<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
-            Tarjeta Visa terminación **${numeroTarjeta.slice(-2)} | ${nombreUsuario} | ${fechaExp} </label>`;
-
-
-nuevaTarjeta.addEventListener("click", () => {
-   //alerta de datos guardados
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Datos guardados",
-      showConfirmButton: false,
-      timer: 1500
-    });
-
-    
-    //agregar la nueva tarjeta
-    
+    // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
 
-    //limpiar datos
-    document.getElementById("inputNumero").value = ""; //numero de tarejta
-    document.getElementById("inputFecha").value = ""; //fecha de expiración
-    document.getElementById("inputCod").value = ""; //codigo seguridad
-    document.getElementById("exampleInputName").value = ""; //nombre usuario
-    document.getElementById("exampleInputPhone").value=""; //numero de telefono
-    document.getElementById("exampleInputEmail").value="";//correo
-    document.getElementById("exampleInputAddress").value="";//direcion
-  })
+    // Alerta del boton
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Datos guardados",
+        showConfirmButton: false,
+        timer: 1500
+    });
+    
+    //Limpiar los campos del formulario 
+        document.getElementById("inputNumero").value = ""; //numero de tarejta
+        document.getElementById("inputFecha").value = ""; //fecha de expiración
+        document.getElementById("inputCod").value = ""; //codigo seguridad
+        document.getElementById("exampleInputName").value = ""; //nombre usuario
+        document.getElementById("exampleInputPhone").value=""; //numero de telefono
+        document.getElementById("exampleInputEmail").value="";//correo
+        document.getElementById("exampleInputAddress").value="";//direcion
+   
+}
+
+function ValidateForm(){
+
+}
+
+nuevaTarjeta.addEventListener("click", (event) => {
+    event.preventDefault();
+    agregarNuevaTarjeta();
+});
+    
+
+
+
+
