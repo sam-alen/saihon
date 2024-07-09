@@ -16,9 +16,11 @@ export function addNavbar(header) {
         <a href="./carrito.html"><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
         <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
       </div>
-      <div id="user-info" style="display: none;">
-        <span id="user-name"></span>
-        <button id="logout-button">Logout</button>
+      <div id="conatiner-user-info">
+          <div id="user-info">
+            <span id="user-name"></span>
+            <button id="logout-button">Cerrar Sesión</button>
+          </div>
       </div>
       
       <label class="bar" for="check">
@@ -60,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.removeItem("loggedUser");
       window.location.href = "inicioSesion.html"; // Redirigir al inicio de sesión
     });
+  } else{
+    logoutButton.style.display = "none";
   }
 });
 
@@ -118,3 +122,23 @@ export function showMenu(){
     });
   });
 }
+
+// Nueva función para mover los elementos al menú de hamburguesa
+document.addEventListener('DOMContentLoaded', () => {
+  const userInfo = document.getElementById('user-info');
+  const menuDisplay = document.getElementById('menu-display');
+  const navbar = document.getElementsByClassName("navbar");
+  const containerUserInfo = document.getElementById("conatiner-user-info");
+
+  function moveUserInfo() {
+    if (window.innerWidth >= 320 && window.innerWidth <= 426) {
+      menuDisplay.appendChild(userInfo);
+    } else{
+      containerUserInfo.appendChild(userInfo);
+      // userInfo.style.display = "flex";
+    }
+
+  }
+  window.addEventListener('resize', moveUserInfo);
+  moveUserInfo(); // Llamada inicial para colocar los elementos en el lugar correcto al cargar la página
+});
