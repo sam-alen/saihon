@@ -15,11 +15,9 @@ addNavbar(header);
 addFooter(footer);
 showMenu();
 
-
-const main = document.getElementById("main");
 const seccionLibro_todos= document.getElementById("seccionLibro-todos");
 
-const defaultSection = seccionLibro_todos;
+// const defaultSection = seccionLibro_todos;
 const romancesec = document.getElementById('seccionLibro-romance');
 const terrorsec = document.getElementById('seccionLibro-terror');
 const cienciasec = document.getElementById('seccionLibro-CF');
@@ -30,7 +28,6 @@ const containerTerror = document.getElementById("container-books-terror");
 const containerCF = document.getElementById("container-books-cf");
 
 const linkaside = document.querySelectorAll('.aside__link');
-const secciones = document.querySelectorAll('.row');
 
 let librosLocalStorage = [];
 
@@ -167,9 +164,6 @@ let libros= [
     },
 ];
 
-console.log(document.querySelector("#seccionLibro-todos > div"))
-
-// console.log(document.querySelector(seccion))
 // Condiciones para el almacenamiento local
 if (localStorage.getItem("librosLocalStorage") != null){
   librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
@@ -181,41 +175,6 @@ if (localStorage.getItem("librosLocalStorage") != null){
   });
   //addBooks(librosLocalStorage)
 }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   const linkaside = document.querySelectorAll('.aside__link');
-//   const secciones = document.querySelectorAll('.row');
-
-//   linkaside.forEach(link => {
-//     link.addEventListener('click', function(event) {
-//       event.preventDefault(); 
-
-//       secciones.forEach(section => {
-//         section.style.display = 'none';
-//       });
-
-//       const targetId = this.getAttribute('href').substring(1);
-//       const targetSection = document.getElementById(targetId);
-//       if (targetSection) {
-//         targetSection.style.display = 'flex';
-//       }
-
-//     });
-//   });
-
-//   // Mostrar la seccion "Todos los libros" por defecto
-//   const defaultSection = seccionLibro_todos;
-//   const romancesec = document.getElementById('seccionLibro-romance');
-//   const terrorsec = document.getElementById('seccionLibro-terror');
-//   const cienciasec = document.getElementById('seccionLibro-CF');
-//   if (defaultSection) {
-//     defaultSection.style.display = 'flex';
-//     addAllBooks(libros);
-//     romancesec.style.display = 'none';
-//     terrorsec.style.display = 'none';
-//     cienciasec.style.display = 'none';
-//   }
-// });
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -233,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Condición para colocar los libros en Tódos los géneros
       if (targetSection.getAttribute('id')=='container-books-todos') {
-        //
         containerRomance.parentElement.style.display = 'none';
         containerRomance.innerHTML = '';
         containerTerror.parentElement.style.display = 'none';
@@ -244,10 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         addAllBooks(libros)
         containerTodos.parentElement.style.display = 'flex';
-
-        document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-          cartIcon.addEventListener('click', carritoCardClick);
-        })
       } else if (targetSection.getAttribute('id')=='container-books-romance') {
         containerRomance.innerHTML = '';
         containerRomance.parentElement.style.display = 'flex';
@@ -259,10 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCF.innerHTML = '';
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
-
-        document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-          cartIcon.addEventListener('click', carritoCardClick);
-        })
       } else if (targetSection.getAttribute('id')=='container-books-terror') {
         containerRomance.parentElement.style.display = 'none';
         containerRomance.innerHTML = '';
@@ -275,10 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCF.innerHTML = '';
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
-
-        document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-          cartIcon.addEventListener('click', carritoCardClick);
-        })
       } else if (targetSection.getAttribute('id')=='container-books-cf') {
         containerRomance.innerHTML = '';
         containerRomance.parentElement.style.display = 'none';
@@ -291,11 +237,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
-
-        document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-          cartIcon.addEventListener('click', carritoCardClick);
-        })
       }
+      document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+        cartIcon.addEventListener('click', carritoCardClick);})
 
     });
   });
@@ -400,6 +344,8 @@ function generateBookHTML(libro){
     </div>
   `;
 } //Función que crea un libro con su modal
+
+
 //CARRITO 
 
 //Para obtener o crear el cart en el localstorage
@@ -431,6 +377,13 @@ function agregarAlCart(libro){
 function actualizarCarrito(){
   const conteoCart = cart.reduce((total, item) => total + item.quantity, 0);
   document.getElementById('cart-contador').innerText = conteoCart;  //se va agregar este contador en un span en el carrito del navbar
+    Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Artículo agregado al carrito",
+    showConfirmButton: false,
+    timer: 1500
+    })
 }
 
 
