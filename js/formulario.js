@@ -48,7 +48,7 @@ btnagregar.addEventListener("click", () => {
 
 
 // Variables REGEX
-const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([ '-][a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
+const regexA = /^[a-zA-ZÀ-ÿ\u00f1\u00d1.]+([ '.-][a-zA-ZÀ-ÿ\u00f1\u00d1.]+)*$/;
 const regexPrecio = /^(?:\$\s?)?\d+(?:\.\d{1,2})?$/;
 const regexNL = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"() ]+$/;
 const regexDes = /^[a-zA-Z0-9À-ÿ\u00f1\u00d1'’\-.,:;!?"()&%$#@*\n\r ]+$/;
