@@ -172,7 +172,21 @@ function agregarNuevaTarjeta(event) {
 
     // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
+     
+    const nuevaTarjeta = {
+        numero: numeroTarjeta.value,
+        titular: nombreUsuario.value,
+        expiracion: fechaExp.value
+    };
+
+    // Obtener las tarjetas guardadas del localStorage
+    let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetas')) || [];
+
+    // Agregar la nueva tarjeta al localStorage
+    tarjetasGuardadas.push(nuevaTarjeta);
+    localStorage.setItem('tarjetas', JSON.stringify(tarjetasGuardadas));
     
+    //Alerta de datos guardados
     Swal.fire({
         position: "center",
         icon: "success",
@@ -210,7 +224,8 @@ function validateForm(){
   let nombrePattern = /^[a-zA-Z\s]{3,}$/; //nombre del usuario
   let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
   let phonePattern = /^((?!000)\d{3})[-\s]?\d{3}[-\s]?\d{4}$/ ;
-  let addressPattern = /^[a-zA-Z0-9\s\.,#\-]+$/;;
+  let addressPattern = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s,.'#-]{5,}$/;
+
   
  
   let tarjetaPattern = /^4\d{15}$/;
@@ -319,23 +334,22 @@ nuevaTarjeta.addEventListener("click", (event) => {
    
 });
     
-document.addEventListener("DOMContentLoaded", (event) => {
-    event.preventDefault;
+//mostrar las tajetas guardadas en el local Storage
+document.addEventListener("DOMContentLoaded", () => {
+   // event.preventDefault;
     console.log("DOM fully loaded and parsed");
-    //Guardar en el localStorage
-    const nuevaTarjeta = {
-        numero: numero,
-        titular: titular,
-        expiracion: expiracion
-    };
-
-    // Obtener las tarjetas existentes del localStorage
+    const checkTarjeta = document.getElementById("checkTarjeta");
     let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetas')) || [];
 
-    // Agregar la nueva tarjeta al arreglo de tarjetas
-    tarjetasGuardadas.push(nuevaTarjeta);
+    tarjetasGuardadas.forEach(tarjeta => {
+        const nuevosDatos = `
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                <img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
+                Tarjeta Visa terminación **${tarjeta.numero.slice(-2)} | ${tarjeta.titular} | ${tarjeta.expiracion}
+            </label>
+        `;
+        checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
+    });
 
-    // Guardar el arreglo actualizado en localStorage
-    localStorage.setItem('tarjetas', JSON.stringify(tarjetasGuardadas));
 });
-
