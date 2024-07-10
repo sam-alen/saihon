@@ -53,12 +53,12 @@ body{
    margin-top: 1rem;
 }
 
-.aside__link{
+.aside__link, .aside_{
    text-decoration: none;
    color: var(--main-darkblue-color);
    padding: .5rem;
 }
-.aside__link:hover{
+.aside__link:hover, .aside_:hover{
    color: var(--main-orangeish-color);
    font-weight: bold;
    border-radius: 5px;
@@ -150,6 +150,13 @@ a:hover{
    fill: none;
 }
 
+.carrito-svg-card:active{
+   background-color: #FDC264 !important;
+}
+
+.containBooks{
+   justify-content: center;
+}
 
 /* ================================================================================== */
 #logo{

@@ -15,7 +15,19 @@
     <style>
 
 @media (min-width: 320px) and (max-width: 426px){
+/* footer y navbar*/
 
+  .footer-info, .footer-infotation {
+          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+      }
+      .dos{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .foot{
+        height: 50vh;
+      }
   /*===CUERPO DE LA PAGINA=*/
 
 body{
@@ -337,7 +349,7 @@ body{
           <div id="emailHelp" class="form-text"></div>
           <label for="exampleInputPhone" class="form-label">Dirección completa</label>
           <input type="text" class="form-control input-form" id="exampleInputAddress" aria-describedby="emailHelp" placeholder="🏠 Villa de Avala #140 Valleverde  ">
-            <span id="errorTelefono"></span>
+            <span id="errorDireccion"></span>
         </div>
     </form>
   </div>
@@ -347,18 +359,21 @@ body{
       <h3>Datos de la tarjeta</h3>
         <label for="inputNumero" class="form-label">Número de tarjeta</label>
         <input type="text" id="inputNumero" class="form-control" aria-describedby="numeroHelpBlock">
+        <span id="errorTarjeta"></span>
         <div id="numeroHelpBlock" class="form-text">
              Ingresa el número de tarjeta
         </div>
         <br>
         <label for="inputFecha" class="form-label">Vigencia</label>
         <input type="text" id="inputFecha" class="form-control" aria-describedby="fechaHelpBlock" placeholder="mm/aa">
+        <span id="errorFecha"></span>
         <div id="fechaHelpBlock" class="form-text">
              Ingresa el mes y año de vencimiento
         </div>
         <br>
         <label for="inputFecha" class="form-label">Código de seguridad</label>
         <input type="text" id="inputCod" class="form-control" aria-describedby="fechaHelpBlock">
+        <span id="errorCodigo"></span>
         <div id="fechaHelpBlock" class="form-text">
           <br>
           <button type="button" class="btn btn-primary" id="nuevaTarjeta">Guardar tarjeta</button>

@@ -64,7 +64,10 @@
     border-radius: 100%;
     margin: 0 1rem;
 }
-
+.navbar-icons img:hover{
+    background-color: #f1faee;
+    box-shadow: 0 0 15px #ffffff;
+}
 .menu {
     display: none;
     position: absolute;
@@ -111,7 +114,7 @@
 .other-icons img {
     width: 3.3rem;
     border-radius: 50%;
-    margin: 0 2rem;
+    margin: 0.5rem 2rem;
 }
 
 .other-icons img:hover {
@@ -287,5 +290,11 @@ h2 {
     }
     .other-icons{
         gap: 2vh;
+    }
+    #user-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }

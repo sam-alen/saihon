@@ -29,7 +29,7 @@
 /* Hover */
 
 .nav-item {
-   padding: 0 3vw 0 3vw;
+   /* padding: 0 3vw 0 3vw; */
    text-align: center;
 }
 
@@ -132,6 +132,9 @@ body{
    /* border-radius: 10px;
    margin: 1vh 0 5vh 0; */
 }
+#myTab{
+   border: none;
+}
 #hello{
    display:flex;
    flex-direction: column;
@@ -146,6 +149,7 @@ body{
    justify-content: center;
    width: 100%;
    padding: 15px;
+   gap: 100px;
 }
 
 #edit{

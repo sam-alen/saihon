@@ -115,7 +115,7 @@ function crearUsuario(){
   let contraValida = true;
   if (!rePass.test(contrase.value.trim())) {
       // errorTelefono.innerHTML = "Por favor ingresa un teléfono válido (entre 10 y 12 dígitos)";
-      errorString += " Contraseña incorrecta <br>";
+      errorString += " Contraseña incorrecta: Contraseña incorrecta: Tu contraseña debe incluir al menos: una letra minúscula, una letra mayúscula, un dígito, un carácter especial de entre @, $, !, %, *, ?, & y tener una longitud mínima de 8 caracteres <br>";
       contrase.style.border = "2px solid crimson";
       contraValida = false;
   }
