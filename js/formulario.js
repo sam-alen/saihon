@@ -79,7 +79,7 @@ btnUpload.addEventListener("click", function() { //boton de subir libro
   myWidget.open();
 }, false);
 
-btnUpload2.addEventListener("click", function() { //boton de editar/eliminar
+btnUpload2.addEventListener("click", function() { //boton de editar
   myWidget.open();
 }, false);
 
@@ -177,9 +177,14 @@ if(idGet){
     });
 
   } else {
-    console.log("Ese libro no se encontró");
-  }
-
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "El libro no se encontro",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  } 
 } 
 }
 
@@ -296,7 +301,11 @@ function updateFields() {
   let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
 
   if (idBuscado === "") {
-    alert("Inserta un ID para actualizar");
+    Swal.fire({
+      icon: "error",
+      title: "Error al agregar el artículo",
+      text: "Favor de llenar los campos",
+    });
     return;
   }
 
