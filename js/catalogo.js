@@ -231,7 +231,7 @@ function addBooks(libros){
 
 function generateBooksHTML(libro){
   return `
-  <div class="card" style="width: 18rem;">
+  <div class="card card_modal_${libro.id}" style="width: 18rem;">
       <img src="${libro.cover_image}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${libro.title}</h5>
@@ -269,7 +269,6 @@ function generateBooksHTML(libro){
     </div>
   `;
 }
-
 //CARRITO 
 
 //Para obtener o crear el cart en el localstorage
@@ -295,10 +294,6 @@ function agregarAlCart(libro){
   localStorage.setItem('cart', JSON.stringify(cart));
 
   actualizarCarrito();
-  
-  
-  
-
 } //Función para agregar libro al Cart
 
 //Para actualizar el número que se mostrará en el carrito
