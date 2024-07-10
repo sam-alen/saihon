@@ -271,42 +271,6 @@ function addBooksByCategory(seccion,libros,cat){
 }
 
 
-// addBooks(libros)
-
-
-//Hacer que addBooks solo agregue libros a una sección que se le indica, y no todos los libros de la página
-// function addBooks(libros){
-//   libros.forEach(libro => {
-
-//     seccionLibro_todos.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
-
-//   libro.genre.forEach(g=> {
-//       let seccionLibro_categoria;
-//       switch (g.toLowerCase()){
-//         case 'fiction':
-//         case 'science fiction':
-//         case 'ciencia ficcion':
-//           seccionLibro_categoria = document.getElementById("seccionLibro-CF");
-//         break;
-//         case 'romance':
-//           seccionLibro_categoria = document.getElementById("seccionLibro-romance");
-//         break;
-//         case 'terror':
-//           seccionLibro_categoria = document.getElementById("seccionLibro-terror");
-//         break;
-//         default:
-//           return;
-//       }
-//       seccionLibro_categoria.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
-//     });
-//   });
-// }
-
-// function addBooks(section,libros,categoria){
-
-//   return
-// }
-
 function generateBookHTML(libro){
   return `
   <div class="card card_modal_${libro.id}" style="width: 18rem;">
