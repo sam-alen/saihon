@@ -64,7 +64,10 @@
     border-radius: 100%;
     margin: 0 1rem;
 }
-
+.navbar-icons img:hover{
+    background-color: #f1faee;
+    box-shadow: 0 0 15px #ffffff;
+}
 .menu {
     display: none;
     position: absolute;
