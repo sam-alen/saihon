@@ -172,6 +172,14 @@ function agregarNuevaTarjeta() {
 
     // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
+
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Datos guardados",
+        showConfirmButton: false,
+        timer: 1500
+        });
 }
 
 function validateForm(){
@@ -198,16 +206,17 @@ function validateForm(){
     
     clearErrors();
     let valid = true;
-
-    //variables REGEX
-    let nombrePattern = /^[a-zA-Z\s]{3,}$/; //nombre del usuario
-    let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
-    let phonePattern = /^((?!000)\d{3})[-\s]?\d{3}[-\s]?\d{4}$/
-    let addressPattern = /^[a-zA-Z0-9\s\-\#\.]+$/;
-
-    let tarjetaPattern = /^4\d{15}$/;
-    let FechaPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
-    let CodPattern = /^\d{3}$/;
+  //variables REGEX
+  let nombrePattern = /^[a-zA-Z\s]{3,}$/; //nombre del usuario
+  let emailPattern = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+  let phonePattern = /^((?!000)\d{3})[-\s]?\d{3}[-\s]?\d{4}$/ ;
+  let addressPattern = /^[a-zA-Z0-9\s\.,#\-]+$/;;
+  
+ 
+  let tarjetaPattern = /^4\d{15}$/;
+  let FechaPattern = /^(0[1-9]|1[0-2])\/(?:[0-9]{2})$/;
+  let CodPattern = /^\d{3}$/;
+ 
 
     if(!nombrePattern.test(nombreUsuario.value.trim())){
         errorNombre.innerHTML = "Por favor ingresa un nombre válido (al menos 3 caracteres)";
@@ -257,9 +266,9 @@ function validateForm(){
         codigo.setAttribute("style", "background-color: #D97575;");
         valid = false;
     }//Codigo
-
     return valid;
 }
+  
 
 function clearErrors() {
     //datos personales
@@ -284,35 +293,30 @@ function clearErrors() {
 
 nuevaTarjeta.addEventListener("click", (event) => {
     event.preventDefault();
-    agregarNuevaTarjeta;
-    validateForm;
-  
+   if(validateForm()){
+    
+    agregarNuevaTarjeta();
+    //Limpiar los campos del formulario 
+    numeroTarjeta.value = ""; //numero de tarejta
+    fechaExp.value = ""; //fecha de expiración
+    codigo.value = ""; //codigo seguridad
 
-    /*if(valid){
-        agregarNuevaTarjeta();
-        // Alerta del boton
-        Swal.fire({
+    nombreUsuario.value = ""; //nombre usuario
+    telefono.value=""; //numero de telefono
+    email.value="";//correo
+    direccion.value="";//direcion
+
+    
+   }else{
+    Swal.fire({
         position: "center",
-        icon: "success",
-        title: "Datos guardados",
+        icon: "error",
+        title: "Favor de verificar los datos",
         showConfirmButton: false,
         timer: 1500
         });
-    
-        //Limpiar los campos del formulario 
-        numeroTarjeta.value = ""; //numero de tarejta
-        fechaExp.value = ""; //fecha de expiración
-        codigo.value = ""; //codigo seguridad
-
-        nombreUsuario.value = ""; //nombre usuario
-        telefono.value=""; //numero de telefono
-        email.value="";//correo
-        direccion.value="";//direcion
-    }else{
-        clearErrors();
-    }*/
-
-    
+   }
+   
 });
     
 
