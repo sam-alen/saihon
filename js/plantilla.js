@@ -36,7 +36,7 @@ export function addNavbar(header) {
           <a href="./nosotros.html">Nosotros</a>
         </div>
         <div class="other-icons">
-          <a href=""><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
+          <a href="./carrito.html"><img src="./assets/imagenes/logo/mb-cart-96x96.svg" alt="icon"></a>
           <a href="inicioSesion.html"><img src="./assets/imagenes/logo/5e973f49-4043-4115-a901-36baa53fcc14.jpeg" alt="icon"></a>
         </div>
       </div>

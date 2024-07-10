@@ -17,17 +17,23 @@
 @media (min-width: 320px) and (max-width: 426px){
 
   /*===CUERPO DE LA PAGINA=*/
+
+body{
+  box-sizing: border-box;
+}
+
   main{
     display: flex;
     flex-direction: column;
-    margin: -1rem;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
  }
 
  /*==="MI CARRITO DE COMPRAS"===*/
 
  .TituloCarrito{
-  margin-top: 3em;
+  width: 100vw;
+  margin-left: 2em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,11 +41,11 @@
  }
 
  .TituloCarrito>h2{
-  font-size: 2em;
+  font-size: 1.5em;
  }
 
  #carritoMain{
-    width: 1.6em;
+    width: 2em;
     height: auto;
     background-color:#E1351F;
     padding: 0.3em;
@@ -49,17 +55,24 @@
  /*====TABLA DE PRODUCTOS=====*/
 
  .compras{
-    width: 100vw;
     height: auto;
+    width: 99vw;
+ }
+
+ .tablaDiv{
+    width: 99vw;
  }
  
 
 .tablaDiv .title{
-   font-weight: bold;
    background-color: var(--main-darkblue-color);
    color: #F9F9F9;
  }
 
+ #btnEliminar{
+  font-size: small;
+  width: 3.7em;
+ }
 
 .tablaDiv .col {
    display: flex;
@@ -68,7 +81,7 @@
    align-items: center;
    justify-content: center;
    font-size: small;
-   gap: 4em;
+   gap: 3em;
    width: 5rem;
    height: auto;
  }
@@ -86,7 +99,7 @@ input{
  
  .tablaDiv .row {
    display: flex;
-   width: 100%;
+   width: 99vw;
  }
 
  /*=====DIVS DE LAS TARJETAS=======*/
@@ -97,7 +110,7 @@ input{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100vw;
+    width: 90vw;
 }
 
 #logoTarjeta{
@@ -127,16 +140,70 @@ input{
 }
 
 .addTarjeta .form1{
-  width: 100vw;
+  width: 90vw;
 }
 
 .addTarjeta .datosTarjeta{
-  width: 100vw;
+  width: 90vw;
+  margin-bottom: 4em;
 }
+
+/*======FOOTER=======*/
+.footer-info, .footer-infotation {
+          font-size: 0.7rem; /*Ajusta el tamaño de la fuente para pantallas pequeñas*/
+      }
+      .dos{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .foot{
+        width: 100%;
+        height: 50vh;
+      }
 
 }
 
 @media (min-width: 427px) and (max-width: 990px){
+
+  /*=====CUERPO=====*/
+
+    /*===CUERPO DE LA PAGINA=*/
+
+body{
+  box-sizing: border-box;
+}
+
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ /*==="MI CARRITO DE COMPRAS"===*/
+
+ .TituloCarrito{
+  width: 100vw;
+  margin-left: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .TituloCarrito>h2{
+  font-size: 1.5em;
+ }
+
+ #carritoMain{
+    width: 2em;
+    height: auto;
+    background-color:#E1351F;
+    padding: 0.3em;
+    border-radius: 50%;
+ }
+
 
 /*=====DIVS DE LAS TARJETAS======*/
 #pago{
