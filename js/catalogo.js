@@ -11,51 +11,23 @@ import { addNavbar, addFooter, showMenu } from './plantilla.js';
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 
-
 addNavbar(header);
 addFooter(footer);
 showMenu();
 
-
-const main = document.getElementById("main");
 const seccionLibro_todos= document.getElementById("seccionLibro-todos");
 
-document.addEventListener('DOMContentLoaded', function() {
-  const linkaside = document.querySelectorAll('.aside__link');
-  const secciones = document.querySelectorAll('.row');
+// const defaultSection = seccionLibro_todos;
+const romancesec = document.getElementById('seccionLibro-romance');
+const terrorsec = document.getElementById('seccionLibro-terror');
+const cienciasec = document.getElementById('seccionLibro-CF');
 
-  linkaside.forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); 
+const containerTodos = document.getElementById("container-books-todos");
+const containerRomance = document.getElementById("container-books-romance");
+const containerTerror = document.getElementById("container-books-terror");
+const containerCF = document.getElementById("container-books-cf");
 
-      
-      secciones.forEach(section => {
-        section.style.display = 'none';
-      });
-
-      const targetId = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.style.display = 'flex';
-      }
-
-    });
-  });
-
-  // Mostrar la seccion "Todos los libros" por defecto
-  const defaultSection = seccionLibro_todos;
-  const romancesec = document.getElementById('seccionLibro-romance');
-  const terrorsec = document.getElementById('seccionLibro-terror');
-  const cienciasec = document.getElementById('seccionLibro-CF');
-  if (defaultSection) {
-    defaultSection.style.display = 'flex';
-    romancesec.style.display = 'none';
-    terrorsec.style.display = 'none';
-    cienciasec.style.display = 'none';
-  }
-});
-
-
+const linkaside = document.querySelectorAll('.aside__link');
 
 let librosLocalStorage = [];
 
@@ -192,44 +164,147 @@ let libros= [
     },
 ];
 
-
-addBooks(libros)
 // Condiciones para el almacenamiento local
 if (localStorage.getItem("librosLocalStorage") != null){
   librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
   console.log(librosLocalStorage);
-  addBooks(librosLocalStorage)
+  // Como los encuentra, los mete al arreglo de libros
+  librosLocalStorage.forEach(element => {
+  libros.push(element)
+  console.log(libros);
+  });
+  //addBooks(librosLocalStorage)
 }
 
+document.addEventListener('DOMContentLoaded', function() {
 
-function addBooks(libros){
-  libros.forEach(libro => {
+  linkaside.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      //Obtenemos la seccion 
 
-    seccionLibro_todos.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
+      let section = this.getAttribute('href');
+      console.log(section);
+      
+      //Obtenemos el div para colocar los libros en la seccion
+      let targetSection = document.querySelector(section + " > div");
+      console.log(targetSection);
+      
+      // Condición para colocar los libros en Tódos los géneros
+      if (targetSection.getAttribute('id')=='container-books-todos') {
+        containerRomance.parentElement.style.display = 'none';
+        containerRomance.innerHTML = '';
+        containerTerror.parentElement.style.display = 'none';
+        containerTerror.innerHTML = '';
+        containerCF.parentElement.style.display = 'none';
+        containerCF.innerHTML = '';
+        containerTodos.innerHTML = '';
+        
+        addAllBooks(libros)
+        containerTodos.parentElement.style.display = 'flex';
+      } else if (targetSection.getAttribute('id')=='container-books-romance') {
+        containerRomance.innerHTML = '';
+        containerRomance.parentElement.style.display = 'flex';
+        addBooksByCategory(targetSection,libros,"Romance");
+        //Se ocultan
+        containerTerror.parentElement.style.display = 'none';
+        containerTerror.innerHTML = '';
+        containerCF.parentElement.style.display = 'none';
+        containerCF.innerHTML = '';
+        containerTodos.parentElement.style.display = 'none';
+        containerTodos.innerHTML = '';
+      } else if (targetSection.getAttribute('id')=='container-books-terror') {
+        containerRomance.parentElement.style.display = 'none';
+        containerRomance.innerHTML = '';
 
-  libro.genre.forEach(g=> {
-      let seccionLibro_categoria;
-      switch (g.toLowerCase()){
-        case 'fiction':
-        case 'science fiction':
-        case 'ciencia ficcion':
-          seccionLibro_categoria = document.getElementById("seccionLibro-CF");
-        break;
-        case 'romance':
-          seccionLibro_categoria = document.getElementById("seccionLibro-romance");
-        break;
-        case 'terror':
-          seccionLibro_categoria = document.getElementById("seccionLibro-terror");
-        break;
-        default:
-          return;
+        containerTerror.innerHTML = '';
+        containerTerror.parentElement.style.display = 'flex';
+        addBooksByCategory(targetSection,libros,"Magical Realism");
+
+        containerCF.parentElement.style.display = 'none';
+        containerCF.innerHTML = '';
+        containerTodos.parentElement.style.display = 'none';
+        containerTodos.innerHTML = '';
+      } else if (targetSection.getAttribute('id')=='container-books-cf') {
+        containerRomance.innerHTML = '';
+        containerRomance.parentElement.style.display = 'none';
+        containerTerror.innerHTML = '';
+        containerTerror.parentElement.style.display = 'none';
+
+        containerCF.innerHTML = '';
+        containerCF.parentElement.style.display = 'flex';
+        addBooksByCategory(targetSection,libros,"Fantasy");
+
+        containerTodos.parentElement.style.display = 'none';
+        containerTodos.innerHTML = '';
       }
-      seccionLibro_categoria.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
+      document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+        cartIcon.addEventListener('click', carritoCardClick);})
+
     });
   });
+});
+
+//Primero se coloca la categroría de Todos por defecto
+romancesec.style.display = 'none';
+terrorsec.style.display = 'none';
+cienciasec.style.display = 'none';
+
+addAllBooks(libros)
+function addAllBooks(libros){
+    libros.forEach(libro => {
+      containerTodos.insertAdjacentHTML("beforeend", generateBookHTML(libro));
+    });
+  return
 }
 
-function generateBooksHTML(libro){
+function addBooksByCategory(seccion,libros,cat){
+  libros.forEach(libro => {
+    if (libro.genre.includes(cat)) {
+      seccion.insertAdjacentHTML("beforeend",generateBookHTML(libro))
+    }
+  });
+    return
+}
+
+
+// addBooks(libros)
+
+
+//Hacer que addBooks solo agregue libros a una sección que se le indica, y no todos los libros de la página
+// function addBooks(libros){
+//   libros.forEach(libro => {
+
+//     seccionLibro_todos.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
+
+//   libro.genre.forEach(g=> {
+//       let seccionLibro_categoria;
+//       switch (g.toLowerCase()){
+//         case 'fiction':
+//         case 'science fiction':
+//         case 'ciencia ficcion':
+//           seccionLibro_categoria = document.getElementById("seccionLibro-CF");
+//         break;
+//         case 'romance':
+//           seccionLibro_categoria = document.getElementById("seccionLibro-romance");
+//         break;
+//         case 'terror':
+//           seccionLibro_categoria = document.getElementById("seccionLibro-terror");
+//         break;
+//         default:
+//           return;
+//       }
+//       seccionLibro_categoria.insertAdjacentHTML("beforeend", generateBooksHTML(libro));
+//     });
+//   });
+// }
+
+// function addBooks(section,libros,categoria){
+
+//   return
+// }
+
+function generateBookHTML(libro){
   return `
   <div class="card card_modal_${libro.id}" style="width: 18rem;">
       <img src="${libro.cover_image}" class="card-img-top" alt="...">
@@ -268,7 +343,9 @@ function generateBooksHTML(libro){
       </div>
     </div>
   `;
-}
+} //Función que crea un libro con su modal
+
+
 //CARRITO 
 
 //Para obtener o crear el cart en el localstorage
@@ -300,12 +377,21 @@ function agregarAlCart(libro){
 function actualizarCarrito(){
   const conteoCart = cart.reduce((total, item) => total + item.quantity, 0);
   document.getElementById('cart-contador').innerText = conteoCart;  //se va agregar este contador en un span en el carrito del navbar
+    Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Artículo agregado al carrito",
+    showConfirmButton: false,
+    timer: 1500
+    })
 }
 
 
 //para que se guarden los datos de los libros que seleccionemos cuando hagamos click en el carrito de su card
 function carritoCardClick(event){
+  console.log("Se dio un click a un carrito");
   const libroId = event.target.id.split('_')[1]; //para cortar y dejar solo el numero del ID
+  console.log(libroId);
   const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
 
   if(!elementoCarrito){
@@ -335,15 +421,16 @@ document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
   cartIcon.addEventListener('click', carritoCardClick);
 })
 
-document.addEventListener('DOMContentLoaded', actualizarCarrito);
-const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
-elementoCarrito.addEventListener("click",() =>{
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Artículo agregado al carrito",
-      showConfirmButton: false,
-      timer: 1500
-      })
+//Sweetalert
+// document.addEventListener('DOMContentLoaded', actualizarCarrito);
+// const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
+// elementoCarrito.addEventListener("click",() =>{
+//     Swal.fire({
+//       position: "center",
+//       icon: "success",
+//       title: "Artículo agregado al carrito",
+//       showConfirmButton: false,
+//       timer: 1500
+//       })
   
-})
+// })
