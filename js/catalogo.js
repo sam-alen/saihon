@@ -168,10 +168,13 @@ let libros= [
 if (localStorage.getItem("librosLocalStorage") != null){
   librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
   console.log(librosLocalStorage);
+  let contId = libros.length + 1;
   // Como los encuentra, los mete al arreglo de libros
   librosLocalStorage.forEach(element => {
-  libros.push(element)
-  console.log(libros);
+    element.id = contId
+    libros.push(element)
+    console.log(libros);
+    contId++;  //Se coloca un ID incrmeental porque cuando se hace con local storage los id del formulario mpiezan en 1
   });
   //addBooks(librosLocalStorage)
 }
