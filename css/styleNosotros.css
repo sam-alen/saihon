@@ -180,6 +180,12 @@ body{
     height: 50px;
  }
 
+ .tarjetas{
+   margin: 0;
+ }
+ .row{
+   margin: 0;
+ }
  /*Color y ancho de las cards*/
  .card{
    object-fit: contain;
