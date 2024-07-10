@@ -18,6 +18,8 @@ showMenu();
 
 
 // Elementos del DOM
+const btnUpload = document.getElementsByClassName("cloudinary-button")[0];
+const btnUpload2 = document.getElementsByClassName("cloudinary-button")[1];
 const nombreLibro = document.getElementById("nombreLibro");
 const autorLibro = document.getElementById("autorLibro");
 const precioLibro = document.getElementById("precioLibro");
@@ -73,7 +75,11 @@ let myWidget = cloudinary.createUploadWidget({
   }
 });
 
-document.getElementById("upload_widget").addEventListener("click", function() {
+btnUpload.addEventListener("click", function() { //boton de subir libro
+  myWidget.open();
+}, false);
+
+btnUpload2.addEventListener("click", function() { //boton de editar/eliminar
   myWidget.open();
 }, false);
 
