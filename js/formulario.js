@@ -70,8 +70,23 @@ let myWidget = cloudinary.createUploadWidget({
   if (!error && result && result.event === "success") { 
     console.log('Imagen subida con éxito: ', result.info); 
     imageUrl = result.info.secure_url;
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Imagen subida con éxito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
   } else if (error) {
     console.error('Error al subir la imagen: ', error);
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Error al subir la imagen",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 });
 
@@ -145,7 +160,7 @@ function agregarLibros() {
     });
   }
 
-}
+}//agregarlibros
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
