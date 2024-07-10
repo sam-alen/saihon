@@ -264,7 +264,10 @@ function fillFields() {
   let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
   
   if(idBuscado === ""){
-    alert("Inserta un ID para buscar");
+    Swal.fire({
+      icon: "error",
+      title: "Inserta un ID para buscar",
+    });
     return;
   }
 
@@ -289,6 +292,11 @@ function fillFields() {
       document.getElementById("cantidadLibro2").value = libroEncontrado.cantidad_libro;
     } else {
       console.log("No hay un libro con ese ID");
+      Swal.fire({
+        icon: "error",
+        title: "No hay un libro con ese ID",
+      });
+      return;
     }
   } else {
     console.log("No hay libros en el Sistema");
@@ -356,9 +364,19 @@ function updateFields() {
       // Si hubo cambios, actualizar el localStorage
       if (hayCambios) {
         localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
-        alert("Los campos han sido actualizados exitosamente.");
+        //alert("Los campos han sido actualizados exitosamente.");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "El libro se ha actualizado",
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
-        alert("No hay cambios para actualizar.");
+        Swal.fire({
+          icon: "error",
+          title: "No hay cambios para actualizar",
+        });
       }
     } else {
       alert("No hay un libro con ese ID");
