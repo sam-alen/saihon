@@ -29,6 +29,20 @@ const containerCF = document.getElementById("container-books-cf");
 
 const linkaside = document.querySelectorAll('.aside__link');
 
+function getData(){
+  const promesa = fetch("http://localhost:8088/api/libros/", {method: "GET"});
+  promesa.then((response)=>{
+    console.log("Conectado, obteniendo datos");
+      response.json().then((data)=>{
+        console.log(data);
+      })
+      .catch(
+          (error)=>{console.log("Problema al cargar el JSON "+ error);}
+      )
+  }).catch((err)=>console.log("Existió un problema con la solicitud " + err));
+}//getData
+
+getData()
 let librosLocalStorage = [];
 
 let libros= [
