@@ -150,7 +150,9 @@ a:hover{
    fill: none;
 }
 
-
+.carrito-svg-card:active{
+   background-color: #FDC264 !important;
+}
 /* ================================================================================== */
 #logo{
    font-size: 3.3rem;
