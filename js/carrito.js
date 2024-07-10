@@ -160,7 +160,7 @@ const fechaExp = document.getElementById("inputFecha");
 const codigo =document.getElementById("inputCod");
 
 //Guardar la nueva tarjeta
-function agregarNuevaTarjeta() {
+function agregarNuevaTarjeta(event) {
     const checkTarjeta = document.getElementById("checkTarjeta");
 
     // Crear el nuevo HTML para la tarjeta
@@ -172,7 +172,7 @@ function agregarNuevaTarjeta() {
 
     // Insertar la nueva tarejta en el div
     checkTarjeta.insertAdjacentHTML('beforeend', nuevosDatos);
-
+    
     Swal.fire({
         position: "center",
         icon: "success",
@@ -319,7 +319,23 @@ nuevaTarjeta.addEventListener("click", (event) => {
    
 });
     
+document.addEventListener("DOMContentLoaded", (event) => {
+    event.preventDefault;
+    console.log("DOM fully loaded and parsed");
+    //Guardar en el localStorage
+    const nuevaTarjeta = {
+        numero: numero,
+        titular: titular,
+        expiracion: expiracion
+    };
 
+    // Obtener las tarjetas existentes del localStorage
+    let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetas')) || [];
 
+    // Agregar la nueva tarjeta al arreglo de tarjetas
+    tarjetasGuardadas.push(nuevaTarjeta);
 
+    // Guardar el arreglo actualizado en localStorage
+    localStorage.setItem('tarjetas', JSON.stringify(tarjetasGuardadas));
+});
 
