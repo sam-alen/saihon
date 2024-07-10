@@ -140,7 +140,7 @@ function eliminarUnLibro(itemId){
 
 //funcion para eliminar todos los libros de la tabla
 function eliminarTodos(index){
-    localStorage.clear();
+    localStorage.removeItem('cart');
     actualizarCart(limpiar);
     actualizarTabla();
 }
