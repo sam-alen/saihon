@@ -18,6 +18,8 @@ showMenu();
 
 
 // Elementos del DOM
+const btnUpload = document.getElementsByClassName("cloudinary-button")[0];
+const btnUpload2 = document.getElementsByClassName("cloudinary-button")[1];
 const nombreLibro = document.getElementById("nombreLibro");
 const autorLibro = document.getElementById("autorLibro");
 const precioLibro = document.getElementById("precioLibro");
@@ -73,7 +75,11 @@ let myWidget = cloudinary.createUploadWidget({
   }
 });
 
-document.getElementById("upload_widget").addEventListener("click", function() {
+btnUpload.addEventListener("click", function() { //boton de subir libro
+  myWidget.open();
+}, false);
+
+btnUpload2.addEventListener("click", function() { //boton de editar
   myWidget.open();
 }, false);
 
@@ -171,9 +177,14 @@ if(idGet){
     });
 
   } else {
-    console.log("Ese libro no se encontró");
-  }
-
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "El libro no se encontro",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  } 
 } 
 }
 
@@ -253,7 +264,10 @@ function fillFields() {
   let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
   
   if(idBuscado === ""){
-    alert("Inserta un ID para buscar");
+    Swal.fire({
+      icon: "error",
+      title: "Inserta un ID para buscar",
+    });
     return;
   }
 
@@ -278,6 +292,11 @@ function fillFields() {
       document.getElementById("cantidadLibro2").value = libroEncontrado.cantidad_libro;
     } else {
       console.log("No hay un libro con ese ID");
+      Swal.fire({
+        icon: "error",
+        title: "No hay un libro con ese ID",
+      });
+      return;
     }
   } else {
     console.log("No hay libros en el Sistema");
@@ -290,7 +309,11 @@ function updateFields() {
   let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
 
   if (idBuscado === "") {
-    alert("Inserta un ID para actualizar");
+    Swal.fire({
+      icon: "error",
+      title: "Error al agregar el artículo",
+      text: "Favor de llenar los campos",
+    });
     return;
   }
 
@@ -341,9 +364,19 @@ function updateFields() {
       // Si hubo cambios, actualizar el localStorage
       if (hayCambios) {
         localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
-        alert("Los campos han sido actualizados exitosamente.");
+        //alert("Los campos han sido actualizados exitosamente.");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "El libro se ha actualizado",
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
-        alert("No hay cambios para actualizar.");
+        Swal.fire({
+          icon: "error",
+          title: "No hay cambios para actualizar",
+        });
       }
     } else {
       alert("No hay un libro con ese ID");
