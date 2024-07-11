@@ -151,17 +151,60 @@ let libros= [
     },
 ];
 
-
+// Ejectuamos las funciones
 addNavbar(header);
 addFooter(footer);
 showMenu();
-addBooksAutoresMes1(libros);
-addBooksAutoresMes2(libros);
-addBookLibroAnio(libros, 9);
-addBooksPopulares1(libros);
-addBooksPopulares2(libros)
-addBooksTendencias1(libros);
-addBooksTendencias2(libros);
+
+// Cargamos los libros
+cargarLibros();
+
+// Vamos a hacer el fetch para mandar a llamar los libros
+async function fetchLibros() {
+
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+  };
+
+  try {
+    const response = await fetch("http://localhost:8088/api/libros/", requestOptions);
+    const libros = await response.json();
+    console.log(libros); // Aquí puedes trabajar con los datos
+    return libros;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Función para cargar los libros en la pagina principal
+async function cargarLibros() {
+  const libros = await fetchLibros();
+  if (libros) {
+    addBooksAutoresMes1(libros);
+    addBooksAutoresMes2(libros);
+    addBookLibroAnio(libros, obtenerEnteroAleatorioRango(1, libros.length));
+    addBooksPopulares1(libros);
+    addBooksPopulares2(libros);
+    addBooksTendencias1(libros);
+    addBooksTendencias2(libros);
+  }else{
+    console.error("No se han podido cargar los libros");
+  }
+}
+
+/*
+FUNCION PARA OBTENER UN NUMERO ENTERO ALEATORIO ENTRE UN RANGO
+*/
+function obtenerEnteroAleatorioRango(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+let enteroEntre10y20 = obtenerEnteroAleatorioRango(10, 20);
+console.log(enteroEntre10y20);
 
 // Añade los libros al primer slide de Autores del mes
 function addBooksAutoresMes1(libros){
