@@ -51,7 +51,7 @@ async function cargarLibros() {
   if (libros) {
     addBooksAutoresMes1(libros);
     addBooksAutoresMes2(libros);
-    addBookLibroAnio(libros, obtenerEnteroAleatorioRango(1, libros.length));
+    addBookLibroAnio(libros, obtenerEnteroAleatorioRango(libros));
     addBooksPopulares1(libros);
     addBooksPopulares2(libros);
     addBooksTendencias1(libros);
@@ -64,15 +64,10 @@ async function cargarLibros() {
 /*
 FUNCION PARA OBTENER UN NUMERO ENTERO ALEATORIO ENTRE UN RANGO
 */
-function obtenerEnteroAleatorioRango(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function obtenerEnteroAleatorioRango(libros) {
+  return Math.floor(Math.random() * libros.length);
 }
 
-
-let enteroEntre10y20 = obtenerEnteroAleatorioRango(10, 20);
-console.log(enteroEntre10y20);
 
 // Añade los libros al primer slide de Autores del mes
 function addBooksAutoresMes1(libros){
