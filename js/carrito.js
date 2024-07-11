@@ -50,7 +50,29 @@ btnPagar.addEventListener("click", () => {
     timer: 1500
   });
 
-  realizarPedido();
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  const raw = JSON.stringify({
+    "domicilio": direccion.value,
+    "forma_de_pago": 'tarjeta',
+    "status": 'activo',
+    "idUsuario": 1
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("http://localhost:8080/api/pedidos/", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+
 });
 
 //desplegar los datos para agregar tarejta
@@ -201,30 +223,6 @@ function agregarNuevaTarjeta(event) {
 
 }
 
-//PEDIDOS LOCALSTORAGE
-let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
-let nextId = 1;
-
-const nuevoPedido = {
-    domicilio: direccion.value,
-    forma_de_pago: 'tarjeta',
-    status: 'activo',
-    id: nextId
-}
-
-
-
-
-function realizarPedido(){
-    pedidos.push(nuevoPedido);
-    localStorage.setItem('pedidos', JSON.stringify(pedidos));
-
-    if (pedidos.length > 0 ) {
-        const ids = pedidos.map(pedido => pedido.id);
-        nextId = Math.max(...ids) + 1;
-    }
-
-}
 
 function validateForm(){
     //error datos personales
@@ -385,18 +383,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//GET DATA - BACK
-function getData(){
-    const promesa = fetch("http://localhost:8080/api/pedidos/", {method: "GET"});
-    promesa.then((response)=>{
-      console.log("Conectado, obteniendo datos");
-        response.json().then((data)=>{
-          console.log(data);
-        })
-        .catch(
-            (error)=>{console.log("Problema al cargar el JSON "+ error);}
-        )
-    }).catch((err)=>console.log("Existió un problema con la solicitud " + err));
-  }//getData
 
-  getData();
