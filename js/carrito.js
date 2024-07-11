@@ -23,6 +23,19 @@ const datosPago = document.getElementById("datosPago");
 const agregarTarjeta = document.getElementById("btnTarjeta");
 const nuevaTarjeta = document.getElementById("nuevaTarjeta");
 
+//variables Datos Personales
+const nombreUsuario = document.getElementById("exampleInputName");
+const telefono = document.getElementById("exampleInputPhone");
+const email = document.getElementById("exampleInputEmail");
+const direccion =  document.getElementById("exampleInputAddress");
+
+
+//variables datos tarjetas
+const numeroTarjeta = document.getElementById("inputNumero");
+const fechaExp = document.getElementById("inputFecha");
+const codigo =document.getElementById("inputCod");
+
+
 btnLimpiar.addEventListener("click", () => eliminarTodos());
 
 btnPagar.addEventListener("click", () => {
@@ -36,6 +49,30 @@ btnPagar.addEventListener("click", () => {
     showConfirmButton: false,
     timer: 1500
   });
+
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  const raw = JSON.stringify({
+    "domicilio": direccion.value,
+    "forma_de_pago": 'tarjeta',
+    "status": 'activo',
+    "idUsuario": 1
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("http://localhost:8080/api/pedidos/", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+
 });
 
 //desplegar los datos para agregar tarejta
@@ -147,17 +184,6 @@ function eliminarTodos(index){
 
 document.addEventListener('DOMContentLoaded', actualizarTabla);
 
-//variables Datos Personales
-const nombreUsuario = document.getElementById("exampleInputName");
-const telefono = document.getElementById("exampleInputPhone");
-const email = document.getElementById("exampleInputEmail");
-const direccion =  document.getElementById("exampleInputAddress");
-
-
-//variables datos tarjetas
-const numeroTarjeta = document.getElementById("inputNumero");
-const fechaExp = document.getElementById("inputFecha");
-const codigo =document.getElementById("inputCod");
 
 //Guardar la nueva tarjeta
 function agregarNuevaTarjeta(event) {
@@ -194,7 +220,9 @@ function agregarNuevaTarjeta(event) {
         showConfirmButton: false,
         timer: 1500
         });
+
 }
+
 
 function validateForm(){
     //error datos personales
@@ -353,3 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+
