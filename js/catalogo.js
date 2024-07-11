@@ -28,164 +28,48 @@ const containerTerror = document.getElementById("container-books-terror");
 const containerCF = document.getElementById("container-books-cf");
 
 const linkaside = document.querySelectorAll('.aside__link');
+let libros = []
+let categorias = []
 
-// Metodo GET para obtener los libros de la base  de datos
+console.log(libros);
+console.log(categorias);
 
+const requestOptions = {
+  method: "GET",
+  redirect: "follow"
+};
 
-// Método GET para obtener las categorías
+function fetchLibros() {
+  return fetch("http://localhost:8088/api/libros/", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      libros = result;
+      console.log(libros); // Aquí puedes trabajar con los datos
+      return libros;
+    })
+    .catch((error) => console.error(error));
+}
 
-let librosLocalStorage = [];
-
-let libros= [
-    {
-      "id": 1,
-      "title": "To Kill a Mockingbird",
-      "price": 200, 
-      "author": "Harper Lee",
-      "publication_year": 1960,
-      "genre": [
-        "Fiction",
-        "Classic"
-      ],
-      "description": "A classic novel depicting racial injustice in the American South.",
-      "cover_image": "assets/imagenes/imageneslibros/libro1-HL.webp"
-    },
-    {
-      "id": 2,
-      "title": "1984",
-      "price": 200, 
-      "author": "George Orwell",
-      "publication_year": 1949,
-      "genre": [
-        "Dystopian",
-        "Science Fiction"
-      ],
-      "description": "A dystopian novel portraying a totalitarian society.",
-      "cover_image": "assets/imagenes/imageneslibros/libro2-GO.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Pride and Prejudice",
-      "price": 200, 
-      "author": "Jane Austen",
-      "publication_year": 1813,
-      "genre": [
-        "Classic",
-        "Romance"
-      ],
-      "description": "A classic novel exploring themes of love, marriage, and social norms.",
-      "cover_image": "assets/imagenes/imageneslibros/libro3-JA.webp"
-    },
-    {
-      "id": 4,
-      "title": "The Great Gatsby",
-      "price": 200,
-      "author": "F. Scott Fitzgerald",
-      "publication_year": 1925,
-      "genre": [
-        "Fiction",
-        "Classic"
-      ],
-      "description": "A tale of the American Dream, wealth, and love during the Roaring Twenties.",
-      "cover_image": "assets/imagenes/imageneslibros/libro4-FSF.webp"
-    },
-    {
-      "id": 5,
-      "title": "Moby-Dick",
-      "price": 200, 
-      "author": "Herman Melville",
-      "publication_year": 1851,
-      "genre": [
-        "Fiction",
-        "Adventure"
-      ],
-      "description": "The epic tale of Captain Ahab's obsession with the white whale.",
-      "cover_image": "assets/imagenes/imageneslibros/libro5-HM.webp"
-    },
-    {
-      "id": 6,
-      "title": "The Lord of the Rings",
-      "price": 200, 
-      "author": "J.R.R. Tolkien",
-      "publication_year": 1954,
-      "genre": [
-        "Fantasy",
-        "Adventure"
-      ],
-      "description": "An epic fantasy saga about the quest to destroy the One Ring.",
-      "cover_image": "assets/imagenes/imageneslibros/LIBRO6-JRT.webp"
-    },
-    {
-      "id": 7,
-      "title": "The Catcher in the Rye",
-      "price": 200, 
-      "author": "J.D. Salinger",
-      "publication_year": 1951,
-      "genre": [
-        "Fiction",
-        "Coming-of-age"
-      ],
-      "description": "A classic coming-of-age novel following Holden Caulfield's journey.",
-      "cover_image": "assets/imagenes/imageneslibros/LIBRO7-JDS.webp"
-    },
-    {
-      "id": 8,
-      "title": "The Hobbit",
-      "price": 200, 
-      "author": "J.R.R. Tolkien",
-      "publication_year": 1937,
-      "genre": [
-        "Fantasy",
-        "Adventure"
-      ],
-      "description": "The prequel to The Lord of the Rings, following Bilbo Baggins' journey.",
-      "cover_image": "assets/imagenes/imageneslibros/LIBRO8-JRT.webp"
-    },
-    {
-      "id": 9,
-      "title": "One Hundred Years of Solitude",
-      "price": 200, 
-      "author": "Gabriel Garcia Marquez",
-      "publication_year": 1967,
-      "genre": [
-        "Magical Realism",
-        "Literary Fiction"
-      ],
-      "description": "A multi-generational saga of the Buendía family in the fictional town of Macondo.",
-      "cover_image": "assets/imagenes/imageneslibros/libro9-GG,.webp"
-    },
-    {
-      "id": 10,
-      "title": "War and Peace",
-      "price": 200, 
-      "author": "Leo Tolstoy",
-      "publication_year": 1869,
-      "genre": [
-        "Historical Fiction",
-        "Epic"
-      ],
-      "description": "A monumental work depicting the events of Russian society during the Napoleonic era.",
-      "cover_image": "assets/imagenes/imageneslibros/libro10-LT.webp"
-    },
-];
+//let librosLocalStorage = [];
 
 //Ciclo para cambiar las categorías de los libros
 
 
-// Condiciones para el almacenamiento local
+//Condiciones para el almacenamiento local
+/*
 if (localStorage.getItem("librosLocalStorage") != null){
   librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
   console.log(librosLocalStorage);
   let contId = libros.length + 1;
-  // Como los encuentra, los mete al arreglo de libros
+
   librosLocalStorage.forEach(element => {
     element.id = contId
     libros.push(element)
     console.log(libros);
-    contId++;  //Se coloca un ID incrmeental porque cuando se hace con local storage los id del formulario mpiezan en 1
+    contId++; 
   });
-  //addBooks(librosLocalStorage)
-}
+  addBooks(librosLocalStorage)
+}*/
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -211,12 +95,22 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCF.innerHTML = '';
         containerTodos.innerHTML = '';
         
-        addAllBooks(libros)
+        //addAllBooks(libros)
+
+        fetchLibros().then((libros) => {
+          addAllBooks(libros)
+        });
+
         containerTodos.parentElement.style.display = 'flex';
       } else if (targetSection.getAttribute('id')=='container-books-romance') {
         containerRomance.innerHTML = '';
         containerRomance.parentElement.style.display = 'flex';
-        addBooksByCategory(targetSection,libros,"Romance");
+
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,"Romance");
+        });
+
+        //addBooksByCategory(targetSection,libros,"Romance");
         //Se ocultan
         containerTerror.parentElement.style.display = 'none';
         containerTerror.innerHTML = '';
@@ -230,7 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         containerTerror.innerHTML = '';
         containerTerror.parentElement.style.display = 'flex';
-        addBooksByCategory(targetSection,libros,"Magical Realism");
+
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,"Terror");
+        });
+        //addBooksByCategory(targetSection,libros,"Magical Realism");
 
         containerCF.parentElement.style.display = 'none';
         containerCF.innerHTML = '';
@@ -244,7 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         containerCF.innerHTML = '';
         containerCF.parentElement.style.display = 'flex';
-        addBooksByCategory(targetSection,libros,"Fantasy");
+
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,"Ciencie Ficción");
+        });
+        
+        //addBooksByCategory(targetSection,libros,"Fantasy");
 
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
@@ -257,11 +160,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Primero se coloca la categroría de Todos por defecto
+
 romancesec.style.display = 'none';
 terrorsec.style.display = 'none';
 cienciasec.style.display = 'none';
+fetchLibros().then((libros) => {
+  addAllBooks(libros)
+});
 
-addAllBooks(libros)
+//addAllBooks(libros)
 function addAllBooks(libros){
     libros.forEach(libro => {
       containerTodos.insertAdjacentHTML("beforeend", generateBookHTML(libro));
@@ -271,9 +178,7 @@ function addAllBooks(libros){
 
 function addBooksByCategory(seccion,libros,cat){
   libros.forEach(libro => {
-    if (libro.genre.includes(cat)) {
-      seccion.insertAdjacentHTML("beforeend",generateBookHTML(libro))
-    }
+    
   });
     return
 }
@@ -281,35 +186,35 @@ function addBooksByCategory(seccion,libros,cat){
 
 function generateBookHTML(libro){
   return `
-  <div class="card card_modal_${libro.id}" style="width: 18rem;">
-      <img src="${libro.cover_image}" class="card-img-top" alt="...">
+  <div class="card card_modal_${libro.idLibros}" style="width: 18rem;">
+      <img src="${libro.portada}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">${libro.title}</h5>
-        <p class="card-text">${libro.author}</p>        
-        <p class="card-text">$${libro.price}</p>
+        <h5 class="card-title">${libro.nombreLibro}</h5>
+        <p class="card-text">${libro.autor}</p>        
+        <p class="card-text">$${libro.precio}</p>
         <div class="container-botones-card">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.id}">
+          <button type="button" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#exampleModal_${libro.idLibros}">
             Ver más
           </button>
-          <img id="carrito_${libro.id}" type="button" class="carrito-svg-card" src="assets/imagenes/logo/carrito2.svg" alt="">
+          <img id="carrito_${libro.idLibros}" type="button" class="carrito-svg-card" src="assets/imagenes/logo/carrito2.svg" alt="">
         </div>
       </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal_${libro.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal_${libro.idLibros}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">${libro.title}</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">${libro.nombreLibro}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
-            <h3>${libro.author}</h3>
-            <h3>${libro.publication_year}</h3>
-            <h3>${libro.genre.join(', ')}</h3>
-            <p>${libro.description}</p>
-            <h4>$${libro.price}</h4>
+            <h3>${libro.autor}</h3>
+            <h3>${libro.year}</h3>
+            <h3>${libro.categoria}</h3>
+            <p>${libro.descripcion}</p>
+            <h4>$${libro.precio}</h4>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -395,17 +300,3 @@ function carritoCardClick(event){
 document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
   cartIcon.addEventListener('click', carritoCardClick);
 })
-
-//Sweetalert
-// document.addEventListener('DOMContentLoaded', actualizarCarrito);
-// const elementoCarrito = document.querySelector(`#carrito_${libroId}`);
-// elementoCarrito.addEventListener("click",() =>{
-//     Swal.fire({
-//       position: "center",
-//       icon: "success",
-//       title: "Artículo agregado al carrito",
-//       showConfirmButton: false,
-//       timer: 1500
-//       })
-  
-// })
