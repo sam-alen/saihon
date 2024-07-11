@@ -48,13 +48,15 @@ export function addNavbar(header) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+  const loggedUser = JSON.parse(localStorage.getItem("user"));
   const userNameElement = document.getElementById("user-name");
   const logoutButton = document.getElementById("logout-button");
   const userInfo = document.getElementById("user-info");
 
+  console.log(loggedUser);
+
   if (loggedUser) {
-    userNameElement.textContent = `Hola, ${loggedUser.UserName.split(" ")[0]}`; // Mostrar el primer nombre
+    userNameElement.textContent = `Hola, ${loggedUser[0].UserName.split(" ")[0]}`; // Mostrar el primer nombre
     userInfo.style.display = "flex"; // Mostrar el contenedor del usuario
     logoutButton.style.display = "inline"; // Mostrar el botón de logout
 
