@@ -100,40 +100,69 @@ btnUpload2.addEventListener("click", function() { //boton de editar
 
 function agregarLibros() {
   if (validateAutor() && validateTitulo() && validatePrecio() && validateDescripcion() && validategenero() && validateStock() && validateYear()) {
-    let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
-    if (librosLocalStorage == null) {
-      librosLocalStorage = [];
-    }
-    let nextId = 1;
-    if (librosLocalStorage.length > 0 ) {
-      const ids = librosLocalStorage.map(libro => libro.id);
-      nextId = Math.max(...ids) + 1;
-    } 
+    // let librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+    // if (librosLocalStorage == null) {
+    //   librosLocalStorage = [];
+    // }
+    // let nextId = 1;
+    // if (librosLocalStorage.length > 0 ) {
+    //   const ids = librosLocalStorage.map(libro => libro.id);
+    //   nextId = Math.max(...ids) + 1;
+    // } 
 
-    console.log(librosLocalStorage);
+    //console.log(librosLocalStorage);
 
+    // let libro = { 
+    //   nombreLibro: nombreLibro.value,
+    //   precio: precioLibro.value,
+    //   autor: autorLibro.value,
+    //   year: yearLibro.value,
+    //   descripcion: descripcionLibro.value,
+    //   cantidadStock: cantidadLibro.value,
+    //   categoria: parseInt(generoLibro.value),
+    //   portada: imageUrl
+    // };
 
-    let libro = { 
-      title: nombreLibro.value,
-      price: precioLibro.value,
-      author: autorLibro.value,
-      publication_year: yearLibro.value,
-      description: descripcionLibro.value,
-      id: nextId,
-      genre: [generoLibro.value],
-      cover_image: imageUrl,
-    };
+    // Hacemos el fetch para metodo post en el backend
+    // postLibro(libro)
   
-    libros.push(libro);
+    // libros.push(libro);
 
     // cada que se modifica el localStorage, se debe verificar y cargar su estado anterior
-    if (localStorage.getItem("librosLocalStorage") != null){
-      librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
-    }
+    // if (localStorage.getItem("librosLocalStorage") != null){
+    //   librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
+    // }
 
     // Se almacena el libro en el localStorage
-    librosLocalStorage.push(libro);
-    localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
+    // librosLocalStorage.push(libro);
+    // localStorage.setItem("librosLocalStorage", JSON.stringify(librosLocalStorage));
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      nombreLibro: nombreLibro.value,
+      precio: precioLibro.value,
+      descripcion: descripcionLibro.value,
+      cantidadStock: cantidadLibro.value,
+      portada: imageUrl,
+      autor: autorLibro.value,
+      editorial: "",
+      year: yearLibro.value,
+      categoria: parseInt(generoLibro.value)
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    fetch("http://localhost:8088/api/libros/", requestOptions)
+      .then((response) => response.text("Good request"))
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
 
 
     nombreLibro.value = "";
@@ -161,6 +190,7 @@ function agregarLibros() {
   }
 
 }//agregarlibros
+
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
