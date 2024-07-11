@@ -158,6 +158,28 @@ function crearUsuario(){
   if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales && terminosAceptados && privacidadAceptada) {
     let users = JSON.parse(localStorage.getItem("user")) || [];
 
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMDU0NDE3NSwiZXhwIjoxNzIwNTgwMTc1fQ.le13emOZj0ue4zmTQMe0A61BCON1fE2O6BESILufSSg");
+    myHeaders.append("Content-Type", "application/json");
+  
+    const raw = JSON.stringify({
+      nombre: nombre.value.trim(),
+      email: email.value.trim(),
+      password: contrase.value.trim(),
+    });
+  
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+  
+    fetch("http://localhost:8088/api/usuarios/", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error("Error:", error));
+      
     // Verificar si el usuario ya está registrado
     let userExists = users.some(user => user.Email === email.value.trim());
     
@@ -199,31 +221,44 @@ function crearUsuario(){
     }
 }
 
-//Validar inicio de sesion
-function validarOpcion(){
+// Función para validar inicio de sesión
+async function validarOpcion() {
+  let email = document.getElementById("exampleInputEmail2").value;
+  let password = document.getElementById("exampleInputPassword2").value;
+
   let userError = document.getElementById("userError");
-  let users = JSON.parse(localStorage.getItem("user"));
-  let validUser = false;
-  let loggedUser;
 
-  for (let i = 0; i < users.length; i++) {
-    if ((users[i].Email === emailDos.value) && (users[i].Password === passwordDos.value)) {
-      validUser = true;
-      loggedUser = users[i];
-      break; 
-    }
-  }
+  const usuario = {
+      email: email,
+      password: password
+  };
 
-  if (validUser) {
-    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
-    window.location.href = "index.html";
-  } else {
-    userError.style.display = "block";
-    userError.innerHTML = "El usuario y/o contraseña son incorrectos";
-    userError.style.color = "red";
+  try {
+      const response = await fetch('http://localhost:8088/api/login/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(usuario)
+      });
+
+      if (response.ok) {
+          const data = await response.json();
+          console.log('Token:', data.token);
+          localStorage.setItem('token', data.token);
+          window.location.href = "index.html";
+      } else {
+          userError.style.display = "block";
+          userError.innerHTML = "El usuario y/o contraseña son incorrectos";
+          userError.style.color = "red";
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      userError.style.display = "block";
+      userError.innerHTML = "Ocurrió un error durante el login";
+      userError.style.color = "red";
   }
 }
-
 
 //EventListener Registro
 submitRegistro.addEventListener("click", function(event){
