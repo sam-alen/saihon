@@ -524,48 +524,78 @@ function executePUT(idBuscado){
     let nuevaDescripcion = document.getElementById("descripcionLibro2").value;
     let nuevaCantidadLibro = document.getElementById("cantidadLibro2").value;
 
+    let URLfetch = "http://localhost:8088/api/libros/" + idBuscado + "?"
+
     //bandera para cambios
     let hayCambios = false;
     let JSONupdate = "";
 
     if (nuevoTitulo != "") {
-      JSONupdate += 1;
+      JSONupdate += "nombreLibro=";
+      JSONupdate += nuevoTitulo;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevoGenero != "") {
-      JSONupdate.categoria = parseInt(nuevoGenero);
+      JSONupdate += "categoria=";
+      JSONupdate += nuevoGenero;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevoAutor != "") {
-      JSONupdate.autor = nuevoAutor;
+      JSONupdate += "autor=";
+      JSONupdate += nuevoAutor;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevoYear != "") {
-      JSONupdate.year = parseInt(nuevoYear);
+      JSONupdate += "year=";
+      JSONupdate += nuevoYear;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevoPrecio != "") {
-      JSONupdate.precio = parseFloat(nuevoPrecio);
+      JSONupdate += "precio="
+      JSONupdate += nuevoPrecio;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevaDescripcion != "") {
-      JSONupdate.descripcion = nuevaDescripcion;
+      JSONupdate += "descripcion";
+      JSONupdate += nuevaDescripcion;
+      JSONupdate += "&"
       hayCambios = true;
     }
     if (nuevaCantidadLibro != "") {
-      JSONupdate.cantidadStock = nuevaCantidadLibro;
+      JSONupdate += "cantidadStock";
+      JSONupdate += nuevaCantidadLibro;
+      JSONupdate += "&"
       hayCambios = true;
     }
-
     const requestOptions = {
       method: "PUT",
       redirect: "follow"
     };
-    
-    fetch("http://localhost:8088/api/libros/3?precio=234.5&cantidadStock=5&editorial=123alfa", requestOptions)
+
+    let urlFinal = (URLfetch + JSONupdate.slice(0, -1))
+    console.log(urlFinal);
+    fetch(urlFinal, requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+      .then((result) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "El libro se ha actualizado",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "No hay cambios para actualizar",
+        });
+      });
 }
 
 
