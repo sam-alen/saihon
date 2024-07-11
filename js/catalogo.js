@@ -50,26 +50,22 @@ function fetchLibros() {
     .catch((error) => console.error(error));
 }
 
-//let librosLocalStorage = [];
+const requestOptionsCat = {
+  method: "GET",
+  redirect: "follow"
+};
 
-//Ciclo para cambiar las categorías de los libros
+function fetchCategorias() {
+  return fetch("http://localhost:8088/api/categorias/", requestOptionsCat)
+    .then((response) => response.json())
+    .then((result) => {
+      categorias = result;
+      console.log(categorias); // Aquí puedes trabajar con los datos
+      return categorias;
+    })
+    .catch((error) => console.error(error));
+}
 
-
-//Condiciones para el almacenamiento local
-/*
-if (localStorage.getItem("librosLocalStorage") != null){
-  librosLocalStorage = JSON.parse(localStorage.getItem("librosLocalStorage"));
-  console.log(librosLocalStorage);
-  let contId = libros.length + 1;
-
-  librosLocalStorage.forEach(element => {
-    element.id = contId
-    libros.push(element)
-    console.log(libros);
-    contId++; 
-  });
-  addBooks(librosLocalStorage)
-}*/
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -99,6 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetchLibros().then((libros) => {
           addAllBooks(libros)
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
         });
 
         containerTodos.parentElement.style.display = 'flex';
@@ -190,6 +190,7 @@ function addAllBooks(libros){
 
 function addBooksByCategory(seccion,libros,cat){
   libros.forEach(libro => {
+
     if(libro.categoria == cat){
       seccion.insertAdjacentHTML("beforeend",generateBookHTML(libro));
     }
