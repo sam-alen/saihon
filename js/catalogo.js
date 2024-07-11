@@ -106,16 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
         containerRomance.innerHTML = '';
         containerRomance.parentElement.style.display = 'flex';
 
-        fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Romance");
-        });
-
         //addBooksByCategory(targetSection,libros,"Romance");
         //Se ocultan
         containerTerror.parentElement.style.display = 'none';
         containerTerror.innerHTML = '';
         containerCF.parentElement.style.display = 'none';
         containerCF.innerHTML = '';
+
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,1);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
+        });
+
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       } else if (targetSection.getAttribute('id')=='container-books-terror') {
@@ -124,14 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         containerTerror.innerHTML = '';
         containerTerror.parentElement.style.display = 'flex';
-
-        fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Terror");
-        });
         //addBooksByCategory(targetSection,libros,"Magical Realism");
-
         containerCF.parentElement.style.display = 'none';
         containerCF.innerHTML = '';
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,2);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
+        });
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       } else if (targetSection.getAttribute('id')=='container-books-cf') {
@@ -144,7 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCF.parentElement.style.display = 'flex';
 
         fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Ciencie Ficción");
+          addBooksByCategory(targetSection,libros,3);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
         });
         
         //addBooksByCategory(targetSection,libros,"Fantasy");
@@ -152,8 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       }
-      document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-        cartIcon.addEventListener('click', carritoCardClick);})
 
     });
   });
@@ -166,6 +175,9 @@ terrorsec.style.display = 'none';
 cienciasec.style.display = 'none';
 fetchLibros().then((libros) => {
   addAllBooks(libros)
+  document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+    cartIcon.addEventListener('click', carritoCardClick);
+  })
 });
 
 //addAllBooks(libros)
@@ -178,13 +190,26 @@ function addAllBooks(libros){
 
 function addBooksByCategory(seccion,libros,cat){
   libros.forEach(libro => {
-    
+    if(libro.categoria == cat){
+      seccion.insertAdjacentHTML("beforeend",generateBookHTML(libro));
+    }
   });
     return
 }
 
 
 function generateBookHTML(libro){
+    //validacion de categoria
+    let txtCat = "";
+    if(libro.categoria == 1){
+      txtCat = "Romance"
+      //Se puede hacer un GET a /api/categoria/ definiendo bien las tres primeras categorias
+    } else if(libro.categoria == 2){
+      txtCat = "Terror"
+    } else if (libro.categoria == 3){
+      txtCat = "Ciencia Ficción"
+    }  
+
   return `
   <div class="card card_modal_${libro.idLibros}" style="width: 18rem;">
       <img src="${libro.portada}" class="card-img-top" alt="...">
@@ -212,7 +237,7 @@ function generateBookHTML(libro){
           <div class="modal-body">
             <h3>${libro.autor}</h3>
             <h3>${libro.year}</h3>
-            <h3>${libro.categoria}</h3>
+            <h3>${txtCat}</h3>
             <p>${libro.descripcion}</p>
             <h4>$${libro.precio}</h4>
           </div>
@@ -297,6 +322,8 @@ function carritoCardClick(event){
 }
 
 //se le agrega evento al bton del carrito
+/*
 document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
   cartIcon.addEventListener('click', carritoCardClick);
 })
+  */
