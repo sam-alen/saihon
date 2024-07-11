@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutButton.style.display = "inline"; // Mostrar el botón de logout
 
     logoutButton.addEventListener('click', () => {
-      localStorage.removeItem("loggedUser");
+      localStorage.removeItem("user");
       window.location.href = "inicioSesion.html"; // Redirigir al inicio de sesión
     });
   } else{
