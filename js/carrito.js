@@ -23,6 +23,19 @@ const datosPago = document.getElementById("datosPago");
 const agregarTarjeta = document.getElementById("btnTarjeta");
 const nuevaTarjeta = document.getElementById("nuevaTarjeta");
 
+//variables Datos Personales
+const nombreUsuario = document.getElementById("exampleInputName");
+const telefono = document.getElementById("exampleInputPhone");
+const email = document.getElementById("exampleInputEmail");
+const direccion =  document.getElementById("exampleInputAddress");
+
+
+//variables datos tarjetas
+const numeroTarjeta = document.getElementById("inputNumero");
+const fechaExp = document.getElementById("inputFecha");
+const codigo =document.getElementById("inputCod");
+
+
 btnLimpiar.addEventListener("click", () => eliminarTodos());
 
 btnPagar.addEventListener("click", () => {
@@ -36,6 +49,8 @@ btnPagar.addEventListener("click", () => {
     showConfirmButton: false,
     timer: 1500
   });
+
+  realizarPedido();
 });
 
 //desplegar los datos para agregar tarejta
@@ -147,17 +162,6 @@ function eliminarTodos(index){
 
 document.addEventListener('DOMContentLoaded', actualizarTabla);
 
-//variables Datos Personales
-const nombreUsuario = document.getElementById("exampleInputName");
-const telefono = document.getElementById("exampleInputPhone");
-const email = document.getElementById("exampleInputEmail");
-const direccion =  document.getElementById("exampleInputAddress");
-
-
-//variables datos tarjetas
-const numeroTarjeta = document.getElementById("inputNumero");
-const fechaExp = document.getElementById("inputFecha");
-const codigo =document.getElementById("inputCod");
 
 //Guardar la nueva tarjeta
 function agregarNuevaTarjeta(event) {
@@ -194,6 +198,32 @@ function agregarNuevaTarjeta(event) {
         showConfirmButton: false,
         timer: 1500
         });
+
+}
+
+//PEDIDOS LOCALSTORAGE
+let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+let nextId = 1;
+
+const nuevoPedido = {
+    domicilio: direccion.value,
+    forma_de_pago: 'tarjeta',
+    status: 'activo',
+    id: nextId
+}
+
+
+
+
+function realizarPedido(){
+    pedidos.push(nuevoPedido);
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+    if (pedidos.length > 0 ) {
+        const ids = pedidos.map(pedido => pedido.id);
+        nextId = Math.max(...ids) + 1;
+    }
+
 }
 
 function validateForm(){
@@ -353,3 +383,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+//GET DATA - BACK
+function getData(){
+    const promesa = fetch("http://localhost:8080/api/pedidos/", {method: "GET"});
+    promesa.then((response)=>{
+      console.log("Conectado, obteniendo datos");
+        response.json().then((data)=>{
+          console.log(data);
+        })
+        .catch(
+            (error)=>{console.log("Problema al cargar el JSON "+ error);}
+        )
+    }).catch((err)=>console.log("Existió un problema con la solicitud " + err));
+  }//getData
+
+  getData();
