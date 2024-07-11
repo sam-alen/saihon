@@ -158,6 +158,28 @@ function crearUsuario(){
   if (nombreValido && emailValido && contraValida && telefonoValido && contraIguales && terminosAceptados && privacidadAceptada) {
     let users = JSON.parse(localStorage.getItem("user")) || [];
 
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxpbEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMDU0NDE3NSwiZXhwIjoxNzIwNTgwMTc1fQ.le13emOZj0ue4zmTQMe0A61BCON1fE2O6BESILufSSg");
+    myHeaders.append("Content-Type", "application/json");
+  
+    const raw = JSON.stringify({
+      nombre: nombre.value.trim(),
+      email: email.value.trim(),
+      password: contrase.value.trim(),
+    });
+  
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+  
+    fetch("http://localhost:8088/api/usuarios/", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error("Error:", error));
+      
     // Verificar si el usuario ya está registrado
     let userExists = users.some(user => user.Email === email.value.trim());
     
