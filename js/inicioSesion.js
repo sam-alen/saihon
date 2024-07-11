@@ -244,8 +244,8 @@ async function validarOpcion() {
 
       if (response.ok) {
           const data = await response.json();
-          console.log('Token:', data.token);
-          localStorage.setItem('token', data.token);
+          console.log('token:', data.accessToken);
+          localStorage.setItem('token', data.accessToken);
           window.location.href = "index.html";
       } else {
           userError.style.display = "block";
