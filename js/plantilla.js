@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     logoutButton.addEventListener('click', () => {
       localStorage.removeItem("user");
+      localStorage.removeItem("token");
       window.location.href = "inicioSesion.html"; // Redirigir al inicio de sesión
     });
   } else{
