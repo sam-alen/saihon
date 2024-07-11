@@ -404,46 +404,6 @@ function updateFields() {
     .catch((error) => console.error(error));
 
 
-
-  //GET Del libro por ID
-
-
-
-  //Put del libro
-
-  // if (libroEncontrado.title !== nuevoTitulo) {
-  //   libroEncontrado.title = nuevoTitulo;
-  //   JSONupdate.nombreLibro = nuevoTitulo;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.genre[0] !== nuevoGenero) {
-  //   libroEncontrado.genre[0] = nuevoGenero;
-  //   JSONupdate.categoria = nuevoGenero;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.author !== nuevoAutor) {
-  //   libroEncontrado.author = nuevoAutor;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.publication_year !== nuevoYear) {
-  //   libroEncontrado.publication_year = nuevoYear;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.price !== nuevoPrecio) {
-  //   libroEncontrado.price = nuevoPrecio;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.description !== nuevaDescripcion) {
-  //   libroEncontrado.description = nuevaDescripcion;
-  //   hayCambios = true;
-  // }
-  // if (libroEncontrado.cantidad_libro !== nuevaCantidadLibro) {
-  //   libroEncontrado.cantidad_libro = nuevaCantidadLibro;
-  //   hayCambios = true;
-  // }
-
-
-
   // if (librosLocalStorage) {
   //   let libroEncontrado = librosLocalStorage.find(libro => libro.id == idBuscado);
     
