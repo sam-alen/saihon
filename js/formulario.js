@@ -200,37 +200,66 @@ btnEnviar.addEventListener("click", function (event) {
 // Eliminar libros usando ID
 
 function deletingBooks(){
-let IDtoDelete = deleteID.value;
-let idGet = localStorage.getItem("librosLocalStorage");
+  let IDtoDelete = deleteID.value;
+  // let idGet = localStorage.getItem("librosLocalStorage");
 
-if(idGet){
-  let toParse = JSON.parse(idGet);
+  const raw = "";
 
-  let indexToDelete = toParse.findIndex(toParse => toParse.id == IDtoDelete);
-  if (indexToDelete !== -1){
-    toParse.splice(indexToDelete, 1)
+  const requestOptions = {
+    method: "DELETE",
+    body: raw,
+    redirect: "follow"
+  };
 
-    localStorage.setItem("librosLocalStorage", JSON.stringify(toParse));
-    console.log("Se eliminó el libro");
-
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "El libro se ha eliminado",
-      showConfirmButton: false,
-      timer: 1500
+  fetch("http://localhost:8088/api/libros/" + IDtoDelete, requestOptions)
+    .then((response) => response.text("Conexion exitosa"))
+    .then((result) => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "El libro se ha eliminado",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+    .catch((error) => {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "El libro no se encontro",
+        showConfirmButton: false,
+        timer: 1500
+      });
     });
 
-  } else {
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: "El libro no se encontro",
-      showConfirmButton: false,
-      timer: 1500
-    });
-  } 
-} 
+  // if(idGet){
+  //   let toParse = JSON.parse(idGet);
+
+  //   let indexToDelete = toParse.findIndex(toParse => toParse.id == IDtoDelete);
+  //   if (indexToDelete !== -1){
+  //     toParse.splice(indexToDelete, 1)
+
+  //     localStorage.setItem("librosLocalStorage", JSON.stringify(toParse));
+  //     console.log("Se eliminó el libro");
+
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "success",
+  //       title: "El libro se ha eliminado",
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //     });
+
+  //   } else {
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "error",
+  //       title: "El libro no se encontro",
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //     });
+  //   } 
+  // } 
 }
 
 btnDelete.addEventListener("click", function(event) {
