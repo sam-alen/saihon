@@ -309,25 +309,16 @@ body{
         <button id="limpiar" class="btn btn-light">Vaciar carrito</button>
   </div>
 
-  <div id="pago">
-    <h5>Forma de pago</h5>
-    <div class="form-check" id="checkTarjeta">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
-            Tarjeta Visa terminación **98      |    Juan Pérez   |      05/25
-        </label>
-
-      </div>
-
-      <div class="agregarTarjeta">
-        <button type="button" class="btn btn-primary" id="btnTarjeta" href="#tarjetaFormulario">Agregar Tarjeta y Pagar</button>
-      </div>
+  <div class="agregarTarjeta">
+    <button type="button" class="btn btn-primary" id="btnTarjeta" href="#tarjetaFormulario">Pagar</button>
   </div>
+
+
 <div class="addTarjeta" id="datosPago">
   <div id="form1">
     <form class="datosTarjeta"><!--Formulario-->
         <div class="mb-3 campos">
-            <h3>Datos de personales</h3>
+            <h3>Datos de envío</h3>
             <label for="exampleInputName" class="form-label">Nombre completo</label>
             <input type="name" class="form-control input-form" id="exampleInputName" placeholder="👤 Ricardo López">
             <span id="errorNombre"></span>
@@ -383,6 +374,16 @@ body{
 </div>
   
 
+<div id="pago">
+  <h5>Tarjetas guardadas</h5>
+  <div class="form-check" id="checkTarjeta">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1"><img src="assets/imagenes/logo/card-2.svg" id="logoTarjeta" alt="logo tarjeta">
+          Tarjeta Visa terminación **98      |    Juan Pérez   |      05/25
+      </label>
+
+    </div>
+</div>
 
 </main>
 
