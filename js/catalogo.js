@@ -106,16 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
         containerRomance.innerHTML = '';
         containerRomance.parentElement.style.display = 'flex';
 
-        fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,1);
-        });
-
         //addBooksByCategory(targetSection,libros,"Romance");
         //Se ocultan
         containerTerror.parentElement.style.display = 'none';
         containerTerror.innerHTML = '';
         containerCF.parentElement.style.display = 'none';
         containerCF.innerHTML = '';
+
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,1);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
+        });
+
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       } else if (targetSection.getAttribute('id')=='container-books-terror') {
@@ -124,14 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         containerTerror.innerHTML = '';
         containerTerror.parentElement.style.display = 'flex';
-
-        fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,2);
-        });
         //addBooksByCategory(targetSection,libros,"Magical Realism");
-
         containerCF.parentElement.style.display = 'none';
         containerCF.innerHTML = '';
+        fetchLibros().then((libros) => {
+          addBooksByCategory(targetSection,libros,2);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
+        });
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       } else if (targetSection.getAttribute('id')=='container-books-cf') {
@@ -145,6 +152,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetchLibros().then((libros) => {
           addBooksByCategory(targetSection,libros,3);
+          //se le agrega evento al bton del carrito
+          document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+            cartIcon.addEventListener('click', carritoCardClick);
+          })
         });
         
         //addBooksByCategory(targetSection,libros,"Fantasy");
@@ -152,8 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         containerTodos.parentElement.style.display = 'none';
         containerTodos.innerHTML = '';
       }
-      document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
-        cartIcon.addEventListener('click', carritoCardClick);})
 
     });
   });
@@ -166,6 +175,9 @@ terrorsec.style.display = 'none';
 cienciasec.style.display = 'none';
 fetchLibros().then((libros) => {
   addAllBooks(libros)
+  document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
+    cartIcon.addEventListener('click', carritoCardClick);
+  })
 });
 
 //addAllBooks(libros)
@@ -310,6 +322,8 @@ function carritoCardClick(event){
 }
 
 //se le agrega evento al bton del carrito
+/*
 document.querySelectorAll('.carrito-svg-card').forEach(cartIcon => {
   cartIcon.addEventListener('click', carritoCardClick);
 })
+  */
