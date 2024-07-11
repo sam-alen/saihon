@@ -29,20 +29,11 @@ const containerCF = document.getElementById("container-books-cf");
 
 const linkaside = document.querySelectorAll('.aside__link');
 
-function getData(){
-  const promesa = fetch("http://localhost:8088/api/libros/", {method: "GET"});
-  promesa.then((response)=>{
-    console.log("Conectado, obteniendo datos");
-      response.json().then((data)=>{
-        console.log(data);
-      })
-      .catch(
-          (error)=>{console.log("Problema al cargar el JSON "+ error);}
-      )
-  }).catch((err)=>console.log("Existió un problema con la solicitud " + err));
-}//getData
+// Metodo GET para obtener los libros de la base  de datos
 
-getData()
+
+// Método GET para obtener las categorías
+
 let librosLocalStorage = [];
 
 let libros= [
@@ -177,6 +168,9 @@ let libros= [
       "cover_image": "assets/imagenes/imageneslibros/libro10-LT.webp"
     },
 ];
+
+//Ciclo para cambiar las categorías de los libros
+
 
 // Condiciones para el almacenamiento local
 if (localStorage.getItem("librosLocalStorage") != null){
