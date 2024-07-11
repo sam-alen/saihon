@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containerRomance.parentElement.style.display = 'flex';
 
         fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Romance");
+          addBooksByCategory(targetSection,libros,1);
         });
 
         //addBooksByCategory(targetSection,libros,"Romance");
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containerTerror.parentElement.style.display = 'flex';
 
         fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Terror");
+          addBooksByCategory(targetSection,libros,2);
         });
         //addBooksByCategory(targetSection,libros,"Magical Realism");
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         containerCF.parentElement.style.display = 'flex';
 
         fetchLibros().then((libros) => {
-          addBooksByCategory(targetSection,libros,"Ciencie Ficción");
+          addBooksByCategory(targetSection,libros,3);
         });
         
         //addBooksByCategory(targetSection,libros,"Fantasy");
@@ -178,13 +178,26 @@ function addAllBooks(libros){
 
 function addBooksByCategory(seccion,libros,cat){
   libros.forEach(libro => {
-    
+    if(libro.categoria == cat){
+      seccion.insertAdjacentHTML("beforeend",generateBookHTML(libro));
+    }
   });
     return
 }
 
 
 function generateBookHTML(libro){
+    //validacion de categoria
+    let txtCat = "";
+    if(libro.categoria == 1){
+      txtCat = "Romance"
+      //Se puede hacer un GET a /api/categoria/ definiendo bien las tres primeras categorias
+    } else if(libro.categoria == 2){
+      txtCat = "Terror"
+    } else if (libro.categoria == 3){
+      txtCat = "Ciencia Ficción"
+    }  
+
   return `
   <div class="card card_modal_${libro.idLibros}" style="width: 18rem;">
       <img src="${libro.portada}" class="card-img-top" alt="...">
@@ -212,7 +225,7 @@ function generateBookHTML(libro){
           <div class="modal-body">
             <h3>${libro.autor}</h3>
             <h3>${libro.year}</h3>
-            <h3>${libro.categoria}</h3>
+            <h3>${txtCat}</h3>
             <p>${libro.descripcion}</p>
             <h4>$${libro.precio}</h4>
           </div>
