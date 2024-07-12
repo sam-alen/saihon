@@ -1,3 +1,5 @@
+import { addNavbar, addFooter, showMenu } from './plantilla.js';
+
 /*
 *****************************************
 *   SE AGREGA LA PLANTILLA DEL PROYECTO *
@@ -7,7 +9,6 @@
 */
 
 
-import { addNavbar, addFooter, showMenu } from './plantilla.js';
 
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
@@ -20,16 +21,16 @@ const tendencias_uno = document.getElementById('tendencias-uno');
 const tendencias_dos = document.getElementById('tendencias-dos');
 
 
-// Ejectuamos las funciones
+// Ejecutamos las funciones de la plantilla
 addNavbar(header);
 addFooter(footer);
 showMenu();
 
-// Cargamos los libros
+// Cargamos los libros en la pagina principal
 cargarLibros();
 
 
-// Vamos a hacer el fetch para mandar a llamar los libros
+// Vamos a hacer el fetch para llamar a los libros
 async function fetchLibros() {
   const requestOptions = {
     method: "GET",
@@ -45,36 +46,58 @@ async function fetchLibros() {
   }
 }
 
-// Función para cargar los libros en la pagina principal
+// Función para cargar los libros en la página principal
 async function cargarLibros() {
   const libros = await fetchLibros();
   if (libros) {
-    addBooksAutoresMes1(libros);
-    addBooksAutoresMes2(libros);
-    addBookLibroAnio(libros, obtenerEnteroAleatorioRango(libros));
-    addBooksPopulares1(libros);
-    addBooksPopulares2(libros);
-    addBooksTendencias1(libros);
-    addBooksTendencias2(libros);
-  }else{
+    addBooksAutoresMes(libros, autores_uno);
+    addBooksAutoresMes(libros, autores_dos);
+    addBookLibroAnio(libros, obtenerEnteroAleatorio(libros));
+    addBooksPopulares(libros, populares_uno);
+    addBooksPopulares(libros, populares_dos);
+    addBooksTendencias(libros, tendencias_uno);
+    addBooksTendencias(libros, tendencias_dos);
+  } else {
     console.error("No se han podido cargar los libros");
   }
 }
 
+
+// Función para generar índices aleatorios sin repetir
+function generarIndicesAleatorios(cantidad, max) {
+  let indices = new Array();
+
+  while (indices.length < cantidad) {
+    let numero = Math.floor(Math.random() * max);
+    if (!indices.includes(numero)) {
+      indices.push(numero);
+    }
+  }
+  return indices;
+}
+
+
 /*
 FUNCION PARA OBTENER UN NUMERO ENTERO ALEATORIO ENTRE UN RANGO
 */
-function obtenerEnteroAleatorioRango(libros) {
+function obtenerEnteroAleatorio(libros) {
   return Math.floor(Math.random() * libros.length);
 }
 
 
+/* 
+FUNCIONES PARA INSERTAR LOS LIBROS EN LOS SLIDES
+*/
+
+
 // Añade los libros al primer slide de Autores del mes
-function addBooksAutoresMes1(libros){
-  //let max = obtenerEnteroAleatorioRango(1, libros.length/2);
-    for (let index = 0; index < 4; index++) {
-        const element = libros[index];
-        autores_uno.insertAdjacentHTML("afterbegin",`
+function addBooksAutoresMes(libros, autoresDelMes) {
+  let indicesAleatorios = generarIndicesAleatorios(4, libros.length);
+
+  indicesAleatorios.forEach(index => {
+    const element = libros[index];
+
+    autoresDelMes.insertAdjacentHTML("afterbegin", `
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -90,37 +113,13 @@ function addBooksAutoresMes1(libros){
                       </div>
                     </div>
             `);
-    }
-    return
+  });
 }
 
-// Añade los libros al segundo slide de Autores del mes
-function addBooksAutoresMes2(libros){
-    for (let index = 4; index < 8; index++) {
-        const element = libros[index];
-        autores_dos.insertAdjacentHTML("afterbegin",`
-            <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="${element.portada}" class="img-fluid rounded-start img-card" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">${element.nombreLibro}</h5>
-                            <p class="card-text">${element.descripcion}</p>
-                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            `);
-    }
-    return
-}
 
-//Añade el libro del año
-function addBookLibroAnio(libros,id){
-    libro_anio.insertAdjacentHTML("afterbegin",`
+// Añade el libro del año
+function addBookLibroAnio(libros, id) {
+  libro_anio.insertAdjacentHTML("afterbegin", `
         <h3>Libro del año</h3>
           <div class="card mb-3" id="card-libro-año" style="max-width: 540px;">
             <div class="row g-0">
@@ -131,7 +130,7 @@ function addBookLibroAnio(libros,id){
                 <div class="card-body">
                   <h5 class="card-title">${libros[id].nombreLibro}</h5>
                   <p class="card-text">${libros[id].descripcion}</p>
-                  <p class="card-text"><small class="text-body-secondary">${libros[id].author}</small></p>
+                  <p class="card-text"><small class="text-body-secondary">${libros[id].autor}</small></p>
                 </div>
               </div>
             </div>
@@ -140,10 +139,11 @@ function addBookLibroAnio(libros,id){
 }
 
 // Añade los libros al primer slide de Populares
-function addBooksPopulares1(libros){
-    for (let index = 0; index < 4; index++) {
-        const element = libros[index];
-        populares_uno.insertAdjacentHTML("afterbegin",`
+function addBooksPopulares(libros, librosPopulares) {
+  let indicesAleatorios = generarIndicesAleatorios(4, libros.length);
+  indicesAleatorios.forEach(index => {
+    const element = libros[index];
+    librosPopulares.insertAdjacentHTML("afterbegin", `
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -153,69 +153,23 @@ function addBooksPopulares1(libros){
                           <div class="card-body">
                             <h5 class="card-title">${element.nombreLibro}</h5>
                             <p class="card-text">${element.descripcion}</p>
-                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
+                            <p class="card-text"><small class="text-body-secondary">${element.autor}</small></p>
                           </div>
                         </div>
                       </div>
                     </div>
             `);
-    }
-    return
+  });
 }
 
-// Añade los libros al segundo slide de Populares
-function addBooksPopulares2(libros){
-    for (let index = 4; index < 8; index++) {
-        const element = libros[index];
-        populares_dos.insertAdjacentHTML("afterbegin",`
-            <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="${element.portada}" class="img-fluid rounded-start img-card" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">${element.nombreLibro}</h5>
-                            <p class="card-text">${element.descripcion}</p>
-                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            `);
-    }
-    return
-}
 
 // Añade los libros al primer slide de Tendencias
-function addBooksTendencias1(libros){
-    for (let index = 0; index < 4; index++) {
-        const element = libros[index];
-        tendencias_uno.insertAdjacentHTML("afterbegin",`
-            <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="${element.portada}" class="img-fluid rounded-start img-card" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">${element.nombreLibro}</h5>
-                            <p class="card-text">${element.description}</p>
-                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            `);
-    }
-    return
-}
+function addBooksTendencias(libros, tendencias) {
+  let indicesAleatorios = generarIndicesAleatorios(4, libros.length);
 
-// Añade los libros al segundo slide de Tendencias
-function addBooksTendencias2(libros){
-    for (let index = 4; index < 8; index++) {
-        const element = libros[index];
-        tendencias_dos.insertAdjacentHTML("afterbegin",`
+  indicesAleatorios.forEach(index => {
+    const element = libros[index];
+    tendencias.insertAdjacentHTML("afterbegin", `
             <div class="card mb-3 col-12 col-lg-6" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -225,12 +179,12 @@ function addBooksTendencias2(libros){
                           <div class="card-body">
                             <h5 class="card-title">${element.nombreLibro}</h5>
                             <p class="card-text">${element.descripcion}</p>
-                            <p class="card-text"><small class="text-body-secondary">${element.author}</small></p>
+                            <p class="card-text"><small class="text-body-secondary">${element.autor}</small></p>
                           </div>
                         </div>
                       </div>
                     </div>
             `);
-    }
-    return
+  });
 }
+
