@@ -44,7 +44,6 @@ export function addNavbar(header) {
       </div>
     </nav>
   `);
-  console.log('se cargó navbar');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,7 +95,6 @@ export function addFooter(footer){
         </div>
         `
     );
-    console.log('se cargó footer')
 }
 
 export function showMenu(){
