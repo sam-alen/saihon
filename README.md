@@ -46,14 +46,14 @@ cd saihon
 
 También puedes hacer un _fork_ del proyecto, si así lo deseas
 
-2. Realizar Cambios
+### 2. Realizar Cambios
 Realiza los cambios necesarios en los archivos del proyecto en tu máquina local. Para esto, debes crear una rama en dónde realizar tus cambios.
 
 ```bash
 git checkout -b mi_rama
 ```
 
-3. Agregar Cambios
+### 3. Agregar Cambios
 Una vez que hayas realizado los cambios, agrega los archivos modificados al área de preparación utilizando el comando _git status_. Luego envía los archivos modificados al área de preparación usando el comando _git add ._:
 
 ```bash
@@ -61,14 +61,14 @@ git status
 git add .
 ```
 
-4. Confirmar Cambios
+### 4. Confirmar Cambios
 Confirma los cambios utilizando el comando git commit. Asegúrate de incluir un mensaje descriptivo que explique los cambios realizados:
 
 ```bash
 git commit -m "Descripción breve de los cambios realizados"
 ```
 
-5. Subir Cambios
+### 5. Subir Cambios
 Finalmente, sube los cambios al repositorio remoto en GitHub utilizando el comando git push:
 
 ```bash
